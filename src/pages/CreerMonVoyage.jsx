@@ -1,123 +1,122 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
-    number: '01',
-    title: 'Tu choisis ta destination',
+    number: "01",
+    title: "On en discute ensemble",
     description:
-      'Sélectionne la destination de tes rêves parmi nos propositions ou propose la tienne. On étudie chaque projet ensemble.',
+      "Réserve un appel avec notre équipe pour nous parler de ton projet. On définit ensemble la destination, le format et les détails de ton voyage.",
   },
   {
-    number: '02',
+    number: "02",
     title: "On s'occupe de tout",
     description:
-      'Logistique, hébergement, activités, transports… Notre équipe gère l\'intégralité de l\'organisation pour toi.',
+      "Logistique, hébergement, activités, transports… Notre équipe gère l'intégralité de l'organisation pour toi.",
   },
   {
-    number: '03',
-    title: 'Tu vis l\'expérience et crées du contenu',
+    number: "03",
+    title: "Tu vis l'expérience et crées du contenu",
     description:
-      'Concentre-toi sur ce que tu fais de mieux : vivre le moment et partager des souvenirs uniques avec ta communauté.',
+      "Concentre-toi sur ce que tu fais de mieux : vivre le moment et partager des souvenirs uniques avec ta communauté.",
   },
-]
+];
 
 const avantages = [
   {
-    icon: '💸',
-    title: 'Revenus',
+    icon: "🎁",
+    title: "Places offertes",
     description:
-      'Gagne une commission sur chaque participant inscrit à ton voyage. Plus ta communauté te suit, plus tu gagnes.',
-    bg: 'bg-orange',
-    text: 'text-white',
+      "Organise un voyage pour ta communauté et ta place est prise en charge. Tu profites aussi d'autres avantages en tant que créateur partenaire.",
+    bg: "bg-orange",
+    text: "text-white",
   },
   {
-    icon: '🎬',
-    title: 'Contenu',
+    icon: "🎬",
+    title: "Contenu",
     description:
-      'Vis des expériences uniques pensées pour être filmées, photographiées et partagées. Du contenu authentique, sans effort.',
-    bg: 'bg-green-light',
-    text: 'text-blue-dark',
+      "Vis des expériences uniques pensées pour être filmées, photographiées et partagées. Du contenu authentique, sans effort.",
+    bg: "bg-green-light",
+    text: "text-blue-dark",
   },
   {
-    icon: '🤝',
-    title: 'Communauté',
+    icon: "🤝",
+    title: "Communauté",
     description:
-      'Renforce le lien avec ton audience en vivant une aventure ensemble. Rien ne rapproche plus qu\'un voyage partagé.',
-    bg: 'bg-yellow',
-    text: 'text-blue-dark',
+      "Renforce le lien avec ton audience en vivant une aventure ensemble. Rien ne rapproche plus qu'un voyage partagé.",
+    bg: "bg-yellow",
+    text: "text-blue-dark",
   },
-]
+];
 
 const temoignages = [
   {
-    name: 'Amina K.',
-    handle: '@amina.travels',
-    followers: '120K abonnés',
+    name: "Amina K.",
+    handle: "@amina.travels",
+    followers: "120K abonnés",
     quote:
-      'J\'avais toujours voulu emmener ma communauté en voyage, mais la logistique me faisait peur. Avec Sanko, j\'ai juste eu à profiter et créer du contenu. Le reste était géré de A à Z.',
+      "J'avais toujours voulu emmener ma communauté en voyage, mais la logistique me faisait peur. Avec Sanko, j'ai juste eu à profiter et créer du contenu. Le reste était géré de A à Z.",
   },
   {
-    name: 'Marcus D.',
-    handle: '@marcus.explore',
-    followers: '85K abonnés',
+    name: "Marcus D.",
+    handle: "@marcus.explore",
+    followers: "85K abonnés",
     quote:
-      'Mon premier voyage avec Sanko a généré plus de revenus que 3 mois de partenariats classiques. Et surtout, ma communauté m\'en parle encore tous les jours.',
+      "Mon premier voyage avec Sanko a généré plus de revenus que 3 mois de partenariats classiques. Et surtout, ma communauté m'en parle encore tous les jours.",
   },
   {
-    name: 'Sofia L.',
-    handle: '@sofia.world',
-    followers: '200K abonnés',
+    name: "Sofia L.",
+    handle: "@sofia.world",
+    followers: "200K abonnés",
     quote:
-      'Ce qui m\'a convaincue, c\'est l\'accompagnement. L\'équipe Sanko comprend les créateurs et sait exactement ce dont on a besoin pour produire du contenu incroyable.',
+      "Ce qui m'a convaincue, c'est l'accompagnement. L'équipe Sanko comprend les créateurs et sait exactement ce dont on a besoin pour produire du contenu incroyable.",
   },
-]
+];
 
 const faqItems = [
   {
-    question: 'Combien de participants minimum pour organiser un voyage ?',
+    question: "Combien de participants minimum pour organiser un voyage ?",
     answer:
-      'Il faut un minimum de 10 participants pour lancer un voyage. Notre équipe t\'accompagne dans la promotion auprès de ta communauté pour atteindre cet objectif.',
+      "Il faut un minimum de 10 participants pour lancer un voyage. Notre équipe t'accompagne dans la promotion auprès de ta communauté pour atteindre cet objectif.",
   },
   {
-    question: 'Qui gère la logistique sur place ?',
+    question: "Qui gère la logistique sur place ?",
     answer:
-      'Sanko s\'occupe de tout : vols, hébergements, activités, transports locaux, restauration. Un coordinateur Sanko est présent sur place pendant tout le voyage.',
+      "Sanko s'occupe de tout : vols, hébergements, activités, transports locaux, restauration. Un coordinateur Sanko est présent sur place pendant tout le voyage.",
   },
   {
-    question: 'Comment sont calculés mes revenus ?',
+    question: "Comment sont calculés mes revenus ?",
     answer:
-      'Tu reçois une commission sur chaque inscription confirmée. Le montant dépend de la destination et du nombre de participants. On te présente tout ça en détail lors de notre premier échange.',
+      "Tu reçois une commission sur chaque inscription confirmée. Le montant dépend de la destination et du nombre de participants. On te présente tout ça en détail lors de notre premier échange.",
   },
   {
-    question: 'Quelles destinations sont disponibles ?',
+    question: "Quelles destinations sont disponibles ?",
     answer:
-      'Nous proposons des destinations en Afrique, Asie, Amérique latine et Europe. Tu peux aussi proposer ta propre destination et on étudie la faisabilité ensemble.',
+      "Nous proposons des destinations en Afrique, Asie, Amérique latine et Europe. Tu peux aussi proposer ta propre destination et on étudie la faisabilité ensemble.",
   },
   {
-    question: 'Faut-il une taille minimum de communauté ?',
+    question: "Faut-il une taille minimum de communauté ?",
     answer:
-      'Pas de minimum strict, mais nous recommandons au moins 5 000 abonnés engagés pour garantir un voyage réussi. Ce qui compte, c\'est l\'engagement de ta communauté, pas juste le nombre.',
+      "Pas de minimum strict, mais nous recommandons au moins 5 000 abonnés engagés pour garantir un voyage réussi. Ce qui compte, c'est l'engagement de ta communauté, pas juste le nombre.",
   },
-]
+];
 
 export default function CreerMonVoyage() {
   const [form, setForm] = useState({
-    prenom: '',
-    email: '',
-    social: '',
-    communaute: '',
-    message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [openFaq, setOpenFaq] = useState(null)
+    email: "",
+    social: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
-  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
     <main>
@@ -125,9 +124,9 @@ export default function CreerMonVoyage() {
       <section
         className="relative h-screen flex items-center justify-center"
         style={{
-          backgroundImage: 'url(/images/paysages/paysage_005.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: "url(/images/paysages/paysage_005.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="absolute inset-0 bg-blue-dark/70" />
@@ -136,11 +135,8 @@ export default function CreerMonVoyage() {
             Créateurs de contenu
           </p>
           <h1 className="font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
-            Transformez votre audience en aventuriers
+            Vivez l'aventure d'une vie avec votre audience
           </h1>
-          <p className="font-body text-white/70 text-lg md:text-xl mb-10">
-            Organisez des voyages inoubliables pour votre communauté. On gère tout, vous créez.
-          </p>
           <a
             href="#formulaire"
             className="inline-block bg-orange text-white font-body font-semibold px-10 py-4 rounded-lg hover:bg-orange/90 transition-colors text-lg"
@@ -158,14 +154,16 @@ export default function CreerMonVoyage() {
           </h2>
           <div className="font-body text-blue-dark/80 text-lg leading-relaxed space-y-6">
             <p>
-              Tu rêves d'emmener ta communauté à l'autre bout du monde, mais tu ne sais pas par où commencer ?
-              Sanko est né pour ça. Nous sommes une agence de voyage spécialisée dans l'accompagnement
-              des créateurs de contenu.
+              Tu rêves d'emmener ta communauté à l'autre bout du monde, mais tu
+              ne sais pas par où commencer ? Sanko est né pour ça. Nous sommes
+              une agence de voyage spécialisée dans l'accompagnement des
+              créateurs de contenu.
             </p>
             <p>
-              De la sélection de la destination à la gestion des inscriptions, en passant par
-              la logistique complète sur place — on prend tout en charge pour que tu puisses
-              te concentrer sur ce que tu fais de mieux : créer et inspirer.
+              De la sélection de la destination à la gestion des inscriptions,
+              en passant par la logistique complète sur place — on prend tout en
+              charge pour que tu puisses te concentrer sur ce que tu fais de
+              mieux : créer et inspirer.
             </p>
           </div>
         </div>
@@ -215,8 +213,12 @@ export default function CreerMonVoyage() {
             {avantages.map((a, i) => (
               <div key={i} className={`${a.bg} ${a.text} rounded-2xl p-8`}>
                 <div className="text-4xl mb-4">{a.icon}</div>
-                <h3 className="font-heading font-bold text-2xl mb-3">{a.title}</h3>
-                <p className="font-body text-sm leading-relaxed opacity-90">{a.description}</p>
+                <h3 className="font-heading font-bold text-2xl mb-3">
+                  {a.title}
+                </h3>
+                <p className="font-body text-sm leading-relaxed opacity-90">
+                  {a.description}
+                </p>
               </div>
             ))}
           </div>
@@ -236,14 +238,19 @@ export default function CreerMonVoyage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {temoignages.map((t, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+              <div
+                key={i}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8"
+              >
                 <p className="font-body text-white/90 text-sm leading-relaxed mb-6 italic">
                   "{t.quote}"
                 </p>
                 <div>
                   <p className="font-heading font-bold text-white">{t.name}</p>
                   <p className="font-body text-orange text-sm">{t.handle}</p>
-                  <p className="font-body text-white/50 text-xs mt-1">{t.followers}</p>
+                  <p className="font-body text-white/50 text-xs mt-1">
+                    {t.followers}
+                  </p>
                 </div>
               </div>
             ))}
@@ -274,18 +281,23 @@ export default function CreerMonVoyage() {
                   </span>
                   <svg
                     className={`w-5 h-5 text-orange flex-shrink-0 transition-transform duration-300 ${
-                      openFaq === i ? 'rotate-180' : ''
+                      openFaq === i ? "rotate-180" : ""
                     }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openFaq === i ? 'max-h-48' : 'max-h-0'
+                    openFaq === i ? "max-h-48" : "max-h-0"
                   }`}
                 >
                   <p className="px-6 pb-5 font-body text-blue-dark/70 text-sm leading-relaxed">
@@ -325,19 +337,6 @@ export default function CreerMonVoyage() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div>
                   <label className="font-body text-sm font-semibold text-blue-dark/70 mb-1.5 block">
-                    Prénom
-                  </label>
-                  <input
-                    name="prenom"
-                    value={form.prenom}
-                    onChange={handleChange}
-                    placeholder="Ton prénom"
-                    required
-                    className="w-full font-body border border-blue-dark/15 rounded-xl px-5 py-3.5 outline-none focus:border-orange transition-colors bg-beige/50 text-blue-dark placeholder-blue-dark/30"
-                  />
-                </div>
-                <div>
-                  <label className="font-body text-sm font-semibold text-blue-dark/70 mb-1.5 block">
                     Email
                   </label>
                   <input
@@ -365,24 +364,6 @@ export default function CreerMonVoyage() {
                 </div>
                 <div>
                   <label className="font-body text-sm font-semibold text-blue-dark/70 mb-1.5 block">
-                    Taille de ta communauté
-                  </label>
-                  <select
-                    name="communaute"
-                    value={form.communaute}
-                    onChange={handleChange}
-                    required
-                    className="w-full font-body border border-blue-dark/15 rounded-xl px-5 py-3.5 outline-none focus:border-orange transition-colors bg-beige/50 text-blue-dark appearance-none"
-                  >
-                    <option value="" disabled>Sélectionne une tranche</option>
-                    <option value="5k-10k">5 000 – 10 000</option>
-                    <option value="10k-50k">10 000 – 50 000</option>
-                    <option value="50k-100k">50 000 – 100 000</option>
-                    <option value="100k+">100 000+</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="font-body text-sm font-semibold text-blue-dark/70 mb-1.5 block">
                     Message
                   </label>
                   <textarea
@@ -403,8 +384,21 @@ export default function CreerMonVoyage() {
               </form>
             )}
           </div>
+
+          <p className="font-body text-blue-dark/80 text-lg mt-10 text-center">
+            Ou prends un rdv directement avec la grande chef{" "}
+            <a
+              href="https://calendly.com/sankofatravelstudio/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-orange font-semibold underline hover:text-orange/70 transition-colors"
+            >
+              juste ici
+            </a>
+            .
+          </p>
         </div>
       </section>
     </main>
-  )
+  );
 }

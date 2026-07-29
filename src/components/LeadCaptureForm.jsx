@@ -16,10 +16,10 @@ export default function LeadCaptureForm() {
     <section id="form" className="bg-orange py-24 px-6">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-4">
-          Tu souhaites devenir ambassadeur ?
+          Tu souhaites créer ton propre voyage ?
         </h2>
         <p className="font-body text-white/80 text-lg mb-10">
-          Rejoins les créateurs qui transforment leur passion en aventure partagée.
+          Tu es créateur de contenu et tu rêves de faire voyager ta communauté ? Lance ton voyage de groupe sur-mesure avec Sankofa.
         </p>
 
         {submitted ? (
@@ -53,6 +53,18 @@ export default function LeadCaptureForm() {
             </button>
           </form>
         )}
+
+        <p className="font-body text-white/80 text-lg mt-10">
+          Ou prends un rdv directement avec la grande chef{' '}
+          <a
+            href="https://calendly.com/sankofatravelstudio/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white font-semibold underline hover:text-white/70 transition-colors"
+          >
+            juste ici
+          </a>.
+        </p>
       </div>
     </section>
   )

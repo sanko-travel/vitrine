@@ -1,18 +1,38 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
+const CTA_COLORS = [
+  '#E67A52', // orange
+  '#0B6863', // green-dark
+  '#102C40', // blue-dark
+]
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [ctaColor, setCtaColor] = useState(CTA_COLORS[0])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (scrollHeight <= 0) return
+      const progress = Math.min(window.scrollY / scrollHeight, 1)
+
+      const idx = Math.min(
+        Math.floor(progress * CTA_COLORS.length),
+        CTA_COLORS.length - 1
+      )
+      setCtaColor(CTA_COLORS[idx])
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   const navLinks = [
-    { to: '/our-team', label: 'Our Team' },
+    { to: '/creer-mon-voyage', label: 'Créer mon voyage' },
+    { to: '/notre-equipe', label: 'Notre équipe' },
     { to: '/contact', label: 'Contact' },
   ]
 
@@ -51,7 +71,8 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             to="/creer-mon-voyage"
-            className="bg-orange text-white font-body font-semibold text-sm px-6 py-2.5 rounded-lg hover:bg-orange/90 transition-colors"
+            className="text-white font-body font-semibold text-sm px-6 py-2.5 rounded-lg"
+            style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
           >
             Créer mon voyage
           </Link>

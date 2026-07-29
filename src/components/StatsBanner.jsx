@@ -32,7 +32,7 @@ function StatItem({ stat, animate }) {
       <span className="font-heading font-bold text-5xl md:text-6xl text-orange">
         {stat.suffix === '+' || stat.value > 100 ? '' : ''}{count}{stat.suffix}
       </span>
-      <span className="font-body text-beige/80 text-sm md:text-base tracking-wide uppercase">
+      <span className="font-body text-beige/80 text-sm md:text-base tracking-wide uppercase whitespace-nowrap">
         {stat.label}
       </span>
     </div>

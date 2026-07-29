@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const navLinks = [
-  { to: '/our-team', label: 'Our Team' },
+  { to: '/notre-equipe', label: 'Notre équipe' },
   { to: '/contact', label: 'Contact' },
   { to: '/mentions-legales', label: 'Mentions légales' },
 ]

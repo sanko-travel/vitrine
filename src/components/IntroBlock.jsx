@@ -1,6 +1,6 @@
 export default function IntroBlock() {
   return (
-    <section className="bg-beige py-24 md:py-32 px-6 md:px-16">
+    <section id="intro" className="bg-beige py-24 md:py-32 px-6 md:px-16">
       <div className="max-w-5xl mx-auto">
         <h2 className="font-heading font-extrabold text-blue-dark text-3xl md:text-5xl leading-relaxed md:leading-relaxed mb-6">
           Une grande{' '}
