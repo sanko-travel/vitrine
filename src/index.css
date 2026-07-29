@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Ken Burns keyframes ─────────────────────────────────────── */
+@keyframes kenBurns1 {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.15) translate(-3%, -2%); }
+}
+@keyframes kenBurns2 {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.15) translate(3%, -2%); }
+}
+@keyframes kenBurns3 {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.18) translate(-2%, 3%); }
+}
+@keyframes kenBurns4 {
+  0%   { transform: scale(1.0) translate(0%, 0%); }
+  100% { transform: scale(1.15) translate(2%, 2%); }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ── Infinite marquee ────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Ken Burns slide ─────────────────────────────────────────── */
+.kb-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.kb-slide.active {
+  opacity: 1;
+}
+
+.kb-slide.active:nth-child(1) { animation: kenBurns1 10s ease-out forwards; }
+.kb-slide.active:nth-child(2) { animation: kenBurns2 10s ease-out forwards; }
+.kb-slide.active:nth-child(3) { animation: kenBurns3 10s ease-out forwards; }
+.kb-slide.active:nth-child(4) { animation: kenBurns4 10s ease-out forwards; }
+
+/* ── Global ──────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #F3F1E7;
+  color: #102C40;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lexend', sans-serif;
+}
