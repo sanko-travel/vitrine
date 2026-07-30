@@ -1,0 +1,6 @@
+20260728._domainkey 3600 IN TXT "v=DKIM1; t=s; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1WxlPSwEmoewnBRc5ofgmvfFGxCp+xb49tsII241ItqrDXjCPtl3CroNg4ZF4M+ePmoLVqQ9Lhf+wOpFgNZX9dQy7g9HarOb1nWuIyL52T1rnhoemSPmXpcaz1igXIQYzVcyYShlGHXrslVKEi+LQnBRzE5LinWEzzsYeNHUBrJpwosDpb/ZjWo2gmaDBaQk1ErkddlIR/F760/0yvvmfYjOXfOSfeVcx3NPlabUwE17+CZ+2sm3FIlSfpZPaXe+KfBkeBcwhBRszUP/5H5XhG+QX9jLyeyiF4zEyHiys2B70CkB6KFV40LBJ8GXzrsWsLgt6Wq3ZM4DiyJnFA3pzwIDAQAB"
+_submissions._tcp 3600 IN SRV 1 1 465 mail.infomaniak.com.
+resend._domainkey 3600 IN TXT "v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCgm55e4x7awqy6tGy8mU5vYLQzRRoteGnco//giQMsPWijH9m2HIWdXnrOuzSxtwTBgNd/nNDRO9Xeckd3AvLTXChZN6nC/pu3Awk0jFsc9uAMi2JV9pvkPz/fcujvzkHh8H+b4Tr7sf5OOHUjaoLy/0v4FjDnJ88TtdW8DhNj8QIDAQAB"
+send 3600 IN MX 10 feedback-smtp.eu-west-1.amazonses.com.
+send 3600 IN TXT "v=spf1 include:amazonses.com ~all"
+@ 3600 IN TXT "v=spf1 include:spf.infomaniak.ch include:amazonses.com -all"

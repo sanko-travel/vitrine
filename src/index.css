@@ -65,6 +65,18 @@
 .kb-slide.active:nth-child(3) { animation: kenBurns3 10s ease-out forwards; }
 .kb-slide.active:nth-child(4) { animation: kenBurns4 10s ease-out forwards; }
 
+/* ── Scroll reveal ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ── Global ──────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
@@ -72,8 +84,8 @@ html {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: #F3F1E7;
-  color: #102C40;
+  background-color: #FFFFFF;
+  color: #025961;
   margin: 0;
 }
 

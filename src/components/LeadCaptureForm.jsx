@@ -1,41 +1,73 @@
 import { useState } from 'react'
+import useTurnstile from '../hooks/useTurnstile'
+import useScrollReveal from '../hooks/useScrollReveal'
+
+const honeypotStyle = { position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }
 
 export default function LeadCaptureForm() {
   const [handle, setHandle] = useState('')
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
+  const [hpNumber, setFaxNumber] = useState('sk-78x')
+  const [newsletter, setNewsletter] = useState(true)
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const { containerRef, token, reset } = useTurnstile()
+  const revealRef = useScrollReveal()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // TODO: remplacer par Formspree endpoint
-    // fetch('https://formspree.io/f/YOUR_ID', { method: 'POST', body: ... })
-    setSubmitted(true)
+    if (!token) return setError('Vérifie que tu n\'es pas un robot.')
+    setLoading(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 'lead-capture',
+          data: { handle, email },
+          website,
+          number: hpNumber,
+          newsletter,
+          'cf-turnstile-response': token,
+        }),
+      })
+      if (!res.ok) throw new Error()
+      setSubmitted(true)
+    } catch {
+      reset()
+      setError('Une erreur est survenue. Réessaie ou contacte-nous directement.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <section id="form" className="bg-orange py-24 px-6">
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-4">
+    <section id="form" className="bg-teal py-24 px-6">
+      <div ref={revealRef} className="max-w-2xl mx-auto text-center">
+        <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white mb-4">
           Tu souhaites créer ton propre voyage ?
         </h2>
-        <p className="font-body text-white/80 text-lg mb-10">
+        <p className="reveal font-body text-white/80 text-lg mb-10">
           Tu es créateur de contenu et tu rêves de faire voyager ta communauté ? Lance ton voyage de groupe sur-mesure avec Sankofa.
         </p>
 
         {submitted ? (
-          <div className="bg-white/20 backdrop-blur rounded-2xl p-10">
-            <p className="font-heading font-bold text-white text-2xl mb-2">Bienvenue dans l'aventure ! 🎉</p>
-            <p className="font-body text-white/80">On te contacte très bientôt.</p>
+          <div className="reveal bg-white/90 backdrop-blur rounded-2xl p-10">
+            <p className="font-heading font-bold text-teal text-2xl mb-2">Bienvenue dans l'aventure !</p>
+            <p className="font-body text-gray-600">On te contacte très bientôt.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+          <form onSubmit={handleSubmit} className="reveal flex flex-col sm:flex-row gap-4">
             <input
               type="text"
               value={handle}
               onChange={e => setHandle(e.target.value)}
               placeholder="@tonhandle"
               required
-              className="flex-1 font-body bg-white/20 backdrop-blur text-white placeholder-white/60 border border-white/30 rounded-lg px-6 py-4 outline-none focus:border-white focus:bg-white/30 transition-colors"
+              className="flex-1 font-body bg-white text-teal placeholder-teal/40 border border-white/30 rounded-full px-6 py-4 outline-none focus:ring-2 focus:ring-coral transition-colors"
             />
             <input
               type="email"
@@ -43,18 +75,33 @@ export default function LeadCaptureForm() {
               onChange={e => setEmail(e.target.value)}
               placeholder="ton@mail.fr"
               required
-              className="flex-1 font-body bg-white/20 backdrop-blur text-white placeholder-white/60 border border-white/30 rounded-lg px-6 py-4 outline-none focus:border-white focus:bg-white/30 transition-colors"
+              className="flex-1 font-body bg-white text-teal placeholder-teal/40 border border-white/30 rounded-full px-6 py-4 outline-none focus:ring-2 focus:ring-coral transition-colors"
             />
+
+            {/* Honeypot fields */}
+            <div style={honeypotStyle} aria-hidden="true">
+              <input type="text" name="website" value={website} onChange={e => setWebsite(e.target.value)} tabIndex={-1} autoComplete="off" />
+              <input type="text" name="number" value={hpNumber} onChange={e => setFaxNumber(e.target.value)} tabIndex={-1} autoComplete="off" />
+              <input type="checkbox" name="newsletter" checked={newsletter} onChange={e => setNewsletter(e.target.checked)} tabIndex={-1} />
+            </div>
+
             <button
               type="submit"
-              className="bg-blue-dark text-white font-body font-semibold px-8 py-4 rounded-lg hover:bg-blue-dark/80 transition-colors whitespace-nowrap"
+              disabled={loading || !token}
+              className="bg-coral text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-coral/90 transition-colors whitespace-nowrap disabled:opacity-60"
             >
-              Je rejoins l'aventure
+              {loading ? 'Envoi…' : 'Je rejoins l\'aventure'}
             </button>
           </form>
         )}
 
-        <p className="font-body text-white/80 text-lg mt-10">
+        <div ref={containerRef} className="flex justify-center mt-4" />
+
+        {error && (
+          <p className="font-body text-coral bg-white/90 rounded-full px-4 py-3 mt-4">{error}</p>
+        )}
+
+        <p className="reveal font-body text-white/80 text-lg mt-10">
           Ou prends un rdv directement avec la grande chef{' '}
           <a
             href="https://calendly.com/sankofatravelstudio/30min"

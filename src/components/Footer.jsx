@@ -40,7 +40,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-dark py-14 px-6">
+    <footer className="bg-teal py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
           {/* Logo */}
@@ -48,7 +48,7 @@ export default function Footer() {
             <span className="font-heading font-bold text-2xl text-white tracking-tight mb-4 block">
               Sanko
             </span>
-            <p className="font-body text-beige/50 text-sm max-w-xs">
+            <p className="font-body text-white/80 text-sm max-w-xs">
               L'agence de voyage pour créateurs de contenu.
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function Footer() {
               <Link
                 key={to}
                 to={to}
-                className="font-body text-beige/60 text-sm hover:text-beige transition-colors"
+                className="font-body text-white/80 text-sm hover:text-white transition-colors"
               >
                 {label}
               </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
                 key={name}
                 href={href}
                 aria-label={name}
-                className="text-beige/50 hover:text-orange transition-colors"
+                className="text-white/80 hover:text-coral transition-colors"
               >
                 {icon}
               </a>
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 text-center">
-          <p className="font-body text-beige/40 text-sm">
+          <p className="font-body text-white/70 text-sm">
             © 2025 Sanko — Tous droits réservés
           </p>
         </div>

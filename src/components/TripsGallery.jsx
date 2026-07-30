@@ -38,10 +38,10 @@ export default function TripsGallery() {
     <section className="bg-white py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <h2 className="font-heading font-bold text-4xl md:text-5xl text-blue-dark mb-4">
+          <h2 className="font-heading font-bold text-4xl md:text-5xl text-teal mb-4">
             Nos dernières expéditions
           </h2>
-          <p className="font-body text-blue-dark/60 text-lg">
+          <p className="font-body text-teal/60 text-lg">
             Des destinations soigneusement sélectionnées, des expériences uniques.
           </p>
         </div>
@@ -57,7 +57,7 @@ export default function TripsGallery() {
                 alt={trip.destination}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-blue-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+              <div className="absolute inset-0 bg-teal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
                 <span className="font-heading font-bold text-white text-xl text-center px-4">
                   {trip.destination}
                 </span>
@@ -66,7 +66,7 @@ export default function TripsGallery() {
                 </span>
               </div>
               {/* Always visible label on mobile */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-dark/80 to-transparent p-4 md:hidden">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-teal/80 to-transparent p-4 md:hidden">
                 <span className="font-heading font-semibold text-white text-sm">{trip.destination}</span>
                 <span className="font-body text-white/70 text-xs ml-2">{trip.season}</span>
               </div>
@@ -77,7 +77,7 @@ export default function TripsGallery() {
         <div className="text-center mt-12">
           <Link
             to="/contact"
-            className="inline-block bg-blue-dark text-white font-body font-semibold px-8 py-3.5 rounded-lg hover:bg-blue-dark/80 transition-colors"
+            className="inline-block bg-teal text-white font-body font-semibold px-8 py-3.5 rounded-lg hover:bg-teal/80 transition-colors"
           >
             Voir toutes nos expéditions
           </Link>

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 const CTA_COLORS = [
-  '#E67A52', // orange
-  '#0B6863', // green-dark
-  '#102C40', // blue-dark
+  '#ea573d', // coral
+  '#025961', // teal
+  '#f8a009', // yellow
 ]
 
 export default function Navbar() {
@@ -16,10 +16,10 @@ export default function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 40)
 
+      // Color changes based on scroll progress across the full page
       const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
       if (scrollHeight <= 0) return
       const progress = Math.min(window.scrollY / scrollHeight, 1)
-
       const idx = Math.min(
         Math.floor(progress * CTA_COLORS.length),
         CTA_COLORS.length - 1
@@ -39,7 +39,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-blue-dark shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-teal shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -57,8 +57,8 @@ export default function Navbar() {
               className={({ isActive }) =>
                 `font-body font-medium text-sm transition-colors ${
                   isActive
-                    ? 'text-orange'
-                    : 'text-white hover:text-orange'
+                    ? 'text-coral'
+                    : 'text-white hover:text-coral'
                 }`
               }
             >
@@ -71,7 +71,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             to="/creer-mon-voyage"
-            className="text-white font-body font-semibold text-sm px-6 py-2.5 rounded-lg"
+            className="text-white font-body font-semibold text-sm px-6 py-2.5 rounded-full"
             style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
           >
             Créer mon voyage
@@ -96,14 +96,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-blue-dark border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-teal border-t border-white/10 px-6 py-4 flex flex-col gap-4">
           {navLinks.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
-                `font-body font-medium text-sm ${isActive ? 'text-orange' : 'text-white'}`
+                `font-body font-medium text-sm ${isActive ? 'text-coral' : 'text-white'}`
               }
             >
               {label}
@@ -112,7 +112,8 @@ export default function Navbar() {
           <Link
             to="/creer-mon-voyage"
             onClick={() => setMenuOpen(false)}
-            className="bg-orange text-white font-body font-semibold text-sm px-6 py-2.5 rounded-lg text-center hover:bg-orange/90 transition-colors mt-2"
+            className="text-white font-body font-semibold text-sm px-6 py-2.5 rounded-full text-center mt-2"
+            style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
           >
             Créer mon voyage
           </Link>
