@@ -5,7 +5,7 @@ const colors = {
 }
 
 // Rotation par défaut basée sur la longueur du texte (quand pas de style.transform fourni)
-const defaultRotations = ['-2deg', '1deg', '2deg', '-1deg', '3deg']
+const defaultRotations = ['-5deg', '4deg', '6deg', '-4deg', '7deg']
 
 // size: 'xs', 'sm' (default), 'md', 'lg', 'xl', '2xl' — ou un nombre en px
 const sizes = {

@@ -11,72 +11,8 @@ const videos = [
   "/videos/forest_waterfall.mp4",
 ];
 
-const words = ["Voyages.", "D'Exception.", "En communauté."];
-
-// ── Stickers positionnés autour du titre (style charte "London") ──
-//
-// Chaque sticker a des props desktop ET mobile.
-// Pour repositionner : modifier top/left/right/bottom (px ou %).
-// Pour tourner :        modifier rotate (en deg).
-// Pour la taille :      modifier size ('xs','sm','md','lg','xl','2xl' ou px).
-//
-const heroStickers = [
-  {
-    text: "Impact",
-    color: "teal",
-    // Desktop
-    size: "xl",
-    top: "-16px",
-    left: "-5%",
-    rotate: "-15deg",
-    // Mobile
-    mobile: { size: "sm", top: "-22px", left: "-2%", rotate: "-10deg" },
-  },
-  {
-    text: "Voyage",
-    color: "yellow",
-    size: "xl",
-    bottom: "-10px",
-    left: "25%",
-    rotate: "3deg",
-    mobile: { size: "sm", bottom: "-8px", left: "35%", rotate: "3deg" },
-  },
-  {
-    text: "Communauté",
-    color: "coral",
-    size: "xl",
-    top: "-30px",
-    left: "50%",
-    rotate: "8deg",
-    mobile: { size: "sm", top: "-18px", left: "60%", rotate: "8deg" },
-  },
-];
-
 export default function VideoHero() {
   const [currentVideo, setCurrentVideo] = useState(0);
-  const [wordIndex, setWordIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detect mobile viewport
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 640);
-    check();
-    window.addEventListener("resize", check, { passive: true });
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  // Cycle words every 2s with fade
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % words.length);
-        setVisible(true);
-      }, 400);
-    }, 2400);
-    return () => clearInterval(interval);
-  }, []);
 
   // Cycle videos every 8s
   useEffect(() => {
@@ -106,61 +42,24 @@ export default function VideoHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-16 select-none">
-        <p className="font-body text-white/80 text-[10px] sm:text-sm tracking-widest uppercase mb-8 sm:mb-4 md:mb-6">
+      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+        <StickerLabel text="Voyage" color="teal" className="mx-auto mb-6" />
+        <p className="font-body text-white/90 font-semibold tracking-widest text-sm uppercase mb-4">
           Agence de voyage · Depuis 2022
         </p>
-
-        {/* Animated word + stickers behind the title */}
-        <div className="relative h-16 sm:h-24 md:h-40 flex items-start">
-          {/* Stickers derrière le titre — modifier heroStickers[] en haut du fichier */}
-          {heroStickers.map((s) => {
-            const m = isMobile && s.mobile ? s.mobile : {};
-            return (
-              <StickerLabel
-                key={s.text}
-                text={s.text}
-                color={s.color}
-                size={m.size || s.size}
-                style={{
-                  position: "absolute",
-                  zIndex: 0,
-                  top: m.top ?? s.top,
-                  bottom: m.bottom ?? s.bottom,
-                  left: m.left ?? s.left,
-                  right: m.right ?? s.right,
-                  transform: `rotate(${m.rotate || s.rotate})`,
-                }}
-              />
-            );
-          })}
-
-          <span
-            className="font-heading font-extrabold text-white leading-none relative"
-            style={{
-              zIndex: 1,
-              fontSize: "clamp(2.2rem, 8vw, 8rem)",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(12px)",
-              transition: "opacity 0.4s ease, transform 0.4s ease",
-            }}
-          >
-            {words[wordIndex]}
-          </span>
-        </div>
-
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8 md:mt-10">
+        <h1 className="font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
+          Des voyages d'exception en communauté
+        </h1>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <a
             href="#qui-sommes-nous"
-            className="text-white font-body font-semibold text-center px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:opacity-90 transition-opacity text-sm sm:text-base"
-            style={{ backgroundColor: "#025961" }}
+            className="bg-coral text-white font-body font-semibold text-center px-8 py-4 rounded-full hover:bg-coral/90 transition-colors text-base"
           >
             Découvrir Sanko
           </a>
           <Link
             to="/creer-mon-voyage"
-            className="border-2 border-white text-white font-body font-semibold text-center px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white hover:text-teal transition-colors text-sm sm:text-base"
+            className="border-2 border-white text-white font-body font-semibold text-center px-8 py-4 rounded-full hover:bg-white hover:text-teal transition-colors text-base"
           >
             Je suis créateur
           </Link>

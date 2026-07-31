@@ -3,8 +3,8 @@ import { Link, NavLink } from 'react-router-dom'
 
 const CTA_COLORS = [
   '#ea573d', // coral
-  '#025961', // teal
   '#f8a009', // yellow
+  '#025961', // teal
 ]
 
 export default function Navbar() {
@@ -39,12 +39,12 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-teal shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0 font-heading font-bold text-2xl text-white tracking-tight">
+        <Link to="/" className={`flex-shrink-0 font-heading font-bold text-2xl tracking-tight transition-colors ${scrolled ? 'text-teal' : 'text-white'}`}>
           Sanko
         </Link>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
                 `font-body font-medium text-sm transition-colors ${
                   isActive
                     ? 'text-coral'
-                    : 'text-white hover:text-coral'
+                    : scrolled ? 'text-teal hover:text-coral' : 'text-white hover:text-coral'
                 }`
               }
             >
@@ -80,7 +80,7 @@ export default function Navbar() {
 
         {/* Mobile burger */}
         <button
-          className="md:hidden text-white p-2"
+          className={`md:hidden p-2 transition-colors ${scrolled ? 'text-teal' : 'text-white'}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -96,14 +96,14 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-teal border-t border-white/10 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-teal/10 px-6 py-4 flex flex-col gap-4 shadow-lg">
           {navLinks.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
-                `font-body font-medium text-sm ${isActive ? 'text-coral' : 'text-white'}`
+                `font-body font-medium text-sm ${isActive ? 'text-coral' : 'text-teal'}`
               }
             >
               {label}
