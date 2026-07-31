@@ -31,7 +31,7 @@ export default function Navbar() {
   }, [])
 
   const navLinks = [
-    { to: '/creer-mon-voyage', label: 'Créer mon voyage' },
+    { to: '/creer-mon-voyage', label: 'Je suis créateur' },
     { to: '/notre-equipe', label: 'Notre équipe' },
     { to: '/contact', label: 'Contact' },
   ]
@@ -74,7 +74,7 @@ export default function Navbar() {
             className="text-white font-body font-semibold text-sm px-6 py-2.5 rounded-full"
             style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
           >
-            Créer mon voyage
+            Je suis créateur
           </Link>
         </div>
 
@@ -115,7 +115,7 @@ export default function Navbar() {
             className="text-white font-body font-semibold text-sm px-6 py-2.5 rounded-full text-center mt-2"
             style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
           >
-            Créer mon voyage
+            Je suis créateur
           </Link>
         </div>
       )}

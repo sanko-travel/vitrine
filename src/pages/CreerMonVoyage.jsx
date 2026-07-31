@@ -104,6 +104,11 @@ const temoignages = [
 
 const faqItems = [
   {
+    question: "Je fais payer ma communauté — est-ce que ça va mal passer ?",
+    answer:
+      "Non. Tu ne fais pas payer ta communauté : tu lui proposes une expérience qu'elle ne pourrait pas vivre autrement. C'est un service premium, pas une taxe. Tes abonnés le comprennent.",
+  },
+  {
     question: "Combien de participants minimum pour organiser un voyage ?",
     answer:
       "Il faut un minimum de 10 participants pour lancer un voyage. Notre équipe t'accompagne dans la promotion auprès de ta communauté pour atteindre cet objectif.",
@@ -119,14 +124,14 @@ const faqItems = [
       "Tu reçois une commission sur chaque inscription confirmée. Le montant dépend de la destination et du nombre de participants. On te présente tout ça en détail lors de notre premier échange.",
   },
   {
-    question: "Quelles destinations sont disponibles ?",
-    answer:
-      "Nous proposons des destinations en Afrique, Asie, Amérique latine et Europe. Tu peux aussi proposer ta propre destination et on étudie la faisabilité ensemble.",
-  },
-  {
     question: "Faut-il une taille minimum de communauté ?",
     answer:
       "Pas de minimum strict, mais nous recommandons au moins 5 000 abonnés engagés pour garantir un voyage réussi. Ce qui compte, c'est l'engagement de ta communauté, pas juste le nombre.",
+  },
+  {
+    question: "Est-ce que je suis juridiquement responsable ?",
+    answer:
+      "Non. Sanko est immatriculée auprès d'Atout France et dispose d'une garantie financière et d'une RC Pro voyage. C'est nous qui portons la responsabilité légale, pas toi.",
   },
 ];
 
@@ -297,8 +302,28 @@ export default function CreerMonVoyage() {
         </div>
       </section>
 
+      {/* Objection handling */}
+      <section className="bg-teal py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-10 text-center">
+            On répond à ce qui te bloque.
+          </h2>
+          <div className="max-w-3xl mx-auto bg-white rounded-2xl p-10 shadow-md">
+            <h3 className="font-heading font-bold text-2xl text-teal mb-4">
+              Tu ne veux pas faire payer ta communauté ?
+            </h3>
+            <p className="font-body text-gray-700 leading-relaxed">
+              Tu ne fais pas payer ta communauté. Tu lui proposes une expérience
+              qu'elle ne pourrait pas vivre autrement. Un voyage pensé autour de
+              ton univers, avec un groupe qui partage les mêmes valeurs. C'est un
+              service premium, pas une taxe — et tes abonnés le comprennent.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Témoignages créateurs */}
-      <section className="bg-gray-50 py-24 px-6">
+      <section className="bg-beige py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-heading font-bold text-4xl text-teal mb-4">

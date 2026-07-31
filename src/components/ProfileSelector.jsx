@@ -8,7 +8,7 @@ const profiles = [
     subtitle: 'Tu veux organiser un voyage avec ta communauté ?',
     description:
       'On s\'occupe d\'organiser le voyage de tes rêves, sur mesure. Toi, tu partages l\'aventure et tu crées des souvenirs inoubliables avec ta communauté.',
-    cta: 'Créer mon voyage',
+    cta: 'Je suis créateur',
     to: '/creer-mon-voyage',
     color: 'bg-coral',
     hoverColor: 'hover:bg-coral/90',
@@ -55,16 +55,16 @@ export default function ProfileSelector() {
   const ref = useScrollReveal()
 
   return (
-    <section className="bg-teal py-24 px-6">
+    <section className="bg-beige py-24 px-6">
       <div ref={ref} className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <div className="reveal mb-4">
             <StickerLabel text="Pour tous" color="yellow" />
           </div>
-          <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white mb-4">
+          <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-teal mb-4">
             Et toi, tu es qui ?
           </h2>
-          <p className="reveal font-body text-white/90 text-lg max-w-xl mx-auto">
+          <p className="reveal font-body text-gray-600 text-lg max-w-xl mx-auto">
             Dis-nous ce qui t'amène, on s'occupe du reste.
           </p>
         </div>

@@ -162,7 +162,7 @@ export default function VideoHero() {
             to="/creer-mon-voyage"
             className="border-2 border-white text-white font-body font-semibold text-center px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-white hover:text-teal transition-colors text-sm sm:text-base"
           >
-            Créer mon propre voyage
+            Je suis créateur
           </Link>
         </div>
       </div>

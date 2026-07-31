@@ -1,11 +1,13 @@
 import VideoHero from "../components/VideoHero";
 import IntroBlock from "../components/IntroBlock";
-import HowItWorks from "../components/HowItWorks";
-import DestinationsGrid from "../components/DestinationsGrid";
 import StatsBanner from "../components/StatsBanner";
+import ConstructionMiroir from "../components/ConstructionMiroir";
+import DestinationsGrid from "../components/DestinationsGrid";
+import HowItWorks from "../components/HowItWorks";
+import DifferencesSection from "../components/DifferencesSection";
 import ProfileSelector from "../components/ProfileSelector";
-import PartnersBanner from "../components/PartnersBanner";
 import Testimonials from "../components/Testimonials";
+import PartnersBanner from "../components/PartnersBanner";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 
 export default function Home() {
@@ -13,21 +15,25 @@ export default function Home() {
     <main>
       {/* dark (video) */}
       <VideoHero />
-      {/* light (beige) */}
+      {/* beige */}
       <IntroBlock />
-      {/* dark (teal) */}
+      {/* teal */}
       <StatsBanner />
-      {/* light (beige - scroll) */}
+      {/* beige */}
+      <ConstructionMiroir />
+      {/* teal */}
       <DestinationsGrid />
-      {/* light (beige) */}
+      {/* beige */}
       <HowItWorks />
-      {/* dark (teal) */}
+      {/* teal */}
+      <DifferencesSection />
+      {/* beige */}
       <ProfileSelector />
-      {/* light (beige) */}
-      <PartnersBanner />
-      {/* light (gray-50) */}
+      {/* teal */}
       <Testimonials />
-      {/* dark (teal) */}
+      {/* beige */}
+      <PartnersBanner />
+      {/* teal */}
       <LeadCaptureForm />
     </main>
   );
