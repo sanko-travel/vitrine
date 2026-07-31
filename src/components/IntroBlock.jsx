@@ -43,9 +43,12 @@ export default function IntroBlock() {
         <div className="reveal mb-4">
           <StickerLabel text="Impact" color="teal" />
         </div>
-        <h2 className="reveal font-heading font-bold text-teal text-3xl md:text-4xl lg:text-5xl leading-tight mb-16 max-w-3xl">
+        <h2 className="reveal font-heading font-bold text-teal text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 max-w-3xl">
           On ne vend pas des voyages. On crée des expériences humaines.
         </h2>
+        <p className="reveal font-body text-gray-600 text-lg md:text-xl mb-16 max-w-2xl">
+          Se déconnecter pour se connecter IRL.
+        </p>
 
         <div className="grid md:grid-cols-3 gap-8">
           {cards.map((card, i) => (

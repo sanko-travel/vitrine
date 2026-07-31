@@ -4,7 +4,7 @@ export default {
   subtitle: "avec @nolwenn_creme",
 
   facts: {
-    dates: "31 octobre — 11 novembre 2026",
+    dates: "31 octobre - 11 novembre 2026",
     duration: "12 jours",
     groupNote: "Places limitées",
     price: "3 490",
@@ -38,7 +38,7 @@ export default {
       title: "Tokyo",
       subtitle: "Immersion urbaine",
       description:
-        "Des izakayas animés au monde fascinant du sumo, en passant par les néons d'Akihabara et l'élégance d'Omotesando — Tokyo te dévoile ses mille visages.",
+        "Des izakayas animés au monde fascinant du sumo, en passant par les néons d'Akihabara et l'élégance d'Omotesando - Tokyo te dévoile ses mille visages.",
       image: "/images/voyages/japon/highlight-1.jpg",
     },
     {
@@ -52,7 +52,7 @@ export default {
       title: "Kyoto",
       subtitle: "Temples, geishas & bambous",
       description:
-        "Fushimi Inari et ses milliers de torii, les forêts de bambous, le Pavillon d'Or, les ruelles de Gion — l'âme traditionnelle du Japon se révèle à chaque pas.",
+        "Fushimi Inari et ses milliers de torii, les forêts de bambous, le Pavillon d'Or, les ruelles de Gion - l'âme traditionnelle du Japon se révèle à chaque pas.",
       image: "/images/voyages/japon/highlight-3.jpg",
     },
     {
@@ -164,10 +164,22 @@ export default {
       "Possibilité d'échelonner le paiement tous les mois jusqu'à la date limite de solde.",
     ],
     cancellation: [
-      { delay: "Plus de 60 jours", retention: "Seul l'acompte n'est pas restitué" },
-      { delay: "De 60 à 30 jours", retention: "50\u00a0% du montant total retenu" },
-      { delay: "De 30 à 7 jours", retention: "75\u00a0% du montant total retenu" },
-      { delay: "Moins de 7 jours", retention: "100\u00a0% du montant total retenu" },
+      {
+        delay: "Plus de 60 jours",
+        retention: "Seul l'acompte n'est pas restitué",
+      },
+      {
+        delay: "De 60 à 30 jours",
+        retention: "50\u00a0% du montant total retenu",
+      },
+      {
+        delay: "De 30 à 7 jours",
+        retention: "75\u00a0% du montant total retenu",
+      },
+      {
+        delay: "Moins de 7 jours",
+        retention: "100\u00a0% du montant total retenu",
+      },
     ],
     cancellationNote:
       "Si Sanko se trouve dans l'obligation d'annuler un départ en groupe, en raison d'événements exceptionnels, les participants seront remboursés intégralement des sommes qu'ils ont versées.",
@@ -203,7 +215,8 @@ export default {
     coverage:
       "Elle doit couvrir les frais médicaux, les accidents, l'annulation, la perte de biens personnels et le rapatriement.",
     tip: "Avant de prévoir une assurance de voyage, consulte ta banque ou ton assureur habituel pour vérifier les garanties incluses dans tes contrats existants.",
-    partner: "Une assurance multirisque peut t'être proposée avec notre partenaire Chapka.",
+    partner:
+      "Une assurance multirisque peut t'être proposée avec notre partenaire Chapka.",
     note: "Sur demande, lors de l'inscription.",
   },
 
@@ -223,9 +236,9 @@ export default {
     registrationNumber: "IM013260002",
     tva: "FR66978616431",
     financialGuarantee:
-      "Accelerant Insurance Europe SA — Place du Champ de Mars 5, 1050 Bruxelles, Belgique",
+      "Accelerant Insurance Europe SA - Place du Champ de Mars 5, 1050 Bruxelles, Belgique",
     insurance:
-      "Accelerant Insurance Europe SA — Place du Champ de Mars 5, 1050 Bruxelles, Belgique — Contrat n° CL-AIE-2026-00005",
+      "Accelerant Insurance Europe SA - Place du Champ de Mars 5, 1050 Bruxelles, Belgique - Contrat n° CL-AIE-2026-00005",
     note: "Cette immatriculation garantit notre sérieux, notre engagement légal et financier, et vous assure un voyage en toute sécurité et confiance.",
   },
-}
+};

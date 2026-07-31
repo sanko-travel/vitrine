@@ -7,6 +7,7 @@ import HowItWorks from "../components/HowItWorks";
 import DifferencesSection from "../components/DifferencesSection";
 import ProfileSelector from "../components/ProfileSelector";
 import Testimonials from "../components/Testimonials";
+import Guarantees from "../components/Guarantees";
 import PartnersBanner from "../components/PartnersBanner";
 import LeadCaptureForm from "../components/LeadCaptureForm";
 
@@ -31,6 +32,8 @@ export default function Home() {
       <ProfileSelector />
       {/* teal */}
       <Testimonials />
+      {/* white */}
+      <Guarantees />
       {/* beige */}
       <PartnersBanner />
       {/* teal */}

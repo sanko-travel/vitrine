@@ -5,10 +5,10 @@ export default function VoyageIntro({ data }) {
 
   return (
     <section className="bg-beige py-24 px-6">
-      <div ref={ref} className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-5 gap-12 items-start">
+      <div ref={ref} className="max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Intro text */}
-          <div className="md:col-span-3">
+          <div>
             <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
               {data.intro.heading}
             </h2>
@@ -22,7 +22,7 @@ export default function VoyageIntro({ data }) {
           </div>
 
           {/* Creator card */}
-          <div className="reveal md:col-span-2">
+          <div className="reveal">
             <div className="bg-white rounded-2xl shadow-md p-6 ring-1 ring-teal/5">
               <img
                 src={data.creator.image}

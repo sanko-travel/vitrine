@@ -1,39 +1,29 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const partners = [
-  { name: 'Tesla', svg: (
+  { name: 'BPI France', svg: (
+    <svg viewBox="0 0 140 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">BPI France</text>
+    </svg>
+  )},
+  { name: 'TeedUp', svg: (
     <svg viewBox="0 0 100 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">TESLA</text>
+      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">TeedUp</text>
     </svg>
   )},
-  { name: 'Spotify', svg: (
-    <svg viewBox="0 0 100 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">Spotify</text>
+  { name: 'La French Tech', svg: (
+    <svg viewBox="0 0 180 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">La French Tech</text>
     </svg>
   )},
-  { name: 'Airbnb', svg: (
-    <svg viewBox="0 0 100 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">Airbnb</text>
+  { name: 'Les Déterminés', svg: (
+    <svg viewBox="0 0 190 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">Les Déterminés</text>
     </svg>
   )},
-  { name: 'GoPro', svg: (
-    <svg viewBox="0 0 100 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">GoPro</text>
-    </svg>
-  )},
-  { name: 'Notion', svg: (
-    <svg viewBox="0 0 100 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">Notion</text>
-    </svg>
-  )},
-  { name: 'Patagonia', svg: (
-    <svg viewBox="0 0 130 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">Patagonia</text>
-    </svg>
-  )},
-  { name: 'Todoist', svg: (
-    <svg viewBox="0 0 110 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="24">Todoist</text>
+  { name: 'TDC', svg: (
+    <svg viewBox="0 0 60 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">TDC</text>
     </svg>
   )},
 ]
@@ -45,7 +35,7 @@ export default function PartnersBanner() {
     <section className="bg-beige py-16 px-6 overflow-hidden">
       <div ref={ref} className="max-w-6xl mx-auto mb-10 text-center">
         <h2 className="reveal font-heading font-bold text-3xl text-teal">
-          Ils voyagent avec nous
+          Ils nous font confiance
         </h2>
       </div>
 

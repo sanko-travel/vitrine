@@ -20,7 +20,7 @@ const profiles = [
   },
   {
     title: 'Partenaire',
-    subtitle: 'Tu veux collaborer avec Sankofa ?',
+    subtitle: 'Tu veux collaborer avec Sanko ?',
     description:
       'Agences locales, hébergeurs, prestataires d\'activités : rejoins notre réseau de partenaires et développe ton activité grâce à nos voyages.',
     cta: 'Nous contacter',

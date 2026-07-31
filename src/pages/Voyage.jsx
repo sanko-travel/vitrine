@@ -9,6 +9,8 @@ import VoyageItinerary from '../components/voyage/VoyageItinerary'
 import VoyagePricing from '../components/voyage/VoyagePricing'
 import VoyageInclusions from '../components/voyage/VoyageInclusions'
 import VoyageCTA from '../components/voyage/VoyageCTA'
+import Footer from '../components/Footer'
+import CookieBanner from '../components/CookieBanner'
 
 export default function Voyage() {
   const { slug } = useParams()
@@ -43,6 +45,8 @@ export default function Voyage() {
         <VoyageInclusions data={data} />
         <VoyageCTA data={data} />
       </main>
+      <Footer />
+      <CookieBanner />
     </>
   )
 }

@@ -63,21 +63,6 @@ export default function VoyageCTA({ data }) {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="border-t border-white/15 mt-8 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <a href="/" className="font-heading font-bold text-xl text-white">
-            sanko<sup className="text-xs">®</sup>
-          </a>
-          <a
-            href="https://withsanko.com"
-            className="font-body text-white/60 text-sm hover:text-white/90 transition-colors"
-          >
-            withsanko.com
-          </a>
-          <p className="font-body text-white/40 text-xs">
-            © {new Date().getFullYear()} Sanko Travel Studio
-          </p>
-        </div>
       </div>
     </section>
   )

@@ -169,8 +169,8 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="font-body text-white/80 text-xs mb-0.5">Email</p>
-                    <a href="mailto:hello@sankofa.fr" className="font-body text-white text-sm hover:text-coral transition-colors">
-                      hello@sankofa.fr
+                    <a href="mailto:contact@withsanko.com" className="font-body text-white text-sm hover:text-coral transition-colors">
+                      contact@withsanko.com
                     </a>
                   </div>
                 </div>
@@ -182,8 +182,8 @@ export default function Contact() {
                   </span>
                   <div>
                     <p className="font-body text-white/80 text-xs mb-0.5">Instagram</p>
-                    <a href="#" className="font-body text-white text-sm hover:text-coral transition-colors">
-                      @sankofa
+                    <a href="https://www.instagram.com/withsanko/" target="_blank" rel="noopener noreferrer" className="font-body text-white text-sm hover:text-coral transition-colors">
+                      @withsanko
                     </a>
                   </div>
                 </div>

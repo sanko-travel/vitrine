@@ -4,9 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Sanko** (anciennement Sankofa) — site vitrine / landing page pour une agence de voyage qui permet aux créateurs de contenu d'organiser des voyages de groupe avec leurs communautés. Built with React 18, Vite, and Tailwind CSS. Deployed on Cloudflare Workers.
+**Sanko** (anciennement Sankofa) - site vitrine / landing page pour une agence de voyage qui permet aux créateurs de contenu d'organiser des voyages de groupe avec leurs communautés. Built with React 18, Vite, and Tailwind CSS. Deployed on Cloudflare Workers.
 
-**Tagline** : "Sanko — catalyseur de rencontres". Ne plus être perçue comme une agence de voyage responsable, mais comme une marque qui rassemble des communautés autour d'expériences qui ont du sens.
+**Tagline** : "Sanko - catalyseur de rencontres". Ne plus être perçue comme une agence de voyage responsable, mais comme une marque qui rassemble des communautés autour d'expériences qui ont du sens.
 
 **Domaine** : withsanko.com
 
@@ -26,6 +26,7 @@ No testing or linting tools are configured.
 ## Architecture
 
 ### Routing (React Router DOM v6, BrowserRouter in `App.jsx`)
+
 - `/` → `Home.jsx`
 - `/notre-equipe` → `Manifeste.jsx`
 - `/contact` → `Contact.jsx`
@@ -69,7 +70,7 @@ src/
 
 **State management** : React hooks uniquement (`useState`, `useEffect`, `useRef`). Pas de state library externe.
 
-### Home.jsx — Ordre des sections
+### Home.jsx - Ordre des sections
 
 ```
 VideoHero      → fond dark (vidéo + gradient teal)
@@ -85,9 +86,10 @@ LeadCaptureForm → fond teal
 
 Règle : ne JAMAIS empiler deux sections avec le même fond. Alterner light/dark.
 
-### Backend — Cloudflare Worker
+### Backend - Cloudflare Worker
 
-`worker/index.js` — API serverless qui gère les soumissions de formulaires :
+`worker/index.js` - API serverless qui gère les soumissions de formulaires :
+
 - **Endpoint** : `POST /api/send-mail`
 - **Anti-spam** : Honeypot fields (website, number, newsletter) + Cloudflare Turnstile
 - **Email** : Envoi via Resend API (`env.RESEND_API_KEY`)
@@ -95,21 +97,21 @@ Règle : ne JAMAIS empiler deux sections avec le même fond. Alterner light/dark
 - **Turnstile site key** : `0x4AAAAAAEB9384p5Vu3VKRL` (dans `useTurnstile.js`)
 - **Secrets Cloudflare** : `RESEND_API_KEY`, `TURNSTILE_SECRET_KEY`
 
-`wrangler.toml` — config Cloudflare Workers avec static assets (SPA fallback).
+`wrangler.toml` - config Cloudflare Workers avec static assets (SPA fallback).
 
 ---
 
-## Charte Graphique — Identité de Marque
+## Charte Graphique - Identité de Marque
 
 ### Qui est Sanko ?
 
-Sanko est une **marque communautaire de voyage** pour créateurs de contenu. L'identité visuelle est : **chaleureuse, authentique, communautaire, fun mais premium**. Penser "aventure entre amis" — jamais corporate, jamais froid.
+Sanko est une **marque communautaire de voyage** pour créateurs de contenu. L'identité visuelle est : **chaleureuse, authentique, communautaire, fun mais premium**. Penser "aventure entre amis" - jamais corporate, jamais froid.
 
 Le nom "Sanko" vient du mot Akan signifiant "retourner en arrière pour mieux avancer" (symbole adinkra Sankofa).
 
 ### Éléments de marque signature
 
-1. **Sticker labels** (SIGNATURE ELEMENT — voir charte "London")
+1. **Sticker labels** (SIGNATURE ELEMENT - voir charte "London")
    - Badges pill arrondis avec couleurs de marque, disposés autour des titres avec rotations
    - 3 stickers récurrents : **"Impact"** (fond teal), **"Voyage"** (fond yellow), **"Influence"** (fond coral)
    - Autres mots possibles : "Aventure", "Pour tous", "Créateurs", "Notre histoire"
@@ -120,7 +122,7 @@ Le nom "Sanko" vient du mot Akan signifiant "retourner en arrière pour mieux av
    - Référence charte : sur le visuel "London", les 3 stickers sont dispersés autour du mot géant, créant un effet playful et identitaire
 
 2. **Oiseau Sanko / symbole adinkra** (voir charte "Des histoires à vivre")
-   - Symbole oiseau stylisé (adinkra Sankofa) — l'élément graphique le plus identitaire de la marque
+   - Symbole oiseau stylisé (adinkra Sankofa) - l'élément graphique le plus identitaire de la marque
    - Utilisé en **watermark semi-transparent blanc** par-dessus les photos (grande taille, centré)
    - Sur fond sombre/photo : blanc avec opacité ~30-40%
    - Sur fond clair : teal avec opacité ~10-20%
@@ -133,29 +135,32 @@ Le nom "Sanko" vient du mot Akan signifiant "retourner en arrière pour mieux av
    - Bande teal en bas des visuels hero avec le logo
 
 4. **Phrase signature**
-   - "Des histoires à vivre" — utilisée sur les affiches/flyers
+   - "Des histoires à vivre" - utilisée sur les affiches/flyers
    - Texte blanc bold en grosses lettres sur photo avec overlay teal
    - Accompagnée des 3 stickers (Impact, Influence, Voyage)
 
-### Style photographique (Iconographie — voir charte)
+### Style photographique (Iconographie - voir charte)
 
 La charte définit un moodboard précis. Les photos doivent refléter :
 
 **Sujets obligatoires :**
-- **Groupes diversifiés** (ethniquement, culturellement) — c'est NON NÉGOCIABLE
+
+- **Groupes diversifiés** (ethniquement, culturellement) - c'est NON NÉGOCIABLE
 - **Moments de partage** : repas collectifs autour d'une table locale, selfies de groupe, rires partagés
 - **Aventure outdoor** : randonnées, rochers, montagnes, silhouettes au coucher de soleil
 - **Couples/duos** qui rient ensemble, moments de complicité naturelle
 - **Vues spectaculaires** : Petra (Jordanie), désert, côtes, monuments
 
 **Style visuel :**
-- **Candide** — jamais posé, jamais mis en scène. Pris sur le vif.
-- **Éclairage naturel chaud** — golden hour, lumière du jour, pas de flash
-- **Couleurs chaudes** — tons terre, ciel bleu, végétation
-- **Diversité visible** — chaque image de groupe doit montrer une mixité ethnique
-- **Énergie positive** — sourires, rires, énergie du groupe
+
+- **Candide** - jamais posé, jamais mis en scène. Pris sur le vif.
+- **Éclairage naturel chaud** - golden hour, lumière du jour, pas de flash
+- **Couleurs chaudes** - tons terre, ciel bleu, végétation
+- **Diversité visible** - chaque image de groupe doit montrer une mixité ethnique
+- **Énergie positive** - sourires, rires, énergie du groupe
 
 **JAMAIS :**
+
 - Photos stock génériques / poses corporate
 - Un seul type ethnique dans un groupe
 - Photos sombres/froides/mélancoliques
@@ -165,13 +170,15 @@ La charte définit un moodboard précis. Les photos doivent refléter :
 ### Composition des visuels de marque (référence charte)
 
 Le visuel "London" de la charte montre le pattern standard pour les visuels hero de destination :
+
 1. **Photo de destination** en plein écran (ici Big Ben / Parlement de Westminster)
-2. **Nom de destination en TRÈS GRAND** — typo blanche extra-bold, taille massive (style `text-8xl`+), centrée
+2. **Nom de destination en TRÈS GRAND** - typo blanche extra-bold, taille massive (style `text-8xl`+), centrée
 3. **3 stickers** (Impact, Voyage, Influence) disposés autour du titre avec rotations variées
 4. **Oiseau Sanko** en overlay blanc semi-transparent, positionné en haut à droite
 5. **Bande teal en bas** avec le logo "sanko®" aligné à droite
 
 Le visuel "Des histoires à vivre" montre le pattern pour les affiches/supports :
+
 1. **Photo de groupe diversifié** en fond
 2. **Oiseau Sanko** en watermark blanc géant centré
 3. **Texte bold blanc** "Des histoires à vivre" en overlay sur la photo
@@ -181,30 +188,31 @@ Le visuel "Des histoires à vivre" montre le pattern pour les affiches/supports 
 ### Sites de référence
 
 Le design s'inspire de 5 sites :
-- **Copines de Voyage** — tonalité chaleureuse, communauté féminine
-- **WeRoad** — voyages de groupe millennials, design moderne
-- **Evaneos** — premium, sur-mesure, visuels immersifs
-- **MeetPe** — communauté, rencontres, couleurs vives
-- **ByNativ** — authenticité, local, impact positif
+
+- **Copines de Voyage** - tonalité chaleureuse, communauté féminine
+- **WeRoad** - voyages de groupe millennials, design moderne
+- **Evaneos** - premium, sur-mesure, visuels immersifs
+- **MeetPe** - communauté, rencontres, couleurs vives
+- **ByNativ** - authenticité, local, impact positif
 
 ---
 
-## Design System — RÈGLES STRICTES (OBLIGATOIRES)
+## Design System - RÈGLES STRICTES (OBLIGATOIRES)
 
 ### Palette de couleurs
 
-| Nom | Hex | Classe Tailwind | Usage |
-|-----|-----|-----------------|-------|
-| Teal | `#025961` | `text-teal`, `bg-teal` | Couleur principale. Titres, fonds de section, navbar |
-| Coral | `#ea573d` | `text-coral`, `bg-coral` | Accent principal. CTA, boutons, badges. JAMAIS en fond de section |
-| Yellow | `#f8a009` | `text-yellow`, `bg-yellow` | Accent secondaire. Stats, badges. JAMAIS en fond de section |
-| Beige | `#f7fafa` | `bg-beige` | Fond clair principal (quasi-blanc) |
-| Mint | `#d4eeeb` | `bg-mint` | Fond clair alternatif |
-| Green-light | `#b3e0dc` | `bg-green-light` | Fond clair / cartes |
-| Salmon | `#f4a99a` | `bg-salmon` | Accent décoratif (grilles) |
-| Yellow-light | `#fde5a0` | `bg-yellow-light` | Fond clair accent (ex: carte "temps de réponse") |
-| Blue-gray | `#a8d5d1` | `bg-blue-gray` | Accent décoratif (grilles) |
-| Gray-light | `#e5e7eb` | `bg-gray-light` | Fond d'input, séparateurs |
+| Nom          | Hex       | Classe Tailwind            | Usage                                                             |
+| ------------ | --------- | -------------------------- | ----------------------------------------------------------------- |
+| Teal         | `#025961` | `text-teal`, `bg-teal`     | Couleur principale. Titres, fonds de section, navbar              |
+| Coral        | `#ea573d` | `text-coral`, `bg-coral`   | Accent principal. CTA, boutons, badges. JAMAIS en fond de section |
+| Yellow       | `#f8a009` | `text-yellow`, `bg-yellow` | Accent secondaire. Stats, badges. JAMAIS en fond de section       |
+| Beige        | `#f7fafa` | `bg-beige`                 | Fond clair principal (quasi-blanc)                                |
+| Mint         | `#d4eeeb` | `bg-mint`                  | Fond clair alternatif                                             |
+| Green-light  | `#b3e0dc` | `bg-green-light`           | Fond clair / cartes                                               |
+| Salmon       | `#f4a99a` | `bg-salmon`                | Accent décoratif (grilles)                                        |
+| Yellow-light | `#fde5a0` | `bg-yellow-light`          | Fond clair accent (ex: carte "temps de réponse")                  |
+| Blue-gray    | `#a8d5d1` | `bg-blue-gray`             | Accent décoratif (grilles)                                        |
+| Gray-light   | `#e5e7eb` | `bg-gray-light`            | Fond d'input, séparateurs                                         |
 
 **Aliases legacy** : `orange` → coral, `blue-dark` → teal, `green-dark` → teal
 
@@ -212,44 +220,47 @@ Le design s'inspire de 5 sites :
 
 Chargées via Google Fonts dans `index.html` :
 
-| Font | Classe Tailwind | Usage |
-|------|-----------------|-------|
-| Lexend | `font-heading`, `font-display` | Titres, headings, nombres |
-| DM Sans | `font-body` | Corps de texte, paragraphes, labels |
-| Bricolage Grotesque | `font-sticker`, `font-accent` | Sticker labels, badges pill |
+| Font                | Classe Tailwind                | Usage                               |
+| ------------------- | ------------------------------ | ----------------------------------- |
+| Lexend              | `font-heading`, `font-display` | Titres, headings, nombres           |
+| DM Sans             | `font-body`                    | Corps de texte, paragraphes, labels |
+| Bricolage Grotesque | `font-sticker`, `font-accent`  | Sticker labels, badges pill         |
 
 Hiérarchie :
+
 - **Hero headlines** : `text-5xl md:text-6xl lg:text-7xl font-bold font-display` (Lexend)
-- **Titres de section** : `text-3xl md:text-4xl lg:text-5xl font-bold font-display` — teal sur fond clair, blanc sur fond sombre
+- **Titres de section** : `text-3xl md:text-4xl lg:text-5xl font-bold font-display` - teal sur fond clair, blanc sur fond sombre
 - **Sous-titres** : `text-lg md:text-xl text-gray-600` (DM Sans)
 - **Corps de texte** : `text-base text-gray-700 leading-relaxed` (DM Sans)
 - **Sticker text** : `font-accent font-semibold text-sm` dans les badges pill
 
-### RÈGLES DE CONTRASTE — TOLÉRANCE ZÉRO
+### RÈGLES DE CONTRASTE - TOLÉRANCE ZÉRO
 
 **JAMAIS de texte clair sur fond clair. JAMAIS de texte sombre sur fond sombre. Chaque texte doit avoir un contraste suffisant (WCAG AA minimum, ratio 4.5:1).**
 
 Combinaisons autorisées :
 
-| Couleur texte | Fonds autorisés |
-|---|---|
-| Blanc (#FFFFFF) | teal, coral, overlays sombres sur images (rgba(0,0,0,0.5)+), gradients sombres |
-| Teal (#025961) | blanc, beige, mint, yellow-light, gray-light |
-| Texte sombre (#1a1a1a) | blanc, beige, mint, green-light, salmon, yellow-light, gray-light |
-| Coral (#ea573d) | blanc, beige (accents/liens uniquement, pas le body text) |
-| `text-gray-600` / `text-gray-700` | blanc, beige, gray-50 (pour body text sur fond clair) |
+| Couleur texte                     | Fonds autorisés                                                                |
+| --------------------------------- | ------------------------------------------------------------------------------ |
+| Blanc (#FFFFFF)                   | teal, coral, overlays sombres sur images (rgba(0,0,0,0.5)+), gradients sombres |
+| Teal (#025961)                    | blanc, beige, mint, yellow-light, gray-light                                   |
+| Texte sombre (#1a1a1a)            | blanc, beige, mint, green-light, salmon, yellow-light, gray-light              |
+| Coral (#ea573d)                   | blanc, beige (accents/liens uniquement, pas le body text)                      |
+| `text-gray-600` / `text-gray-700` | blanc, beige, gray-50 (pour body text sur fond clair)                          |
 
 Combinaisons INTERDITES :
-- Blanc sur blanc/beige/mint/green-light/yellow-light/salmon — **JAMAIS**
-- Blanc sur yellow (#f8a009) — contraste insuffisant
-- Teal sur teal ou coral — **JAMAIS**
-- Gris clair sur blanc — **JAMAIS**
-- Texte sur image SANS overlay ou text-shadow — **JAMAIS**
-- `text-white/50` ou plus faible opacité sur fond sombre — **TROP FAIBLE**, minimum `/80`
-- `text-teal/70` sur fond beige pour du body text — utiliser `text-gray-700` à la place
-- `bg-white/5` ou `bg-white/10` pour des cartes — **INVISIBLE**, utiliser `bg-white` opaque
 
-Overlay texte sur image — TOUJOURS appliquer l'un de :
+- Blanc sur blanc/beige/mint/green-light/yellow-light/salmon - **JAMAIS**
+- Blanc sur yellow (#f8a009) - contraste insuffisant
+- Teal sur teal ou coral - **JAMAIS**
+- Gris clair sur blanc - **JAMAIS**
+- Texte sur image SANS overlay ou text-shadow - **JAMAIS**
+- `text-white/50` ou plus faible opacité sur fond sombre - **TROP FAIBLE**, minimum `/80`
+- `text-teal/70` sur fond beige pour du body text - utiliser `text-gray-700` à la place
+- `bg-white/5` ou `bg-white/10` pour des cartes - **INVISIBLE**, utiliser `bg-white` opaque
+
+Overlay texte sur image - TOUJOURS appliquer l'un de :
+
 1. Gradient sombre : `bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30`
 2. Overlay solid : `bg-black/50` ou `bg-teal/80`
 3. Text-shadow : `text-shadow: 0 2px 8px rgba(0,0,0,0.6)`
@@ -266,29 +277,33 @@ Overlay texte sur image — TOUJOURS appliquer l'un de :
 ### Couleur par type de section
 
 **Sections hero (full-width, immersives) :**
+
 - Image/vidéo plein écran + gradient overlay : `bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30`
 - Texte blanc, CTA coral `rounded-full`
 - Sticker labels au-dessus du titre
 
 **Sections contenu (fond clair) :**
+
 - Fond : `bg-white`, `bg-beige` ou `bg-gray-50`
 - Titre : `text-teal`
 - Corps : `text-gray-700`
 - Cartes : `bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300`
 
 **Sections colorées (fond teal) :**
+
 - Fond : `bg-teal`, texte blanc
 - Sous-titres : `text-white/90` minimum
-- JAMAIS `bg-yellow` ou `bg-coral` en fond de section — ce sont des couleurs d'ACCENT
+- JAMAIS `bg-yellow` ou `bg-coral` en fond de section - ce sont des couleurs d'ACCENT
 
 **Sections CTA / formulaire :**
+
 - Fond : `bg-teal`
 - Texte blanc, inputs `bg-white text-teal rounded-full`
 - Bouton submit : `bg-coral text-white rounded-full`
 
 ---
 
-## Composants — Patterns d'implémentation
+## Composants - Patterns d'implémentation
 
 ### Boutons
 
@@ -319,10 +334,10 @@ Props : `text` (string), `color` (`teal` | `coral` | `yellow`), `className` (opt
 ### Scroll Reveal (hook)
 
 ```jsx
-import useScrollReveal from '../hooks/useScrollReveal'
+import useScrollReveal from "../hooks/useScrollReveal";
 
 function MySection() {
-  const ref = useScrollReveal()
+  const ref = useScrollReveal();
   return (
     <section>
       <div ref={ref}>
@@ -330,7 +345,7 @@ function MySection() {
         <p className="reveal">Contenu</p>
       </div>
     </section>
-  )
+  );
 }
 ```
 
@@ -380,6 +395,7 @@ function MySection() {
 ### Formulaires
 
 3 formulaires, tous avec :
+
 - **Honeypot** : champs cachés (website, number, newsletter) pour anti-spam
 - **Turnstile** : captcha Cloudflare via hook `useTurnstile()`
 - **Envoi** : `POST /api/send-mail` → Worker Cloudflare → Resend API
@@ -390,12 +406,14 @@ function MySection() {
 ### Pages secondaires
 
 **Manifeste** (`/notre-equipe`) :
+
 - Hero avec gradient overlay + sticker label
 - Section "Pourquoi Sanko" : texte `text-gray-700`
 - Cartes valeurs : `bg-white border-t-4` (coral/teal/yellow) + icônes SVG
 - Section vision : `bg-teal`, texte `text-white/90 italic`
 
 **CreerMonVoyage** (`/creer-mon-voyage`) :
+
 - Hero avec gradient overlay + sticker label
 - "Comment ça marche" : timeline visuelle avec cercles numérotés (`bg-teal`) et ligne verticale
 - Cartes avantages : `bg-white border-t-4` + icônes SVG
@@ -403,6 +421,7 @@ function MySection() {
 - FAQ : accordion avec bordure gauche coral sur réponse ouverte
 
 **Contact** (`/contact`) :
+
 - Formulaire dans carte blanche avec hover shadow
 - Carte "Infos pratiques" : `bg-teal`
 - Carte "Temps de réponse" : `bg-yellow-light` avec texte teal
@@ -424,10 +443,10 @@ function MySection() {
 
 ## Images & Assets
 
-- `public/images/paysages/` — photos de paysages de voyage
-- `public/videos/` — vidéos hero (campfire, meadow, village, forest, etc.)
-- `public/images/logo/` — logos Sanko (PNG)
-- `ressources/` — assets source (charte graphique PDF, logos HD) — PAS déployés
+- `public/images/paysages/` - photos de paysages de voyage
+- `public/videos/` - vidéos hero (campfire, meadow, village, forest, etc.)
+- `public/images/logo/` - logos Sanko (PNG)
+- `ressources/` - assets source (charte graphique PDF, logos HD) - PAS déployés
 - Toutes les images : `object-cover` pour éviter la distorsion
 - Images hero : plein écran avec overlay sombre
 - Images dans les cartes : ratio cohérent (`aspect-[3/2]` ou `aspect-[4/3]`)
@@ -446,19 +465,19 @@ function MySection() {
 
 ---
 
-## Anti-patterns — NE JAMAIS FAIRE
+## Anti-patterns - NE JAMAIS FAIRE
 
-1. **Texte blanc sur fond blanc/clair** — le pattern #1 interdit
-2. **Cartes translucides** (`bg-white/5`, `bg-white/10`) — utiliser `bg-white` opaque
-3. **Opacité de texte trop faible** (`/50`, `/40`) — minimum `/80` sur fond sombre
-4. **`text-teal/70` pour body text** — utiliser `text-gray-700` à la place
+1. **Texte blanc sur fond blanc/clair** - le pattern #1 interdit
+2. **Cartes translucides** (`bg-white/5`, `bg-white/10`) - utiliser `bg-white` opaque
+3. **Opacité de texte trop faible** (`/50`, `/40`) - minimum `/80` sur fond sombre
+4. **`text-teal/70` pour body text** - utiliser `text-gray-700` à la place
 5. **Texte directement sur image busy** sans overlay ou shadow
-6. **`bg-coral` ou `bg-yellow` en fond de section** — ce sont des accents uniquement
-7. **Boutons `rounded-lg`** — toujours `rounded-full` (pill shape)
-8. **CTA qui change de couleur au scroll** — fixer en `bg-coral`
-9. **Emojis dans les composants** — utiliser des icônes SVG (style Heroicons outline)
+6. **`bg-coral` ou `bg-yellow` en fond de section** - ce sont des accents uniquement
+7. **Boutons `rounded-lg`** - toujours `rounded-full` (pill shape)
+8. **CTA qui change de couleur au scroll** - fixer en `bg-coral`
+9. **Emojis dans les composants** - utiliser des icônes SVG (style Heroicons outline)
 10. **Tiny text** (en dessous de `text-sm` pour body content)
-11. **Texte centré** sur paragraphes de plus de 2 lignes — `text-left`
-12. **Texte plein écran** sans max-width — toujours contraindre avec `max-w-3xl` ou similaire
-13. **Border-radius incohérent** — `rounded-2xl` pour cartes, `rounded-full` pour boutons
-14. **Contenu placeholder générique** — chaque section doit être intentionnelle et complète
+11. **Texte centré** sur paragraphes de plus de 2 lignes - `text-left`
+12. **Texte plein écran** sans max-width - toujours contraindre avec `max-w-3xl` ou similaire
+13. **Border-radius incohérent** - `rounded-2xl` pour cartes, `rounded-full` pour boutons
+14. **Contenu placeholder générique** - chaque section doit être intentionnelle et complète

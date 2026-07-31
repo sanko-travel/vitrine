@@ -21,7 +21,7 @@ function PasswordGate({ onUnlock }) {
   return (
     <div className="min-h-screen bg-beige flex items-center justify-center">
       <form onSubmit={handleSubmit} className="text-center space-y-6">
-        <h1 className="font-lexend text-3xl text-teal">Sankofa</h1>
+        <h1 className="font-lexend text-3xl text-teal">Sanko</h1>
         <p className="text-teal/70 font-dm-sans">Entrez le mot de passe pour accéder au site</p>
         <input
           type="password"
