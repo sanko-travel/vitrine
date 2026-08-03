@@ -17,7 +17,7 @@ export default function VoyageHero({ data }) {
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
           <StickerLabel text="Voyage" color="coral" />
           <StickerLabel text="Immersion" color="teal" />
-          <StickerLabel text="Japon" color="yellow" />
+          <StickerLabel text={data.destination} color="yellow" />
         </div>
 
         {/* Title */}

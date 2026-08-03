@@ -12,7 +12,7 @@ export default function VoyageItinerary({ data }) {
           Ton aventure, jour après jour
         </h2>
         <p className="reveal font-body text-white/80 text-lg text-center mb-14">
-          {data.facts.duration} d'immersion au Japon
+          {data.facts.duration} d'immersion
         </p>
 
         <div className="reveal flex flex-col gap-3">
@@ -56,7 +56,7 @@ export default function VoyageItinerary({ data }) {
                     isOpen ? 'max-h-96' : 'max-h-0'
                   }`}
                 >
-                  <div className={`px-6 pb-5 ${isOpen ? 'border-l-4 border-coral ml-4' : ''}`}>
+                  <div className={`px-6 pb-5 ${isOpen ? 'ml-4' : ''}`}>
                     <p className="font-body text-white/90 text-sm leading-relaxed">
                       {item.description}
                     </p>

@@ -4,10 +4,10 @@ export default function VoyageCTA({ data }) {
       <div className="max-w-3xl mx-auto text-center">
         {/* CTA */}
         <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
-          Prêt·e pour le Japon ?
+          Prêt·e pour {data.destination} ?
         </h2>
         <p className="font-body text-white/80 text-lg mb-10">
-          Rejoins Nolwenn et un petit groupe de voyageurs pour 12 jours d'immersion inoubliable.
+          Rejoins {data.creator.name} et un petit groupe de voyageurs pour {data.facts.duration} d'immersion inoubliable.
         </p>
 
         <a

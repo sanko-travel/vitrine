@@ -11,7 +11,7 @@ function PasswordGate({ onUnlock }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (value === 'samsam') {
-      sessionStorage.setItem('site-unlocked', 'true')
+      localStorage.setItem('site-unlocked', 'true')
       onUnlock()
     } else {
       setError(true)
@@ -45,7 +45,7 @@ function PasswordGate({ onUnlock }) {
 
 export default function App() {
   const [unlocked, setUnlocked] = useState(
-    () => sessionStorage.getItem('site-unlocked') === 'true'
+    () => localStorage.getItem('site-unlocked') === 'true'
   )
 
   if (!unlocked) {
