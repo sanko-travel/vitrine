@@ -5,7 +5,7 @@ const steps = [
     color: 'text-coral',
     bgColor: 'bg-coral/10',
     title: 'Tu choisis',
-    description: 'Découvre nos prochains voyages et choisis la destination qui te fait vibrer, avec le créateur que tu suis.',
+    description: 'Découvre nos voyages et choisis la destination qui te fait vibrer, avec le créateur que tu suis.',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
