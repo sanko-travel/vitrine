@@ -36,16 +36,27 @@ const sections = [
         <p>
           Sanko Travel Studio SAS est immatriculée au registre des Opérateurs de
           Voyages et de Séjours auprès d'Atout France sous le numéro{" "}
-          <strong>IM069240009</strong>.
+          <a
+            href="https://registre-operateurs-de-voyages.atout-france.fr/web/rovs/resultat_recherche#https://registre-operateurs-de-voyages.atout-france.fr/immatriculation/fichePublique?idPersonne=17701"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal underline hover:text-teal/80 transition-colors font-bold"
+          >
+            IM013260002
+          </a>.
+        </p>
+        <p className="mt-3">
+          TVA Intracommunautaire : <strong>FR66978616431</strong>
         </p>
         <ul className="list-disc pl-6 mt-3 space-y-1">
           <li>
-            Garantie financière : GROUPAMA ASSURANCE-CRÉDIT & CAUTION, 8-10 rue
-            d'Astorg, 75008 Paris
+            Garantie financière : Accelerant Insurance Europe SA - Place du
+            Champ de Mars 5, 1050 Bruxelles, Belgique
           </li>
           <li>
-            Assurance Responsabilité Civile Professionnelle : HISCOX SA, 19 rue
-            Louis le Grand, 75002 Paris - contrat n° HA RCP0587224
+            Assurance Responsabilité Civile Professionnelle : Accelerant
+            Insurance Europe SA - Place du Champ de Mars 5, 1050 Bruxelles,
+            Belgique - Contrat n° CL-AIE-2026-00005
           </li>
         </ul>
       </>

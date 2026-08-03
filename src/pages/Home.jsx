@@ -3,7 +3,7 @@ import IntroBlock from "../components/IntroBlock";
 import StatsBanner from "../components/StatsBanner";
 import ConstructionMiroir from "../components/ConstructionMiroir";
 import DestinationsGrid from "../components/DestinationsGrid";
-import HowItWorks from "../components/HowItWorks";
+
 import DifferencesSection from "../components/DifferencesSection";
 import ProfileSelector from "../components/ProfileSelector";
 import Testimonials from "../components/Testimonials";
@@ -25,8 +25,6 @@ export default function Home() {
       {/* teal */}
       <DestinationsGrid />
       {/* beige */}
-      <HowItWorks />
-      {/* teal */}
       <DifferencesSection />
       {/* beige */}
       <ProfileSelector />

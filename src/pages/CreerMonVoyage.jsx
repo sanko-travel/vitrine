@@ -151,7 +151,7 @@ const temoignages = [
     handle: "@marcus.explore",
     followers: "85K abonnés",
     quote:
-      "Mon premier voyage avec Sanko a généré plus de revenus que 3 mois de partenariats classiques. Et surtout, ma communauté m'en parle encore tous les jours.",
+      "Mon premier voyage avec Sanko a créé plus d'engagement que n'importe quel partenariat classique. Et surtout, ma communauté m'en parle encore tous les jours.",
   },
   {
     name: "Sofia L.",
@@ -184,9 +184,9 @@ const faqItems = [
       "Sanko s'occupe de tout : vols, hébergements, activités, transports locaux, restauration. Un coordinateur Sanko est présent sur place pendant tout le voyage.",
   },
   {
-    question: "Comment sont calculés mes revenus ?",
+    question: "Qu'est-ce que j'y gagne concrètement ?",
     answer:
-      "Tu reçois une commission sur chaque inscription confirmée. Le montant dépend de la destination et du nombre de participants. On te présente tout ça en détail lors de notre premier échange.",
+      "Ta place est offerte, tu vis une expérience unique avec ta communauté, et tu repars avec du contenu authentique et mémorable. On discute de tous les détails lors de notre premier échange.",
   },
   {
     question: "Faut-il une taille minimum de communauté ?",
@@ -483,7 +483,7 @@ export default function CreerMonVoyage() {
                   }`}
                 >
                   <p
-                    className={`px-6 pb-5 font-body text-gray-600 text-sm leading-relaxed ${openFaq === i ? "border-l-4 border-coral ml-4" : ""}`}
+                    className={`px-6 pb-5 font-body text-gray-600 text-sm leading-relaxed ${openFaq === i ? "ml-4" : ""}`}
                   >
                     {item.answer}
                   </p>

@@ -1,31 +1,15 @@
 import useScrollReveal from '../hooks/useScrollReveal'
 
 const partners = [
-  { name: 'BPI France', svg: (
-    <svg viewBox="0 0 140 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">BPI France</text>
-    </svg>
-  )},
-  { name: 'TeedUp', svg: (
-    <svg viewBox="0 0 100 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">TeedUp</text>
-    </svg>
-  )},
-  { name: 'La French Tech', svg: (
-    <svg viewBox="0 0 180 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">La French Tech</text>
-    </svg>
-  )},
-  { name: 'Les Déterminés', svg: (
-    <svg viewBox="0 0 190 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">Les Déterminés</text>
-    </svg>
-  )},
-  { name: 'TDC', svg: (
-    <svg viewBox="0 0 60 30" className="h-8 w-auto fill-teal/70" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="24" fontFamily="Lexend, sans-serif" fontWeight="bold" fontSize="22">TDC</text>
-    </svg>
-  )},
+  { name: 'BPI France', logo: '/images/partners/bpifrance.png' },
+  { name: 'La French Tech', logo: '/images/partners/la-french-tech.png', height: 'h-14' },
+  { name: 'Les Déterminés', logo: '/images/partners/les-determines.png' },
+  { name: 'TeedUp', logo: '/images/partners/teedup.png' },
+  { name: 'ESCAET', logo: '/images/partners/escaet.png' },
+  { name: 'Provence Travel Innovation', logo: '/images/partners/provence-tourisme.png' },
+  { name: 'Marseille Innovation', logo: '/images/partners/marseille-innovation.png', invert: true },
+  { name: "L'Escalator", logo: '/images/partners/lescalator.svg' },
+  { name: 'BNP Paribas', logo: '/images/partners/bnp-paribas.svg' },
 ]
 
 export default function PartnersBanner() {
@@ -41,10 +25,18 @@ export default function PartnersBanner() {
 
       <div className="overflow-hidden">
         <div className="marquee-track gap-16 items-center">
-          {/* Duplicate for seamless loop */}
           {[...partners, ...partners].map((partner, i) => (
-            <div key={i} className="flex-shrink-0 flex items-center px-6 opacity-70 hover:opacity-100 transition-opacity">
-              {partner.svg}
+            <div key={i} className="flex-shrink-0 flex items-center px-8 opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className={`${partner.height || 'h-10'} w-auto object-contain transition-all duration-300 ${
+                  partner.invert ? '' : 'grayscale hover:grayscale-0'
+                }`}
+                style={partner.invert ? { filter: 'invert(1) grayscale(1)' } : undefined}
+                onMouseEnter={partner.invert ? (e) => { e.currentTarget.style.filter = 'invert(1) grayscale(0)' } : undefined}
+                onMouseLeave={partner.invert ? (e) => { e.currentTarget.style.filter = 'invert(1) grayscale(1)' } : undefined}
+              />
             </div>
           ))}
         </div>

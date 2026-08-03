@@ -4,8 +4,11 @@ import StickerLabel from './StickerLabel'
 const guarantees = [
   {
     title: 'Voyage en toute légalité',
-    description:
-      'Sanko est immatriculée auprès d\'Atout France, avec garantie financière Groupama et RC Pro voyage. Tu pars en toute sécurité juridique.',
+    description: (
+      <>
+        Sanko est immatriculée auprès d'<a href="https://registre-operateurs-de-voyages.atout-france.fr/immatriculation/fichePublique?idPersonne=17701" target="_blank" rel="noopener noreferrer" className="text-teal underline hover:text-teal/80 transition-colors font-semibold">Atout France</a>, avec garantie financière Groupama et RC Pro voyage. Tu pars en toute sécurité juridique.
+      </>
+    ),
     borderColor: 'border-teal',
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">

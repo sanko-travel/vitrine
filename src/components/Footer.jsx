@@ -17,7 +17,7 @@ const legalLinks = [
 const socials = [
   {
     name: "Instagram",
-    href: "https://www.instagram.com/sankofatravelstud.io/",
+    href: "https://www.instagram.com/withsanko/",
     icon: (
       <svg
         viewBox="0 0 24 24"
