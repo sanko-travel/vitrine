@@ -13,8 +13,8 @@ export default {
   heroImage: "/images/voyages/japon/hero.jpg",
 
   route: [
-    { city: "Tokyo", coordinates: [35.6762, 139.6503], days: [1, 2, 3, 4, 5] },
-    { city: "Mont Fuji", coordinates: [35.3606, 138.7274], days: [6] },
+    { city: "Tokyo", coordinates: [35.6762, 139.6503], days: [1, 2, 3, 4, 5], curveInward: true },
+    { city: "Mont Fuji", coordinates: [35.3606, 138.7274], days: [6], curveInward: true },
     { city: "Kyoto", coordinates: [35.0116, 135.7681], days: [7, 8, 9, 10] },
     { city: "Uji", coordinates: [34.8842, 135.7997], days: [11] },
     { city: "Tokyo", coordinates: [35.6762, 139.6503], days: [12] },

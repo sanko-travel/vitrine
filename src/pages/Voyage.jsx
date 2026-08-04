@@ -47,18 +47,20 @@ export default function Voyage() {
         <VoyageHero data={data} />
         <VoyageIntro data={data} />
         <VoyageHighlights data={data} />
-        {data.route && data.route.length > 0 && (
-          <section className="bg-white pt-0 pb-0 px-6">
-            <div className="max-w-3xl mx-auto">
+        <VoyageItinerary
+          data={data}
+          activeDay={activeDay}
+          onDayChange={handleDayChange}
+          mapSlot={
+            data.route?.length > 0 && (
               <VoyageMap
                 route={data.route}
                 activeDay={activeDay}
                 onMarkerClick={handleDayChange}
               />
-            </div>
-          </section>
-        )}
-        <VoyageItinerary data={data} activeDay={activeDay} onDayChange={handleDayChange} />
+            )
+          }
+        />
         <VoyageInclusions data={data} />
         <VoyagePricing data={data} />
         <VoyageCTA data={data} />
