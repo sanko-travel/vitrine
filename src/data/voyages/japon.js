@@ -51,9 +51,9 @@ export default {
     },
     {
       title: "Mont Fuji",
-      subtitle: "Panorama & ryokan",
+      subtitle: "Panorama & traditions",
       description:
-        "Un hôtel avec vue panoramique sur le Fuji, un dîner traditionnel japonais et la magie d'un lever de soleil sur le volcan le plus célèbre du Japon.",
+        "Un hôtel avec vue panoramique sur le Fuji, un dîner traditionnel japonais et un dernier regard sur le volcan le plus célèbre du Japon, souvent plus dégagé au petit matin.",
       image: "/images/voyages/japon/highlight-2.jpg",
     },
     {
@@ -190,7 +190,7 @@ export default {
       },
     ],
     cancellationNote:
-      "Si Sanko se trouve dans l'obligation d'annuler un départ en groupe, en raison d'événements exceptionnels, les participants seront remboursés intégralement des sommes qu'ils ont versées.",
+      "Si Sanko se trouve dans l'obligation d'annuler un départ en groupe, en raison d'événements exceptionnels, les participants seront remboursés intégralement des sommes qu'ils ont versées, sans toutefois prétendre à une indemnité quelconque.",
   },
 
   inclusions: [

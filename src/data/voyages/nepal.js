@@ -53,7 +53,7 @@ export default {
       title: "Trek en montagne",
       subtitle: "Sentiers & panoramas",
       description:
-        "Un trek de deux jours et une nuit dans les montagnes népalaises, entre forêts, villages et rivières, accompagnés de Kabi, un guide local.",
+        "Un trek de deux jours et une nuit dans les environs du village et jusqu'à la rivière, accompagnés de Kabi, un guide local.",
       image: "/images/voyages/nepal/highlight-2.jpg",
     },
     {
@@ -81,46 +81,11 @@ export default {
       accommodation: "Nuit à Katmandou",
     },
     {
-      day: 2,
+      day: "2 à 7",
       title: "Immersion dans le village de Barang",
       description:
-        "Départ pour le village de Barang. Début de l'immersion au cœur de la vie locale. Pendant les six prochains jours, nous nous adapterons au rythme des habitantes de Barang et aux activités du moment.",
-      accommodation: "Nuit chez l'habitant à Barang",
-    },
-    {
-      day: 3,
-      title: "Au rythme des femmes du village",
-      description:
-        "Participation aux tâches du quotidien\u00a0: préparer les repas ensemble, nourrir les chèvres et les poules, participer aux travaux agricoles selon la saison des récoltes. Chaque journée sera différente.",
-      accommodation: "Nuit chez l'habitant à Barang",
-    },
-    {
-      day: 4,
-      title: "Trek dans les montagnes népalaises – Jour 1",
-      description:
-        "Début du trek de deux jours dans les environs du village avec Kabi, un guide local. Exploration des sentiers qui traversent les montagnes, entre forêts et panoramas. Moments simples et discussions spontanées en chemin.",
-      accommodation: "Nuit en teahouse",
-    },
-    {
-      day: 5,
-      title: "Trek dans les montagnes népalaises – Jour 2",
-      description:
-        "Poursuite du trek jusqu'à la rivière. Retour au village en fin de journée. Soirée conviviale chez l'habitant pour partager les souvenirs de l'aventure.",
-      accommodation: "Nuit chez l'habitant à Barang",
-    },
-    {
-      day: 6,
-      title: "Savoir-faire local et moments de partage",
-      description:
-        "Atelier de fabrication d'encens artisanal avec les habitantes du village. L'après-midi, séance de sound healing dans la nature. Temps de repos et soirées conviviales.",
-      accommodation: "Nuit chez l'habitant à Barang",
-    },
-    {
-      day: 7,
-      title: "Derniers instants à Barang",
-      description:
-        "Dernière journée au village. Excursion à la rivière, moments de partage et derniers échanges avec les habitants. Profiter pleinement de cette immersion avant le départ.",
-      accommodation: "Nuit chez l'habitant à Barang",
+        "Départ pour le village de Barang. Pendant ces six jours, nous nous adapterons au rythme des habitantes de Barang et aux activités du moment. Au fil des journées\u00a0: participer aux tâches du quotidien (préparer les repas ensemble, nourrir les chèvres et les poules, participer aux travaux agricoles selon la saison des récoltes), explorer les montagnes lors d'un trek de deux jours et une nuit dans les environs du village et jusqu'à la rivière, partager des moments simples (discussions spontanées, temps de repos, soirées conviviales chez l'habitant), et découvrir les savoir-faire locaux (atelier de fabrication d'encens, séance de sound healing). Chaque journée sera différente. C'est justement ce qui rend cette immersion si authentique.",
+      accommodation: "Nuits chez l'habitant à Barang (5 nuits) et 1 nuit en teahouse pendant le trek",
     },
     {
       day: 8,
@@ -169,7 +134,7 @@ export default {
       },
     ],
     cancellationNote:
-      "Si Sanko se trouve dans l'obligation d'annuler un départ en groupe, en raison d'événements exceptionnels, les participants seront remboursés intégralement des sommes qu'ils ont versées.",
+      "Si Sanko se trouve dans l'obligation d'annuler un départ en groupe, en raison d'événements exceptionnels, les participants seront remboursés intégralement des sommes qu'ils ont versées, sans toutefois prétendre à une indemnité quelconque.",
   },
 
   inclusions: [
@@ -179,7 +144,7 @@ export default {
     "5 nuits en pension complète chez l'habitant",
     "1 nuit en pension complète en teahouse",
     "2 jours de randonnée avec guide anglophone et porteurs locaux en pension complète",
-    "Participation au travail dans les champs avec les femmes du village",
+    "Participation au travail dans les champs en petits groupes avec les femmes du village",
     "Une demi-journée atelier création d'encens artisanal",
     "Atelier de sound healing dans la nature",
     "Excursion(s) à la rivière",

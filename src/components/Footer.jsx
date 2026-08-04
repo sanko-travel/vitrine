@@ -13,6 +13,10 @@ const legalLinks = [
     to: "/politique-de-confidentialite",
     label: "Politique de confidentialité",
   },
+  {
+    to: "/conditions-generales-de-vente",
+    label: "CGV",
+  },
 ];
 
 const socials = [

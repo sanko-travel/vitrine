@@ -108,7 +108,7 @@ export default {
       day: 5,
       title: "Le Nil, ses villages et ses temples",
       description:
-        "Escale au village de Koubania, puis continuation jusqu'à Daraw pour le marché local, avant de rejoindre le temple de Kom Ombo qui rend hommage à deux divinités Sobek et Haroëris.",
+        "Escale au village de Koubania, puis continuation jusqu'à Daraw où nous aurons peut-être la chance de tomber sur un marché local, avant de rejoindre le temple de Kom Ombo qui rend hommage à deux divinités Sobek et Haroëris.",
       accommodation: "Nuit en felouque sur le Nil",
     },
     {
@@ -144,7 +144,7 @@ export default {
       title: "Le Caire à votre rythme",
       description:
         "Cette dernière journée est libre, pour découvrir la ville selon vos envies, vous perdre dans ses quartiers ou simplement prendre le temps avant le retour. Le lendemain, retour vers la France ou extension dans le Désert Blanc.",
-      accommodation: "Nuit au Caire",
+      accommodation: "Nuit en hôtel 3* au Caire",
     },
     {
       day: 11,

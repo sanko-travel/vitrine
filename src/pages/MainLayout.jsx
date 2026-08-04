@@ -9,6 +9,7 @@ import Contact from './Contact'
 import CreerMonVoyage from './CreerMonVoyage'
 import MentionsLegales from './MentionsLegales'
 import PolitiqueConfidentialite from './PolitiqueConfidentialite'
+import CGV from './CGV'
 import NotFound from './NotFound'
 
 function ScrollToTop() {
@@ -31,6 +32,7 @@ export default function MainLayout() {
         <Route path="/creer-mon-voyage" element={<CreerMonVoyage />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
         <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+        <Route path="/conditions-generales-de-vente" element={<CGV />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
