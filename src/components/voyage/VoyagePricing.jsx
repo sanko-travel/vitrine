@@ -73,8 +73,8 @@ export default function VoyagePricing({ data }) {
               </h3>
               <div className="space-y-2">
                 {data.pricing.cancellation.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 font-body text-sm">
-                    <span className="font-semibold text-teal whitespace-nowrap min-w-[140px]">
+                  <div key={i} className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-3 font-body text-sm">
+                    <span className="font-semibold text-teal whitespace-nowrap sm:min-w-[140px]">
                       {item.delay}
                     </span>
                     <span className="text-gray-700">{item.retention}</span>

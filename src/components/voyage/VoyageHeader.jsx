@@ -100,6 +100,7 @@ export default function VoyageHeader({ data }) {
             ))}
             <a
               href="#reservation"
+              onClick={() => setMenuOpen(false)}
               className="text-white font-body font-semibold px-5 py-3 rounded-full text-sm text-center"
               style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
             >

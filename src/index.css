@@ -119,8 +119,11 @@
 }
 
 /* Scroll reveal variants — override initial transform only */
-.reveal.from-left  { transform: translateX(-48px); }
-.reveal.from-right { transform: translateX(48px); }
+/* Horizontal slides only on md+ to avoid overflow on mobile */
+@media (min-width: 768px) {
+  .reveal.from-left  { transform: translateX(-48px); }
+  .reveal.from-right { transform: translateX(48px); }
+}
 .reveal.from-below { transform: translateY(48px); }
 .reveal.scale-up   { transform: scale(0.92); }
 .reveal.fade-only  { transform: none; }
@@ -137,6 +140,7 @@
 /* ── Global ──────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {

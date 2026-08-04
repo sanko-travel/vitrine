@@ -62,8 +62,8 @@ export default function Voyage() {
           }
         />
         <VoyageInclusions data={data} />
-        <VoyagePricing data={data} />
         <VoyageCTA data={data} />
+        <VoyagePricing data={data} />
       </main>
       <Footer />
       <CookieBanner />

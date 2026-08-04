@@ -1,12 +1,16 @@
+import useScrollReveal from '../../hooks/useScrollReveal'
+
 export default function VoyageCTA({ data }) {
+  const ref = useScrollReveal()
+
   return (
     <section id="inscription" className="bg-teal py-24 px-6">
-      <div className="max-w-3xl mx-auto text-center">
+      <div ref={ref} className="max-w-3xl mx-auto text-center">
         {/* CTA */}
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
+        <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
           Prêt·e pour {data.destination} ?
         </h2>
-        <p className="font-body text-white/80 text-lg mb-10">
+        <p className="reveal font-body text-white/80 text-lg mb-10">
           Rejoins {data.creator.name} et un petit groupe de voyageurs pour {data.facts.duration} d'immersion inoubliable.
         </p>
 
@@ -14,13 +18,13 @@ export default function VoyageCTA({ data }) {
           href={data.pricing.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg mb-16"
+          className="reveal inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg mb-16"
         >
           S'inscrire maintenant
         </a>
 
         {/* Qui sommes-nous */}
-        <div className="border-t border-white/15 pt-12 mb-12">
+        <div className="reveal border-t border-white/15 pt-12 mb-12">
           <h3 className="font-heading font-bold text-xl text-white mb-4">
             Qui sommes-nous ?
           </h3>

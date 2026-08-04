@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const sankoLinks = [
   { to: "https://withsanko.com", label: "withsanko.com", external: true },
@@ -53,10 +54,12 @@ const socials = [
 ];
 
 export default function Footer() {
+  const ref = useScrollReveal();
+
   return (
     <footer className="bg-teal py-16 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
+      <div ref={ref} className="max-w-6xl mx-auto">
+        <div className="reveal flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
           {/* Logo + tagline */}
           <div className="text-center md:text-left">
             <Link

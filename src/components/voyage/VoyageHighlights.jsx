@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
+import useScrollReveal from '../../hooks/useScrollReveal'
 
 const CARD_WIDTH = 320
 const GAP = 24
@@ -7,6 +8,7 @@ export default function VoyageHighlights({ data }) {
   const sectionRef = useRef(null)
   const rowRef = useRef(null)
   const wrapperRef = useRef(null)
+  const revealRef = useScrollReveal()
   const [totalWidth, setTotalWidth] = useState(0)
 
   const count = data.highlights.length
@@ -14,6 +16,32 @@ export default function VoyageHighlights({ data }) {
   useEffect(() => {
     setTotalWidth(count * CARD_WIDTH + (count - 1) * GAP)
   }, [count])
+
+  const getMaxTranslate = () => {
+    const wrapper = wrapperRef.current
+    if (!wrapper) return 0
+    const padLeft = parseFloat(getComputedStyle(wrapper).paddingLeft) || 0
+    const lastCardCenter = padLeft + (count - 1) * (CARD_WIDTH + GAP) + CARD_WIDTH / 2
+    return Math.max(0, lastCardCenter - wrapper.clientWidth / 2)
+  }
+
+  const scrollToCard = (index) => {
+    const section = sectionRef.current
+    const wrapper = wrapperRef.current
+    if (!section || !wrapper) return
+
+    const maxTranslate = getMaxTranslate()
+    if (maxTranslate <= 0) return
+
+    const padLeft = parseFloat(getComputedStyle(wrapper).paddingLeft) || 0
+    const cardCenter = padLeft + index * (CARD_WIDTH + GAP) + CARD_WIDTH / 2
+    const targetTranslate = Math.max(0, Math.min(maxTranslate, cardCenter - wrapper.clientWidth / 2))
+    const p = targetTranslate / maxTranslate
+
+    const scrollable = section.offsetHeight - window.innerHeight
+    const targetScrollY = section.offsetTop + p * scrollable
+    window.scrollTo({ top: targetScrollY, behavior: 'smooth' })
+  }
 
   useEffect(() => {
     const section = sectionRef.current
@@ -26,8 +54,8 @@ export default function VoyageHighlights({ data }) {
       const scrollable = height - window.innerHeight
       if (scrollable <= 0) return
       const p = Math.max(0, Math.min(1, -top / scrollable))
-      const maxTranslate = totalWidth - wrapper.clientWidth
-      row.style.transform = `translateX(-${p * Math.max(0, maxTranslate)}px)`
+      const maxTranslate = getMaxTranslate()
+      row.style.transform = `translateX(-${p * maxTranslate}px)`
     }
 
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -37,16 +65,16 @@ export default function VoyageHighlights({ data }) {
 
   return (
     <section ref={sectionRef} className="bg-white relative" style={{ height: '200vh' }}>
-      <div className="sticky top-0 h-screen flex flex-col justify-center">
+      <div ref={revealRef} className="sticky top-0 h-screen flex flex-col justify-center">
         <div className="max-w-6xl mx-auto w-full px-6 md:px-16 mb-10">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-teal text-center tracking-tight">
+          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal text-center tracking-tight">
             Les temps forts
           </h2>
         </div>
 
         <div
           ref={wrapperRef}
-          className="max-w-6xl mx-auto w-full px-6 md:px-16 overflow-hidden"
+          className="reveal max-w-6xl mx-auto w-full px-6 md:px-16 overflow-hidden"
         >
           <div
             ref={rowRef}
@@ -60,6 +88,7 @@ export default function VoyageHighlights({ data }) {
             {data.highlights.map((item, i) => (
               <div
                 key={i}
+                onClick={() => scrollToCard(i)}
                 className="relative rounded-2xl overflow-hidden shadow-lg flex-shrink-0 hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 style={{ width: CARD_WIDTH, height: 420 }}
               >
