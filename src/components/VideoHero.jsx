@@ -42,15 +42,15 @@ export default function VideoHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <div className="hero-content relative z-10 text-center px-6 max-w-3xl mx-auto">
         <StickerLabel text="Voyage" color="teal" className="mx-auto mb-6" />
-        <p className="font-body text-white/90 font-semibold tracking-widest text-sm uppercase mb-4">
+        <p className="hero-fade-up hero-d1 font-body text-white/90 font-semibold tracking-widest text-sm uppercase mb-4">
           Agence de voyage · Depuis 2022
         </p>
-        <h1 className="font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
+        <h1 className="hero-fade-up hero-d2 font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
           Des voyages d'exception en communauté
         </h1>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+        <div className="hero-fade-up hero-d3 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
           <a
             href="#qui-sommes-nous"
             className="bg-coral text-white font-body font-semibold text-center px-8 py-4 rounded-full hover:bg-coral/90 transition-colors text-base"

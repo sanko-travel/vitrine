@@ -40,13 +40,13 @@ export default function IntroBlock() {
   return (
     <section id="intro" className="bg-beige py-24 md:py-32 px-6 md:px-16">
       <div ref={ref} className="max-w-5xl mx-auto">
-        <div className="reveal mb-4">
+        <div className="reveal from-left mb-4">
           <StickerLabel text="Impact" color="teal" />
         </div>
-        <h2 className="reveal font-heading font-bold text-teal text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 max-w-3xl">
+        <h2 className="reveal from-left font-heading font-bold text-teal text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 max-w-3xl">
           On ne vend pas des voyages. On crée des expériences humaines.
         </h2>
-        <p className="reveal font-body text-gray-600 text-lg md:text-xl mb-16 max-w-2xl">
+        <p className="reveal from-left font-body text-gray-600 text-lg md:text-xl mb-16 max-w-2xl">
           Se déconnecter pour se connecter IRL.
         </p>
 
@@ -54,7 +54,7 @@ export default function IntroBlock() {
           {cards.map((card, i) => (
             <div
               key={i}
-              className="reveal bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ring-1 ring-teal/5"
+              className="reveal from-right bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ring-1 ring-teal/5"
             >
               <div className="bg-teal w-14 h-14 rounded-xl flex items-center justify-center text-white mb-6">
                 {card.icon}

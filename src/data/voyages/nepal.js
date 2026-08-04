@@ -12,6 +12,14 @@ export default {
 
   heroImage: "/images/voyages/nepal/hero.jpg",
 
+  route: [
+    { city: "Katmandou", coordinates: [27.7172, 85.3240], days: [1] },
+    { city: "Barang", coordinates: [28.2380, 83.9500], days: [2, 3] },
+    { city: "Trek montagne", coordinates: [28.3000, 83.9200], days: [4, 5] },
+    { city: "Barang", coordinates: [28.2380, 83.9500], days: [6, 7] },
+    { city: "Katmandou", coordinates: [27.7172, 85.3240], days: [8, 9] },
+  ],
+
   intro: {
     heading: "Immersion népalaise",
     paragraphs: [

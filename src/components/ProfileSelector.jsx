@@ -73,7 +73,7 @@ export default function ProfileSelector() {
           {profiles.map((profile) => (
             <div
               key={profile.title}
-              className="reveal bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-8 flex flex-col justify-between"
+              className="reveal scale-up bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-8 flex flex-col justify-between"
             >
               <div>
                 <div className={`${profile.color} w-14 h-14 rounded-xl flex items-center justify-center text-white mb-6`}>

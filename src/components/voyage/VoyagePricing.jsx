@@ -6,13 +6,13 @@ export default function VoyagePricing({ data }) {
   return (
     <section id="reservation" className="bg-beige py-24 px-6">
       <div ref={ref} className="max-w-5xl mx-auto">
-        <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-14 text-center">
+        <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-14 text-center tracking-tight">
           Réserve ta place
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Price card */}
-          <div className="reveal">
+          <div className="reveal scale-up">
             <div className="bg-white rounded-2xl shadow-md p-8 ring-1 ring-teal/5 h-full flex flex-col">
               <div className="mb-6">
                 <span className="font-heading font-bold text-5xl text-teal">

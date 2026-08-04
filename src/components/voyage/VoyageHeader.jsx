@@ -43,7 +43,7 @@ export default function VoyageHeader({ data }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="/" className={`font-heading font-bold text-xl transition-colors ${scrolled ? 'text-teal' : 'text-white'}`}>
-          sanko<sup className="text-xs">®</sup>
+          sanko<sup className="text-xs">&copy;</sup>
         </a>
 
         {/* Desktop nav */}
@@ -60,9 +60,7 @@ export default function VoyageHeader({ data }) {
             </a>
           ))}
           <a
-            href={data.pricing.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#reservation"
             className="text-white font-body font-semibold px-5 py-2.5 rounded-full text-sm"
             style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
           >
@@ -101,9 +99,7 @@ export default function VoyageHeader({ data }) {
               </a>
             ))}
             <a
-              href={data.pricing.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#reservation"
               className="text-white font-body font-semibold px-5 py-3 rounded-full text-sm text-center"
               style={{ backgroundColor: ctaColor, transition: 'background-color 0.5s ease' }}
             >

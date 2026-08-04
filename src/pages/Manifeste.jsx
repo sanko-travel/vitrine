@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import StickerLabel from "../components/StickerLabel";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const values = [
   {
@@ -74,6 +75,11 @@ const values = [
 ];
 
 export default function Manifeste() {
+  const refPourquoi = useScrollReveal();
+  const refValeurs = useScrollReveal();
+  const refVision = useScrollReveal();
+  const refCta = useScrollReveal();
+
   return (
     <main>
       {/* Hero */}
@@ -86,16 +92,16 @@ export default function Manifeste() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+        <div className="hero-content relative z-10 text-center px-6 max-w-3xl mx-auto">
           <StickerLabel
             text="Notre histoire"
             color="coral"
             className="mx-auto mb-6"
           />
-          <p className="font-body text-coral font-semibold tracking-widest text-sm uppercase mb-4">
+          <p className="hero-fade-up hero-d1 font-body text-coral font-semibold tracking-widest text-sm uppercase mb-4">
             Notre manifeste
           </p>
-          <h1 className="font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight">
+          <h1 className="hero-fade-up hero-d2 font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight">
             Allier nos forces pour un monde meilleur
           </h1>
         </div>
@@ -103,11 +109,11 @@ export default function Manifeste() {
 
       {/* Pourquoi Sanko */}
       <section className="bg-beige py-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
+        <div ref={refPourquoi} className="max-w-3xl mx-auto">
+          <h2 className="reveal from-left font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
             Pourquoi Sanko ?
           </h2>
-          <div className="font-body text-gray-700 text-lg leading-relaxed space-y-6">
+          <div className="reveal from-right font-body text-gray-700 text-lg leading-relaxed space-y-6">
             <p>
               Sanko est un mot Akan qui signifie{" "}
               <em>"retourner en arrière pour mieux avancer"</em>. Cette
@@ -133,12 +139,12 @@ export default function Manifeste() {
 
       {/* Nos valeurs */}
       <section className="bg-white py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div ref={refValeurs} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-heading font-bold text-4xl text-teal mb-4">
+            <h2 className="reveal font-heading font-bold text-4xl text-teal mb-4">
               Nos valeurs
             </h2>
-            <p className="font-body text-gray-600 text-lg">
+            <p className="reveal font-body text-gray-600 text-lg">
               Ce qui guide chacune de nos décisions.
             </p>
           </div>
@@ -146,7 +152,7 @@ export default function Manifeste() {
             {values.map((v, i) => (
               <div
                 key={i}
-                className={`${v.bg} ${v.text} ${v.borderTop} rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300`}
+                className={`reveal scale-up ${v.bg} ${v.text} ${v.borderTop} rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300`}
               >
                 <div className="mb-4">{v.icon}</div>
                 <h3 className="font-heading font-bold text-2xl mb-3">
@@ -163,11 +169,11 @@ export default function Manifeste() {
 
       {/* Notre vision */}
       <section className="bg-teal py-24 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading font-bold text-4xl text-white mb-8">
+        <div ref={refVision} className="max-w-3xl mx-auto text-center">
+          <h2 className="reveal font-heading font-bold text-4xl text-white mb-8">
             Notre vision
           </h2>
-          <div className="font-body text-white/90 text-xl leading-relaxed space-y-6 italic">
+          <div className="reveal from-right font-body text-white/90 text-xl leading-relaxed space-y-6 italic">
             <p>
               "Nous imaginons un monde où les frontières ne sont pas des
               obstacles, mais des invitations. Un monde où chaque voyage laisse
@@ -187,15 +193,17 @@ export default function Manifeste() {
 
       {/* CTA */}
       <section className="bg-beige py-20 px-6 text-center">
-        <h2 className="font-heading font-bold text-3xl text-teal mb-6">
-          Prêt à rejoindre l'aventure ?
-        </h2>
-        <Link
-          to="/#form"
-          className="inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
-        >
-          Rejoindre l'aventure
-        </Link>
+        <div ref={refCta}>
+          <h2 className="reveal fade-only font-heading font-bold text-3xl text-teal mb-6">
+            Prêt à rejoindre l'aventure ?
+          </h2>
+          <Link
+            to="/#form"
+            className="reveal fade-only inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
+          >
+            Rejoindre l'aventure
+          </Link>
+        </div>
       </section>
     </main>
   );

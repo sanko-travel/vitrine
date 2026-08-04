@@ -12,6 +12,13 @@ export default {
 
   heroImage: "/images/voyages/croatie/hero.jpg",
 
+  route: [
+    { city: "Šibenik", coordinates: [43.7350, 15.8952], days: [1, 2, 3] },
+    { city: "Prvić", coordinates: [43.7280, 15.7930], days: [2] },
+    { city: "Parc Krka", coordinates: [43.8010, 15.9620], days: [3] },
+    { city: "Split", coordinates: [43.5081, 16.4402], days: [4, 5, 6, 7] },
+  ],
+
   intro: {
     heading: "Immersion en Dalmatie",
     paragraphs: [

@@ -29,7 +29,7 @@ export default function ConstructionMiroir() {
           {rows.map((row, i) => (
             <div
               key={i}
-              className={`reveal grid md:grid-cols-2 gap-6 md:gap-8 py-10 ${
+              className={`reveal ${i % 2 === 0 ? 'from-left' : 'from-right'} grid md:grid-cols-2 gap-6 md:gap-8 py-10 ${
                 i < rows.length - 1 ? 'border-b border-teal/10' : ''
               }`}
             >

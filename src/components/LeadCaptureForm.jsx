@@ -47,20 +47,20 @@ export default function LeadCaptureForm() {
   return (
     <section id="form" className="bg-teal py-24 px-6">
       <div ref={revealRef} className="max-w-2xl mx-auto text-center">
-        <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white mb-4">
+        <h2 className="reveal fade-only font-heading font-bold text-4xl md:text-5xl text-white mb-4">
           Tu souhaites créer ton propre voyage ?
         </h2>
-        <p className="reveal font-body text-white/80 text-lg mb-10">
+        <p className="reveal fade-only font-body text-white/80 text-lg mb-10">
           Tu es créateur de contenu et tu rêves de faire voyager ta communauté ? Lance ton voyage de groupe sur-mesure avec Sankofa.
         </p>
 
         {submitted ? (
-          <div className="reveal bg-white/90 backdrop-blur rounded-2xl p-10">
+          <div className="reveal fade-only bg-white/90 backdrop-blur rounded-2xl p-10">
             <p className="font-heading font-bold text-teal text-2xl mb-2">Bienvenue dans l'aventure !</p>
             <p className="font-body text-gray-600">On te contacte très bientôt.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="reveal flex flex-col sm:flex-row gap-4">
+          <form onSubmit={handleSubmit} className="reveal fade-only flex flex-col sm:flex-row gap-4">
             <input
               type="text"
               value={handle}
@@ -101,7 +101,7 @@ export default function LeadCaptureForm() {
           <p className="font-body text-coral bg-white/90 rounded-full px-4 py-3 mt-4">{error}</p>
         )}
 
-        <p className="reveal font-body text-white/80 text-lg mt-10">
+        <p className="reveal fade-only font-body text-white/80 text-lg mt-10">
           Ou prends un rdv directement avec la grande chef{' '}
           <a
             href="https://calendly.com/sankofatravelstudio/30min"

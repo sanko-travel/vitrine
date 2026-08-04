@@ -3,7 +3,7 @@ export default function VoyageCTA({ data }) {
     <section id="inscription" className="bg-teal py-24 px-6">
       <div className="max-w-3xl mx-auto text-center">
         {/* CTA */}
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
           Prêt·e pour {data.destination} ?
         </h2>
         <p className="font-body text-white/80 text-lg mb-10">

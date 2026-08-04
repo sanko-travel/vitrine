@@ -65,6 +65,47 @@
 .kb-slide.active:nth-child(3) { animation: kenBurns3 10s ease-out forwards; }
 .kb-slide.active:nth-child(4) { animation: kenBurns4 10s ease-out forwards; }
 
+/* ── Hero entrance animation ─────────────────────────────────── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-fade-up {
+  opacity: 0;
+  animation: heroFadeUp 0.9s ease-out forwards;
+}
+.hero-d1 { animation-delay: 0.15s; }
+.hero-d2 { animation-delay: 0.4s; }
+.hero-d3 { animation-delay: 0.65s; }
+
+/* ── Sticker appear animation ────────────────────────────────── */
+@keyframes stickerAppear {
+  from { opacity: 0; transform: translateY(24px) rotate(0deg); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sticker-appear {
+  display: inline-block;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: stickerAppear 800ms ease-out forwards;
+}
+
+/* Stickers in hero: appear after the main content */
+.hero-content .sticker-appear {
+  animation-delay: 1.2s;
+}
+
+/* Stickers in scroll-revealed containers: wait for reveal */
+.reveal .sticker-appear {
+  animation: none;
+  opacity: 0;
+}
+.reveal.visible .sticker-appear {
+  animation: stickerAppear 800ms ease-out 500ms forwards;
+}
+
 /* ── Scroll reveal ───────────────────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -74,7 +115,23 @@
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+/* Scroll reveal variants — override initial transform only */
+.reveal.from-left  { transform: translateX(-48px); }
+.reveal.from-right { transform: translateX(48px); }
+.reveal.from-below { transform: translateY(48px); }
+.reveal.scale-up   { transform: scale(0.92); }
+.reveal.fade-only  { transform: none; }
+
+/* ── Hide scrollbar for carousel ─────────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* ── Global ──────────────────────────────────────────────────── */
@@ -87,6 +144,7 @@ body {
   background-color: #FFFFFF;
   color: #025961;
   margin: 0;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5, h6 {

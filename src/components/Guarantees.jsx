@@ -74,7 +74,7 @@ export default function Guarantees() {
           {guarantees.map((g, i) => (
             <div
               key={i}
-              className={`reveal bg-white border-t-4 ${g.borderColor} rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ring-1 ring-teal/5`}
+              className={`reveal scale-up bg-white border-t-4 ${g.borderColor} rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ring-1 ring-teal/5`}
             >
               <div className="text-teal mb-4">
                 {g.icon}

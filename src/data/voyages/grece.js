@@ -12,6 +12,14 @@ export default {
 
   heroImage: "/images/voyages/grece/hero.jpg",
 
+  route: [
+    { city: "Athènes", coordinates: [37.9838, 23.7275], days: [1] },
+    { city: "Kyllini", coordinates: [37.9340, 21.1460], days: [2] },
+    { city: "Zakynthos", coordinates: [37.7870, 20.8979], days: [2, 3, 4, 5, 6] },
+    { city: "Kyllini", coordinates: [37.9340, 21.1460], days: [7] },
+    { city: "Athènes", coordinates: [37.9838, 23.7275], days: [7, 8] },
+  ],
+
   intro: {
     heading: "La Grèce idyllique",
     paragraphs: [

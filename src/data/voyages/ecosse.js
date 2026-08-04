@@ -12,6 +12,10 @@ export default {
 
   heroImage: "/images/voyages/ecosse/hero.jpg",
 
+  route: [
+    { city: "Édimbourg", coordinates: [55.9533, -3.1883], days: [1, 2, 3, 4, 5, 6] },
+  ],
+
   intro: {
     heading: "Édimbourg, parenthèse automnale",
     paragraphs: [

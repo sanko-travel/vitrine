@@ -7,10 +7,18 @@ export default {
     dates: "31 octobre - 11 novembre 2026",
     duration: "12 jours",
     groupNote: "Places limitées",
-    price: "3 490",
+    price: "3 000",
   },
 
   heroImage: "/images/voyages/japon/hero.jpg",
+
+  route: [
+    { city: "Tokyo", coordinates: [35.6762, 139.6503], days: [1, 2, 3, 4, 5] },
+    { city: "Mont Fuji", coordinates: [35.3606, 138.7274], days: [6] },
+    { city: "Kyoto", coordinates: [35.0116, 135.7681], days: [7, 8, 9, 10] },
+    { city: "Uji", coordinates: [34.8842, 135.7997], days: [11] },
+    { city: "Tokyo", coordinates: [35.6762, 139.6503], days: [12] },
+  ],
 
   intro: {
     heading: "Découvrez le Japon autrement",
@@ -50,7 +58,7 @@ export default {
     },
     {
       title: "Kyoto",
-      subtitle: "Temples, geishas & bambous",
+      subtitle: "Temples & bambous",
       description:
         "Fushimi Inari et ses milliers de torii, les forêts de bambous, le Pavillon d'Or, les ruelles de Gion - l'âme traditionnelle du Japon se révèle à chaque pas.",
       image: "/images/voyages/japon/highlight-3.jpg",
@@ -152,7 +160,7 @@ export default {
   ],
 
   pricing: {
-    price: "3 490",
+    price: "3 000",
     currency: "€",
     perPerson: true,
     deposit: "30%",
@@ -165,15 +173,15 @@ export default {
     ],
     cancellation: [
       {
-        delay: "Plus de 60 jours",
+        delay: "Plus de 30 jours",
         retention: "Seul l'acompte n'est pas restitué",
       },
       {
-        delay: "De 60 à 30 jours",
+        delay: "De 30 à 15 jours",
         retention: "50\u00a0% du montant total retenu",
       },
       {
-        delay: "De 30 à 7 jours",
+        delay: "De 15 à 7 jours",
         retention: "75\u00a0% du montant total retenu",
       },
       {

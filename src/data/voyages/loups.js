@@ -12,6 +12,15 @@ export default {
 
   heroImage: "/images/voyages/loups/hero.jpg",
 
+  route: [
+    { city: "Nice", coordinates: [43.7102, 7.2620], days: [1] },
+    { city: "Refuge Mercantour", coordinates: [44.0800, 7.3900], days: [1, 2] },
+    { city: "Bivouac", coordinates: [44.0900, 7.4300], days: [2] },
+    { city: "Vallée des Merveilles", coordinates: [44.0560, 7.4400], days: [3] },
+    { city: "Crête panoramique", coordinates: [44.0700, 7.4100], days: [4] },
+    { city: "Nice", coordinates: [43.7102, 7.2620], days: [5] },
+  ],
+
   intro: {
     heading: "Sur la trace des Loups",
     paragraphs: [

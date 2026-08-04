@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useTurnstile from "../hooks/useTurnstile";
+import useScrollReveal from "../hooks/useScrollReveal";
 import StickerLabel from "../components/StickerLabel";
 
 const steps = [
@@ -221,6 +222,13 @@ export default function CreerMonVoyage() {
   const [error, setError] = useState(null);
   const [openFaq, setOpenFaq] = useState(null);
   const { containerRef, token, reset } = useTurnstile();
+  const refPourquoi = useScrollReveal();
+  const refTimeline = useScrollReveal();
+  const refAvantages = useScrollReveal();
+  const refObjection = useScrollReveal();
+  const refTemoignages = useScrollReveal();
+  const refFaq = useScrollReveal();
+  const refFormulaire = useScrollReveal();
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -267,21 +275,21 @@ export default function CreerMonVoyage() {
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
+        <div className="hero-content relative z-10 text-center px-6 max-w-3xl mx-auto">
           <StickerLabel
             text="Créateurs"
             color="coral"
             className="mx-auto mb-6"
           />
-          <p className="font-body text-coral font-semibold tracking-widest text-sm uppercase mb-4">
+          <p className="hero-fade-up hero-d1 font-body text-coral font-semibold tracking-widest text-sm uppercase mb-4">
             Créateurs de contenu
           </p>
-          <h1 className="font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
+          <h1 className="hero-fade-up hero-d2 font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
             Vivez l'aventure d'une vie avec votre audience
           </h1>
           <a
             href="#formulaire"
-            className="inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
+            className="hero-fade-up hero-d3 inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
           >
             Lancer mon projet
           </a>
@@ -290,11 +298,11 @@ export default function CreerMonVoyage() {
 
       {/* Pourquoi Sanko ? */}
       <section className="bg-beige py-24 px-6">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
+        <div ref={refPourquoi} className="max-w-3xl mx-auto">
+          <h2 className="reveal from-left font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
             Pourquoi Sanko ?
           </h2>
-          <div className="font-body text-gray-700 text-lg leading-relaxed space-y-6">
+          <div className="reveal from-right font-body text-gray-700 text-lg leading-relaxed space-y-6">
             <p>
               Tu rêves d'emmener ta communauté à l'autre bout du monde, mais tu
               ne sais pas par où commencer ? Sanko est né pour ça. Nous sommes
@@ -313,7 +321,7 @@ export default function CreerMonVoyage() {
 
       {/* Comment ça marche - Timeline */}
       <section className="bg-white py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div ref={refTimeline} className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-heading font-bold text-4xl text-teal mb-4">
               Comment ça marche
@@ -329,7 +337,7 @@ export default function CreerMonVoyage() {
               {steps.map((step, i) => (
                 <div
                   key={step.number}
-                  className={`flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
+                  className={`reveal ${i % 2 === 0 ? 'from-left' : 'from-right'} flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
                 >
                   <div className="flex-1 text-center md:text-left">
                     <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ring-1 ring-teal/5">
@@ -356,7 +364,7 @@ export default function CreerMonVoyage() {
 
       {/* Vos avantages */}
       <section className="bg-beige py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div ref={refAvantages} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-heading font-bold text-4xl text-teal mb-4">
               Vos avantages
@@ -369,7 +377,7 @@ export default function CreerMonVoyage() {
             {avantages.map((a, i) => (
               <div
                 key={i}
-                className={`bg-white border-t-4 ${a.borderColor} rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300`}
+                className={`reveal scale-up bg-white border-t-4 ${a.borderColor} rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300`}
               >
                 <div className={`${a.iconColor} mb-4`}>{a.icon}</div>
                 <h3 className="font-heading font-bold text-2xl text-teal mb-3">
@@ -386,11 +394,11 @@ export default function CreerMonVoyage() {
 
       {/* Objection handling */}
       <section className="bg-teal py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-white mb-10 text-center">
+        <div ref={refObjection} className="max-w-5xl mx-auto">
+          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-white mb-10 text-center">
             On répond à ce qui te bloque.
           </h2>
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl p-10 shadow-md">
+          <div className="reveal scale-up max-w-3xl mx-auto bg-white rounded-2xl p-10 shadow-md">
             <h3 className="font-heading font-bold text-2xl text-teal mb-4">
               Tu ne veux pas faire payer ta communauté ?
             </h3>
@@ -406,7 +414,7 @@ export default function CreerMonVoyage() {
 
       {/* Témoignages créateurs */}
       <section className="bg-beige py-24 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div ref={refTemoignages} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-heading font-bold text-4xl text-teal mb-4">
               Ils ont créé leur voyage
@@ -419,7 +427,7 @@ export default function CreerMonVoyage() {
             {temoignages.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-8"
+                className="reveal from-left bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-8"
               >
                 <span className="font-heading text-5xl text-coral/30 leading-none select-none">
                   "
@@ -442,7 +450,7 @@ export default function CreerMonVoyage() {
 
       {/* FAQ */}
       <section className="bg-white py-24 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div ref={refFaq} className="max-w-3xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-heading font-bold text-4xl text-teal mb-4">
               Questions fréquentes
@@ -452,7 +460,7 @@ export default function CreerMonVoyage() {
             {faqItems.map((item, i) => (
               <div
                 key={i}
-                className="border border-teal/15 rounded-xl overflow-hidden"
+                className="reveal from-left border border-teal/15 rounded-xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -496,7 +504,7 @@ export default function CreerMonVoyage() {
 
       {/* Formulaire */}
       <section id="formulaire" className="bg-beige py-24 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div ref={refFormulaire} className="max-w-3xl mx-auto">
           <div className="mb-14 text-center">
             <p className="font-body text-coral font-semibold tracking-widest text-sm uppercase mb-3">
               On y est
@@ -506,7 +514,7 @@ export default function CreerMonVoyage() {
             </h2>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 ring-1 ring-teal/5">
+          <div className="reveal fade-only bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 ring-1 ring-teal/5">
             {submitted ? (
               <div className="text-center py-10">
                 <svg

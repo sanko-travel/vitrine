@@ -12,24 +12,24 @@ export default function VoyageHero({ data }) {
     >
       <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="hero-content relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Sticker labels */}
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-          <StickerLabel text="Voyage" color="coral" />
-          <StickerLabel text="Immersion" color="teal" />
-          <StickerLabel text={data.destination} color="yellow" />
+          <StickerLabel text="Voyage" color="coral" style={{ animationDelay: '1.2s' }} />
+          <StickerLabel text="Immersion" color="teal" style={{ animationDelay: '1.35s' }} />
+          <StickerLabel text={data.destination} color="yellow" style={{ animationDelay: '1.5s' }} />
         </div>
 
         {/* Title */}
-        <h1 className="font-heading font-extrabold text-white text-5xl md:text-7xl leading-tight mb-4">
+        <h1 className="hero-fade-up hero-d1 font-heading font-extrabold text-white text-5xl md:text-7xl leading-tight tracking-tight mb-4">
           {data.destination}
         </h1>
-        <p className="font-body text-white/90 text-xl md:text-2xl mb-10">
+        <p className="hero-fade-up hero-d2 font-body text-white/90 text-xl md:text-2xl mb-10">
           {data.subtitle}
         </p>
 
         {/* Fact pills */}
-        <div className="flex items-center justify-center gap-3 flex-wrap mb-10">
+        <div className="hero-fade-up hero-d3 flex items-center justify-center gap-3 flex-wrap mb-10">
           <span className="bg-white/20 backdrop-blur-sm text-white font-body text-sm px-4 py-2 rounded-full">
             {data.facts.dates}
           </span>
@@ -44,7 +44,7 @@ export default function VoyageHero({ data }) {
         {/* CTA */}
         <a
           href="#reservation"
-          className="inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
+          className="hero-fade-up hero-d3 inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
         >
           Réserver ma place
         </a>

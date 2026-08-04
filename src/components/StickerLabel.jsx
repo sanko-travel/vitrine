@@ -1,7 +1,7 @@
 const colors = {
   teal: { bg: "#025961", text: "#ffffff" },
   coral: { bg: "#ea573d", text: "#ffffff" },
-  yellow: { bg: "#f8a009", text: "#025961" },
+  yellow: { bg: "#f8a009", text: "#ffffff" },
 };
 
 // Rotation par défaut basée sur la longueur du texte (quand pas de style.transform fourni)
@@ -37,7 +37,7 @@ export default function StickerLabel({
 
   return (
     <span
-      className={`inline-block font-accent font-semibold rounded-full ${className}`}
+      className={`sticker-appear font-accent font-semibold rounded-full ${className}`}
       style={{
         backgroundColor: c.bg,
         color: c.text,

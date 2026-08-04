@@ -28,7 +28,7 @@ export default function DifferencesSection() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Ce que tu gagnes */}
-          <div className="reveal bg-white rounded-2xl p-8 shadow-md">
+          <div className="reveal from-below bg-white rounded-2xl p-8 shadow-md">
             <div className="flex items-center gap-3 mb-6">
               <svg className="w-7 h-7 text-teal" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -50,7 +50,7 @@ export default function DifferencesSection() {
           </div>
 
           {/* Ce qu'on élimine */}
-          <div className="reveal bg-white rounded-2xl p-8 shadow-md">
+          <div className="reveal from-below bg-white rounded-2xl p-8 shadow-md">
             <div className="flex items-center gap-3 mb-6">
               <svg className="w-7 h-7 text-coral" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />

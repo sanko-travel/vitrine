@@ -6,13 +6,13 @@ export default function VoyageInclusions({ data }) {
   return (
     <section className="bg-white py-24 px-6">
       <div ref={ref} className="max-w-5xl mx-auto">
-        <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-14 text-center">
+        <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-14 text-center tracking-tight">
           Ce qui est inclus
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Inclus */}
-          <div className="reveal">
+          <div className="reveal from-left">
             <h3 className="font-heading font-bold text-xl text-teal mb-6 flex items-center gap-2">
               <svg className="w-6 h-6 text-teal" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -32,7 +32,7 @@ export default function VoyageInclusions({ data }) {
           </div>
 
           {/* Non inclus */}
-          <div className="reveal">
+          <div className="reveal from-right">
             <h3 className="font-heading font-bold text-xl text-gray-700 mb-6 flex items-center gap-2">
               <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

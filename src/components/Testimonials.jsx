@@ -78,7 +78,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="reveal bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-8 flex flex-col gap-5"
+              className="reveal from-left bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 p-8 flex flex-col gap-5"
             >
               <span className="font-heading text-5xl text-coral/30 leading-none select-none">"</span>
 

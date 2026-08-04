@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import useTurnstile from '../hooks/useTurnstile'
+import useScrollReveal from '../hooks/useScrollReveal'
 
 const honeypotStyle = { position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }
 
@@ -12,6 +13,7 @@ export default function Contact() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const { containerRef, token, reset } = useTurnstile()
+  const revealRef = useScrollReveal()
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -55,9 +57,9 @@ export default function Contact() {
           </h1>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-12 items-start">
+        <div ref={revealRef} className="grid md:grid-cols-5 gap-12 items-start">
           {/* Form */}
-          <div className="md:col-span-3 bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 ring-1 ring-teal/5">
+          <div className="reveal from-left md:col-span-3 bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 ring-1 ring-teal/5">
             {submitted ? (
               <div className="text-center py-10">
                 <svg className="w-14 h-14 text-coral mx-auto mb-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -155,7 +157,7 @@ export default function Contact() {
           </div>
 
           {/* Info column */}
-          <div className="md:col-span-2 flex flex-col gap-8">
+          <div className="reveal from-right md:col-span-2 flex flex-col gap-8">
             <div className="bg-teal rounded-2xl p-7">
               <h3 className="font-heading font-bold text-white text-xl mb-5">
                 Infos pratiques

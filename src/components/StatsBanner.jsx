@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const stats = [
   { value: 50, suffix: "+", label: "voyages organisés" },
@@ -28,7 +29,7 @@ function useCountUp(target, duration = 1800, start = false) {
 function StatItem({ stat, animate, showDivider }) {
   const count = useCountUp(stat.value, 1800, animate);
   return (
-    <div className="flex items-center gap-1">
+    <div className="reveal scale-up flex items-center gap-1">
       <div className="flex flex-col items-center gap-1 flex-1">
         <span className="font-heading font-bold text-5xl md:text-6xl text-yellow">
           {count}
@@ -47,7 +48,8 @@ function StatItem({ stat, animate, showDivider }) {
 
 export default function StatsBanner() {
   const [animate, setAnimate] = useState(false);
-  const ref = useRef(null);
+  const countRef = useRef(null);
+  const revealRef = useScrollReveal();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -56,12 +58,12 @@ export default function StatsBanner() {
       },
       { threshold: 0.3 },
     );
-    if (ref.current) observer.observe(ref.current);
+    if (countRef.current) observer.observe(countRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={ref} className="bg-teal py-20 px-6">
+    <section ref={(el) => { countRef.current = el; revealRef.current = el; }} className="bg-teal py-20 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
         {stats.map((stat, i) => (
           <StatItem

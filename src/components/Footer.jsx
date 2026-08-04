@@ -64,7 +64,7 @@ export default function Footer() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="font-heading font-bold text-2xl text-white tracking-tight mb-2 block hover:text-white/90 transition-colors"
             >
-              sanko<sup className="text-xs align-super">®</sup>
+              sanko<sup className="text-xs align-super">&copy;</sup>
             </Link>
             <p className="font-body text-white/60 text-sm max-w-xs">
               Catalyseur de rencontres
