@@ -122,7 +122,7 @@ export default function VoyageItinerary({ data, activeDay, onDayChange, mapSlot 
           Ton aventure, jour après jour
         </h2>
         <p className="reveal font-body text-gray-600 text-lg text-center mb-14">
-          {data.facts.duration} d'immersion
+          <span className="inline-block" style={{ transform: 'rotate(-2deg)' }}><StickerLabel text={data.facts.duration} color="yellow" style={{ fontSize: 'inherit', padding: '0.05em 0.35em' }} /></span> d'immersion
         </p>
 
         {mapSlot && <div ref={mapRef} className="reveal mb-10">{mapSlot}</div>}

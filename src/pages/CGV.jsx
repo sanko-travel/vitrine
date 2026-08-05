@@ -47,7 +47,7 @@ const sections = [
             </a>
           </li>
         </ul>
-        <p className="mt-3">Ci-après dénommé « SANKOFA »</p>
+        <p className="mt-3"><em>Ci-après dénommé « SANKOFA »</em></p>
 
         <p className="font-semibold text-teal mt-4 mb-2">2. Objet</p>
         <p>
@@ -252,10 +252,10 @@ const sections = [
         </p>
         <p className="mt-3">
           En cas de confirmation de la réservation, le Client recevra une
-          confirmation de séjour valant Contrat par email. Toute commande
-          implique que le Client accepte le contenu du séjour et se déclare apte
-          physiquement, psychologiquement et techniquement à participer aux
-          Prestations.
+          confirmation de séjour valant Contrat par email.
+        </p>
+        <p className="mt-3">
+          <strong>Toute commande implique que le Client accepte le contenu du séjour et se déclare apte physiquement, psychologiquement et techniquement à participer aux Prestations.</strong>
         </p>
       </>
     ),
@@ -277,8 +277,8 @@ const sections = [
         <p className="mt-3">
           SANKOFA se prévaut de cette absence de droit de rétractation et indique
           que pour toutes les prestations entrant dans le champ d'application de
-          l'article L. 221-28 ou L. 221-2 du Code de la consommation, le Client
-          ne disposera d'aucun droit de rétractation.
+          l'article L. 221-28 ou L. 221-2 du Code de la consommation, <strong>le Client
+          ne disposera d'aucun droit de rétractation</strong>.
         </p>
       </>
     ),
@@ -299,7 +299,7 @@ const sections = [
           un support durable.
         </p>
         <p className="mt-3">
-          <em>Exemple :</em> Les activités d'un séjour peuvent être modifiées,
+          <em>Exemple : Les activités d'un séjour peuvent être modifiées,
           inversées ou décalées en fonction d'impératifs locaux rendant
           inaccessibles les sites prévus ou des conditions météorologiques
           défavorables. Dans ce même contexte, les hébergements peuvent également
@@ -310,7 +310,7 @@ const sections = [
           d'itinéraire et pourra être contraint de raccourcir et/ou annuler
           certaines excursions et activités sportives pour la sécurité des
           participants sans que ces modifications exceptionnelles ne donnent lieu
-          à une indemnisation.
+          à une indemnisation.</em>
         </p>
         <p className="mt-3">
           Si, avant le début du séjour, SANKOFA est contraint de modifier
@@ -440,10 +440,10 @@ const sections = [
           activités proposées, il devra se rapprocher immédiatement de SANKOFA ou
           de l'accompagnateur. Il s'engage également à respecter les règles
           énoncées par les guides et accompagnateurs en toutes circonstances, de
-          sorte qu'une faute de sa part pourra être retenue en cas d'incident.
-          Toute interruption de séjour en raison de l'incompatibilité physique,
+          sorte qu'une faute de sa part pourra être retenue en cas d'incident.{" "}
+          <span className="underline">Toute interruption de séjour en raison de l'incompatibilité physique,
           ou la non-réalisation de certaines activités prévues au contrat de ce
-          fait n'entraînera aucun remboursement.
+          fait n'entraînera aucun remboursement.</span>
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">Communauté</p>
@@ -460,9 +460,9 @@ const sections = [
           visitée.
         </p>
         <p className="mt-3">
-          SANKOFA ne pourra en aucun cas être tenue responsable du comportement
+          <span className="underline">SANKOFA ne pourra en aucun cas être tenue responsable du comportement
           inadapté d'un Client ou de gênes occasionnées par les autres Clients
-          pouvant être inhérentes à la vie en communauté. Tout frais
+          pouvant être inhérentes à la vie en communauté.</span> Tout frais
           supplémentaire résultant d'une interruption de séjour souhaitée par le
           Client (transferts véhiculés, ajout de nuitées…etc) resteront à la
           charge du Client et devront être réglées sur site aux prestataires
@@ -844,7 +844,7 @@ const sections = [
           Article 19.2. Médiation
         </p>
         <p>
-          Le Client peut recourir à une médiation conventionnelle, notamment
+          <strong>Le Client peut recourir à une médiation conventionnelle, notamment
           auprès de la Commission de la médiation de la consommation ou auprès
           des instances de médiation sectorielles existantes, ou à tout mode
           alternatif de règlement des différends (conciliation, par exemple) en
@@ -861,7 +861,7 @@ const sections = [
           ou à MTV Médiation tourisme voyage, BP 80 303 - 75 823 Paris Cedex 17
           dans le cas où la réponse apportée par SANKOFA au Client sur sa
           réclamation soit jugée insuffisante ou restée sans réponse au bout de
-          60 jours.
+          60 jours.</strong>
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
@@ -959,8 +959,8 @@ const sections = [
           transiter par les pays visités.
         </p>
         <p className="mt-3">
-          SANKOFA fournit ces informations uniquement pour les ressortissants de
-          nationalité française résidant en France. Il est de la responsabilité
+          <strong>SANKOFA fournit ces informations uniquement pour les ressortissants de
+          nationalité française résidant en France.</strong> Il est de la responsabilité
           du Client et de chaque participant de s'assurer de la conformité de ses
           documents, tant administratifs que sanitaires, avec les informations
           transmises par l'organisateur. La personne ayant validé le devis ou le
@@ -976,9 +976,9 @@ const sections = [
           documents étaient mentionnés dans le contrat de vente remis au client.
         </p>
         <p className="mt-3">
-          Les personnes de nationalité étrangère sont invitées à consulter leur
+          <span className="underline">Les personnes de nationalité étrangère sont invitées à consulter leur
           autorité consulaire afin de vérifier les conditions d'entrée et de
-          séjour dans les pays concernés.
+          séjour dans les pays concernés.</span>
         </p>
         <p className="mt-3">
           Pour plus de précisions sur les

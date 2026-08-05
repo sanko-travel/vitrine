@@ -103,7 +103,7 @@
   opacity: 0;
 }
 .reveal.visible .sticker-appear {
-  animation: stickerAppear 800ms ease-out 500ms forwards;
+  animation: stickerAppear 800ms ease-out 600ms forwards;
 }
 
 /* ── Scroll reveal ───────────────────────────────────────────── */

@@ -11,6 +11,7 @@ export default {
   },
 
   heroImage: "/images/voyages/ecosse/hero.jpg",
+  heroVideoFolder: "/videos/voyages/ecosse/",
 
   route: [
     { city: "Édimbourg", coordinates: [55.9533, -3.1883], days: [1, 2, 3, 4, 5, 6] },
@@ -18,6 +19,7 @@ export default {
 
   intro: {
     heading: "Édimbourg, parenthèse automnale",
+    stickerWord: "Édimbourg",
     paragraphs: [
       "Du 18 au 23 octobre 2026, Aurore t'invite à découvrir Édimbourg au cœur de l'automne écossais.",
       "Ce séjour a été imaginé comme une invitation à prendre le temps. Le temps de découvrir une ville fascinante, riche de son histoire et de ses légendes. Le temps de marcher sans but précis dans ses ruelles médiévales, de s'émerveiller, de pousser la porte d'une librairie ou de s'installer dans un café chaleureux.",

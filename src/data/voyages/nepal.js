@@ -11,6 +11,7 @@ export default {
   },
 
   heroImage: "/images/voyages/nepal/hero.jpg",
+  heroVideoFolder: "/videos/voyages/nepal/",
 
   route: [
     { city: "Katmandou", coordinates: [27.7172, 85.3240], days: [1] },
@@ -22,6 +23,7 @@ export default {
 
   intro: {
     heading: "Immersion népalaise",
+    stickerWord: "népalaise",
     paragraphs: [
       "Du 14 au 22 novembre 2026, Juliette t'emmène vivre une expérience d'immersion au cœur des montagnes népalaises.",
       "Tu partageras le quotidien des femmes du village, les accompagneras dans leurs activités, marcheras sur les sentiers qui traversent les montagnes, cuisineras ensemble, dormiras chez l'habitant et découvriras des traditions culturelles transmises de génération en génération.",

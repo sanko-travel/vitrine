@@ -79,7 +79,7 @@ export default function Footer() {
           </div>
 
           {/* Nav columns */}
-          <div className="flex gap-16 text-center md:text-left">
+          <div className="flex gap-10 sm:gap-16 text-center md:text-left">
             <nav className="flex flex-col gap-3">
               <p className="font-heading font-semibold text-white text-sm mb-1">
                 Sanko

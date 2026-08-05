@@ -43,7 +43,7 @@ function PasswordGate({ onUnlock }) {
   )
 }
 
-export default function App() {
+function ProtectedRoute({ children }) {
   const [unlocked, setUnlocked] = useState(
     () => localStorage.getItem('site-unlocked') === 'true'
   )
@@ -52,11 +52,17 @@ export default function App() {
     return <PasswordGate onUnlock={() => setUnlocked(true)} />
   }
 
+  return children
+}
+
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Pages voyage accessibles sans mot de passe */}
         <Route path="/voyage/:slug" element={<Voyage />} />
-        <Route path="*" element={<MainLayout />} />
+        {/* Toutes les autres pages protégées */}
+        <Route path="*" element={<ProtectedRoute><MainLayout /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   )

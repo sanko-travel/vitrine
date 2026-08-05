@@ -11,20 +11,22 @@ export default {
   },
 
   heroImage: "/images/voyages/egypte/hero.jpg",
+  heroVideoFolder: "/videos/voyages/egypte/",
 
   route: [
     { city: "Le Caire", coordinates: [30.0444, 31.2357], days: [1] },
     { city: "Assouan", coordinates: [24.0889, 32.8998], days: [2, 3] },
-    { city: "Abu Simbel", coordinates: [22.3369, 31.6256], days: [3, 4] },
-    { city: "Nil (felouque)", coordinates: [24.4539, 32.9394], days: [4, 5] },
-    { city: "Kom Ombo", coordinates: [24.4520, 32.9457], days: [5] },
-    { city: "Edfou", coordinates: [24.9780, 32.8734], days: [6] },
-    { city: "Louxor", coordinates: [25.6872, 32.6396], days: [6, 7, 8, 9] },
+    { city: "Abu Simbel", coordinates: [22.3369, 31.6256], days: [3, 4], curveInward: true },
+    { city: "Nil (felouque)", coordinates: [24.4539, 32.9394], days: [4, 5], curveInward: true },
+    { city: "Kom Ombo", coordinates: [24.4520, 32.9457], days: [5], curveInward: true },
+    { city: "Edfou", coordinates: [24.9780, 32.8734], days: [6], curveInward: true },
+    { city: "Louxor", coordinates: [25.6872, 32.6396], days: [6, 7, 8, 9], curveInward: true },
     { city: "Le Caire", coordinates: [30.0444, 31.2357], days: [10, 11] },
   ],
 
   intro: {
     heading: "Les secrets les mieux gardés d'Égypte",
+    stickerWord: "Égypte",
     paragraphs: [
       "Du 20 au 30 octobre 2026, on t'emmène en Égypte, dans sa version la plus vraie, celle que seuls les Égyptiens connaissent.",
       "Entre immersion culturelle, rencontres humaines et reconnexion à l'essentiel, ce voyage est une parenthèse hors du temps.",

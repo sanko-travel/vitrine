@@ -11,17 +11,19 @@ export default {
   },
 
   heroImage: "/images/voyages/grece/hero.jpg",
+  heroVideoFolder: "/videos/voyages/grece/",
 
   route: [
     { city: "Athènes", coordinates: [37.9838, 23.7275], days: [1] },
     { city: "Kyllini", coordinates: [37.9340, 21.1460], days: [2] },
-    { city: "Zakynthos", coordinates: [37.7870, 20.8979], days: [2, 3, 4, 5, 6] },
-    { city: "Kyllini", coordinates: [37.9340, 21.1460], days: [7] },
+    { city: "Zakynthos", coordinates: [37.7870, 20.8979], days: [2, 3, 4, 5, 6], curveInward: true },
+    { city: "Kyllini", coordinates: [37.9340, 21.1460], days: [7], curveInward: true },
     { city: "Athènes", coordinates: [37.9838, 23.7275], days: [7, 8] },
   ],
 
   intro: {
     heading: "La Grèce idyllique",
+    stickerWord: "Grèce",
     paragraphs: [
       "Du 14 au 21 octobre 2026, Aurélie t'emmène sur l'île de Zakynthos pour un séjour entre immersion locale et douceur de vivre.",
       "Entre l'effervescence d'Athènes et la douceur sauvage de Zakynthos, ce voyage a été pensé comme une parenthèse\u00a0: créer, rencontrer, comprendre… et surtout profiter.",

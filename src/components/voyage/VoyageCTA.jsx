@@ -1,4 +1,5 @@
 import useScrollReveal from '../../hooks/useScrollReveal'
+import StickerLabel from '../StickerLabel'
 
 export default function VoyageCTA({ data }) {
   const ref = useScrollReveal()
@@ -8,7 +9,7 @@ export default function VoyageCTA({ data }) {
       <div ref={ref} className="max-w-3xl mx-auto text-center">
         {/* CTA */}
         <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-white mb-4 tracking-tight">
-          Prêt·e pour {data.destination} ?
+          Prêt·e pour <span className="inline-block" style={{ transform: 'rotate(-2deg)' }}><StickerLabel text={data.destination} color="yellow" style={{ fontSize: 'inherit', padding: '0.05em 0.35em' }} /></span> ?
         </h2>
         <p className="reveal font-body text-white/80 text-lg mb-10">
           Rejoins {data.creator.name} et un petit groupe de voyageurs pour {data.facts.duration} d'immersion inoubliable.

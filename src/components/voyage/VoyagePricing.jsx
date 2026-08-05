@@ -1,13 +1,14 @@
 import useScrollReveal from '../../hooks/useScrollReveal'
+import StickerLabel from '../StickerLabel'
 
 export default function VoyagePricing({ data }) {
   const ref = useScrollReveal()
 
   return (
-    <section id="reservation" className="bg-beige py-24 px-6">
+    <section id="reservation" className="bg-white py-24 px-6">
       <div ref={ref} className="max-w-5xl mx-auto">
         <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-14 text-center tracking-tight">
-          Réserve ta place
+          Réserve <span className="inline-block" style={{ transform: 'rotate(-2deg)' }}><StickerLabel text="ta place" color="coral" style={{ fontSize: 'inherit', padding: '0.05em 0.35em' }} /></span>
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">

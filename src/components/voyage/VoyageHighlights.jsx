@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import useScrollReveal from '../../hooks/useScrollReveal'
+import StickerLabel from '../StickerLabel'
 
 const CARD_WIDTH = 320
 const GAP = 24
@@ -64,10 +65,10 @@ export default function VoyageHighlights({ data }) {
   }, [totalWidth])
 
   return (
-    <section ref={sectionRef} className="bg-white relative" style={{ height: '200vh' }}>
+    <section ref={sectionRef} className="bg-teal relative" style={{ height: '200vh' }}>
       <div ref={revealRef} className="sticky top-0 h-screen flex flex-col justify-center">
         <div className="max-w-6xl mx-auto w-full px-6 md:px-16 mb-10">
-          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal text-center tracking-tight">
+          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-white text-center tracking-tight">
             Les temps forts
           </h2>
         </div>
@@ -100,28 +101,29 @@ export default function VoyageHighlights({ data }) {
                   loading="lazy"
                 />
 
-                {/* Gradient sombre en bas — plus étendu pour lisibilité */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 via-50% to-transparent" />
-
                 {/* Titre en pastille — haut droite */}
-                <span className={`absolute top-3 right-3 px-4 py-1.5 rounded-full font-accent font-bold text-sm ${['bg-coral text-white', 'bg-teal text-white', 'bg-yellow text-white', 'bg-coral text-white'][i % 4]}`}>
+                <span className={`absolute top-3 right-3 z-10 px-4 py-1.5 rounded-full font-accent font-bold text-sm ${['bg-coral text-white', 'bg-teal text-white', 'bg-yellow text-white', 'bg-coral text-white'][i % 4]}`}>
                   {item.title}
                 </span>
 
-                {/* Texte en bas avec backdrop-blur */}
-                <div className="absolute bottom-0 left-0 right-0 px-4 pb-4 backdrop-blur-[2px]">
-                  {/* 1re ligne visible par défaut, tout le texte au hover */}
-                  <div className="max-h-6 group-hover:max-h-36 overflow-hidden transition-all duration-500 ease-out">
-                    <p className="font-body text-white text-sm leading-relaxed" style={{ textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
-                      {item.description}
-                    </p>
-                  </div>
+                {/* Gradient blanc fixe en bas — toujours visible */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-white/80 pointer-events-none" />
 
-                  {/* Chevron hint — disparaît au hover */}
-                  <div className="flex justify-center mt-1.5 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none">
-                    <svg className="w-4 h-4 text-white/70 animate-bounce" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                {/* Bloc flèche + gradient + texte — remonte ensemble au hover */}
+                <div className="absolute bottom-0 left-0 right-0 translate-y-[calc(100%-3rem)] group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  {/* Flèche hint — visible par défaut, disparaît au hover */}
+                  <div className="flex justify-center pb-1 group-hover:opacity-0 transition-opacity duration-300">
+                    <svg className="w-5 h-5 text-white drop-shadow-md animate-bounce" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
                     </svg>
+                  </div>
+                  {/* Gradient long et progressif : transparent → blanc */}
+                  <div className="h-32 bg-gradient-to-b from-transparent via-white/40 to-white" />
+                  {/* Zone blanche avec le texte */}
+                  <div className="bg-white px-5 pb-5">
+                    <p className="font-body text-gray-600 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               </div>

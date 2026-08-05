@@ -11,18 +11,20 @@ export default {
   },
 
   heroImage: "/images/voyages/loups/hero.jpg",
+  heroVideoFolder: "/videos/voyages/loups/",
 
   route: [
     { city: "Nice", coordinates: [43.7102, 7.2620], days: [1] },
     { city: "Refuge Mercantour", coordinates: [44.0800, 7.3900], days: [1, 2] },
     { city: "Bivouac", coordinates: [44.0900, 7.4300], days: [2] },
     { city: "Vallée des Merveilles", coordinates: [44.0560, 7.4400], days: [3] },
-    { city: "Crête panoramique", coordinates: [44.0700, 7.4100], days: [4] },
+    { city: "Crête panoramique", coordinates: [44.0700, 7.4100], days: [4], curveInward: true },
     { city: "Nice", coordinates: [43.7102, 7.2620], days: [5] },
   ],
 
   intro: {
     heading: "Sur la trace des Loups",
+    stickerWord: "Loups",
     paragraphs: [
       "Du 23 au 27 septembre 2026, marchez sur le territoire d'un animal aussi fascinant qu'invisible dans le Parc National du Mercantour.",
       "Ce séjour n'a pas pour objectif de chercher le loup ni de l'observer à tout prix, mais de comprendre sa présence et d'apprendre à lire les signes qu'il laisse derrière lui.",

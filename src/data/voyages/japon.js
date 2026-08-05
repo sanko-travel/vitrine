@@ -11,6 +11,7 @@ export default {
   },
 
   heroImage: "/images/voyages/japon/hero.jpg",
+  heroVideoFolder: "/videos/voyages/japon/",
 
   route: [
     { city: "Tokyo", coordinates: [35.6762, 139.6503], days: [1, 2, 3, 4, 5], curveInward: true },
@@ -22,6 +23,7 @@ export default {
 
   intro: {
     heading: "Découvrez le Japon autrement",
+    stickerWord: "Japon",
     paragraphs: [
       "Du 31 octobre au 11 novembre 2026, Nolwenn t'emmène à la découverte d'un Japon où tradition et modernité se rencontrent\u00a0!",
       "Des ruelles animées de Tokyo aux montagnes paisibles de Kyoto, en passant par les paysages majestueux du Mont Fuji, ce voyage a été imaginé pour te faire découvrir différentes facettes du pays.",

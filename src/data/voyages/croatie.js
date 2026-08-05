@@ -11,9 +11,10 @@ export default {
   },
 
   heroImage: "/images/voyages/croatie/hero.jpg",
+  heroVideoFolder: "/videos/voyages/croatie/",
 
   route: [
-    { city: "Šibenik", coordinates: [43.7350, 15.8952], days: [1, 2, 3] },
+    { city: "Šibenik", coordinates: [43.7350, 15.8952], days: [1, 2, 3], curveInward: true },
     { city: "Prvić", coordinates: [43.7280, 15.7930], days: [2] },
     { city: "Parc Krka", coordinates: [43.8010, 15.9620], days: [3] },
     { city: "Split", coordinates: [43.5081, 16.4402], days: [4, 5, 6, 7] },
@@ -21,6 +22,7 @@ export default {
 
   intro: {
     heading: "Immersion en Dalmatie",
+    stickerWord: "Dalmatie",
     paragraphs: [
       "Du 13 au 19 septembre, ce séjour en Dalmatie a été imaginé pour prendre le temps et redécouvrir le plaisir du voyage autrement.",
       "Pendant une semaine, tu traverseras la Croatie exclusivement en transports en commun\u00a0: bus, ferry et marche.",
