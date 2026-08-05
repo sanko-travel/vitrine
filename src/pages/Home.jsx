@@ -1,41 +1,37 @@
 import VideoHero from "../components/VideoHero";
-import IntroBlock from "../components/IntroBlock";
-import StatsBanner from "../components/StatsBanner";
-import ConstructionMiroir from "../components/ConstructionMiroir";
+import ValueProposition from "../components/ValueProposition";
 import DestinationsGrid from "../components/DestinationsGrid";
-
-import DifferencesSection from "../components/DifferencesSection";
-import ProfileSelector from "../components/ProfileSelector";
+import ManifestoTeaser from "../components/ManifestoTeaser";
 import Testimonials from "../components/Testimonials";
 import Guarantees from "../components/Guarantees";
-import PartnersBanner from "../components/PartnersBanner";
-import LeadCaptureForm from "../components/LeadCaptureForm";
+import StatsBanner from "../components/StatsBanner";
+import ProfileSelector from "../components/ProfileSelector";
+import HomeFAQ from "../components/HomeFAQ";
+import PressMentions from "../components/PressMentions";
 
 export default function Home() {
   return (
     <main>
       {/* dark (video) */}
       <VideoHero />
-      {/* beige */}
-      <IntroBlock />
-      {/* teal */}
-      <StatsBanner />
-      {/* beige */}
-      <ConstructionMiroir />
+      {/* white */}
+      <ValueProposition />
       {/* teal */}
       <DestinationsGrid />
-      {/* beige */}
-      <DifferencesSection />
-      {/* beige */}
-      <ProfileSelector />
+      {/* white */}
+      <ManifestoTeaser />
       {/* teal */}
       <Testimonials />
       {/* white */}
       <Guarantees />
-      {/* beige */}
-      <PartnersBanner />
       {/* teal */}
-      <LeadCaptureForm />
+      <StatsBanner />
+      {/* white */}
+      <ProfileSelector />
+      {/* teal */}
+      <HomeFAQ />
+      {/* white */}
+      <PressMentions />
     </main>
   );
 }

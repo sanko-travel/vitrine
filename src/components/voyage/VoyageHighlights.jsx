@@ -102,7 +102,7 @@ export default function VoyageHighlights({ data }) {
                 />
 
                 {/* Titre en pastille — haut droite */}
-                <span className={`absolute top-3 right-3 z-10 px-4 py-1.5 rounded-full font-accent font-bold text-sm ${['bg-coral text-white', 'bg-teal text-white', 'bg-yellow text-white', 'bg-coral text-white'][i % 4]}`}>
+                <span className={`absolute top-3 right-3 z-10 px-4 py-1.5 rounded-full font-accent font-semibold text-sm ${['bg-coral text-white', 'bg-teal text-white', 'bg-yellow text-white', 'bg-coral text-white'][i % 4]}`}>
                   {item.title}
                 </span>
 

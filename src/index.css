@@ -2,38 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Tighter letter-spacing on headings ────────────────────── */
+@layer base {
+  .font-heading,
+  .font-display {
+    letter-spacing: -0.05em;
+  }
+}
+
 /* ── Ken Burns keyframes ─────────────────────────────────────── */
 @keyframes kenBurns1 {
-  0%   { transform: scale(1.0) translate(0%, 0%); }
-  100% { transform: scale(1.15) translate(-3%, -2%); }
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(1.15) translate(-3%, -2%);
+  }
 }
 @keyframes kenBurns2 {
-  0%   { transform: scale(1.0) translate(0%, 0%); }
-  100% { transform: scale(1.15) translate(3%, -2%); }
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(1.15) translate(3%, -2%);
+  }
 }
 @keyframes kenBurns3 {
-  0%   { transform: scale(1.0) translate(0%, 0%); }
-  100% { transform: scale(1.18) translate(-2%, 3%); }
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(1.18) translate(-2%, 3%);
+  }
 }
 @keyframes kenBurns4 {
-  0%   { transform: scale(1.0) translate(0%, 0%); }
-  100% { transform: scale(1.15) translate(2%, 2%); }
+  0% {
+    transform: scale(1) translate(0%, 0%);
+  }
+  100% {
+    transform: scale(1.15) translate(2%, 2%);
+  }
 }
 
 @keyframes fadeIn {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ── Infinite marquee ────────────────────────────────────────── */
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .marquee-track {
@@ -60,29 +96,55 @@
   opacity: 1;
 }
 
-.kb-slide.active:nth-child(1) { animation: kenBurns1 10s ease-out forwards; }
-.kb-slide.active:nth-child(2) { animation: kenBurns2 10s ease-out forwards; }
-.kb-slide.active:nth-child(3) { animation: kenBurns3 10s ease-out forwards; }
-.kb-slide.active:nth-child(4) { animation: kenBurns4 10s ease-out forwards; }
+.kb-slide.active:nth-child(1) {
+  animation: kenBurns1 10s ease-out forwards;
+}
+.kb-slide.active:nth-child(2) {
+  animation: kenBurns2 10s ease-out forwards;
+}
+.kb-slide.active:nth-child(3) {
+  animation: kenBurns3 10s ease-out forwards;
+}
+.kb-slide.active:nth-child(4) {
+  animation: kenBurns4 10s ease-out forwards;
+}
 
 /* ── Hero entrance animation ─────────────────────────────────── */
 @keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(32px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-fade-up {
   opacity: 0;
   animation: heroFadeUp 0.9s ease-out forwards;
 }
-.hero-d1 { animation-delay: 0.15s; }
-.hero-d2 { animation-delay: 0.4s; }
-.hero-d3 { animation-delay: 0.65s; }
+.hero-d1 {
+  animation-delay: 0.15s;
+}
+.hero-d2 {
+  animation-delay: 0.4s;
+}
+.hero-d3 {
+  animation-delay: 0.65s;
+}
 
 /* ── Sticker appear animation ────────────────────────────────── */
 @keyframes stickerAppear {
-  from { opacity: 0; transform: translateY(24px) rotate(var(--sticker-rotate, 0deg)); }
-  to   { opacity: 1; transform: translateY(0) rotate(var(--sticker-rotate, 0deg)); }
+  from {
+    opacity: 0;
+    transform: translateY(24px) rotate(var(--sticker-rotate, 0deg));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--sticker-rotate, 0deg));
+  }
 }
 
 .sticker-appear {
@@ -110,7 +172,9 @@
 .reveal {
   opacity: 0;
   transform: translateY(32px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out;
 }
 
 .reveal.visible {
@@ -121,12 +185,22 @@
 /* Scroll reveal variants — override initial transform only */
 /* Horizontal slides only on md+ to avoid overflow on mobile */
 @media (min-width: 768px) {
-  .reveal.from-left  { transform: translateX(-48px); }
-  .reveal.from-right { transform: translateX(48px); }
+  .reveal.from-left {
+    transform: translateX(-48px);
+  }
+  .reveal.from-right {
+    transform: translateX(48px);
+  }
 }
-.reveal.from-below { transform: translateY(48px); }
-.reveal.scale-up   { transform: scale(0.92); }
-.reveal.fade-only  { transform: none; }
+.reveal.from-below {
+  transform: translateY(48px);
+}
+.reveal.scale-up {
+  transform: scale(0.92);
+}
+.reveal.fade-only {
+  transform: none;
+}
 
 /* ── Hide scrollbar for carousel ─────────────────────────────── */
 .scrollbar-hide {
@@ -144,13 +218,18 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: #FFFFFF;
+  font-family: "DM Sans", sans-serif;
+  background-color: #ffffff;
   color: #025961;
   margin: 0;
   overflow-x: clip;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lexend', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lexend", sans-serif;
 }
