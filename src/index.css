@@ -81,8 +81,8 @@
 
 /* ── Sticker appear animation ────────────────────────────────── */
 @keyframes stickerAppear {
-  from { opacity: 0; transform: translateY(24px) rotate(0deg); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px) rotate(var(--sticker-rotate, 0deg)); }
+  to   { opacity: 1; transform: translateY(0) rotate(var(--sticker-rotate, 0deg)); }
 }
 
 .sticker-appear {

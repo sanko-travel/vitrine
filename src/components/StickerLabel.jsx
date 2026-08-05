@@ -34,6 +34,10 @@ export default function StickerLabel({
         }
       : sizes[size] || sizes.sm;
   const defaultRotate = defaultRotations[text.length % defaultRotations.length];
+  const rotate = style.transform
+    ? style.transform.match(/rotate\(([^)]+)\)/)?.[1] || defaultRotate
+    : defaultRotate;
+  const { transform: _ignored, ...restStyle } = style;
 
   return (
     <span
@@ -43,8 +47,8 @@ export default function StickerLabel({
         color: c.text,
         fontSize: s.fontSize,
         padding: s.padding,
-        transform: `rotate(${defaultRotate})`,
-        ...style,
+        '--sticker-rotate': rotate,
+        ...restStyle,
       }}
     >
       {text}

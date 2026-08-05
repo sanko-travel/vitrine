@@ -66,9 +66,9 @@ export default function VoyageHero({ data }) {
       <div className="hero-content relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Sticker labels */}
         <div className="flex items-center justify-center gap-3 mb-8 flex-wrap">
-          <StickerLabel text="Voyage" color="coral" style={{ animationDelay: '1.2s' }} />
-          <StickerLabel text="Immersion" color="teal" style={{ animationDelay: '1.35s' }} />
-          <StickerLabel text={data.destination} color="yellow" style={{ animationDelay: '1.5s' }} />
+          <StickerLabel text="Voyage" color="coral" style={{ animationDelay: '1.2s', transform: 'rotate(-3deg)' }} />
+          <StickerLabel text="Immersion" color="teal" style={{ animationDelay: '1.35s', transform: 'rotate(2deg)' }} />
+          <StickerLabel text={data.destination} color="yellow" style={{ animationDelay: '1.5s', transform: 'rotate(-1.5deg)' }} />
         </div>
 
         {/* Title */}
