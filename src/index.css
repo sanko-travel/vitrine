@@ -147,21 +147,30 @@
   }
 }
 
-/* Sticker life: gentle pulse at ~15s, vibration shake at ~28s */
+/* Sticker life: cycle 20s — pulse at ~9s, pulse at ~14s, rotation at ~20s */
 @keyframes stickerWiggle {
-  0%, 44%     { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
-  45%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
-  46%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
-  47%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
-  48%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
-  49%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
-  50%, 95%    { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
-  95.7%       { transform: rotate(calc(var(--sticker-rotate, 0deg) + 3deg)) scale(1); }
-  96.4%       { transform: rotate(calc(var(--sticker-rotate, 0deg) - 3deg)) scale(1); }
-  97.1%       { transform: rotate(calc(var(--sticker-rotate, 0deg) + 2deg)) scale(1); }
-  97.8%       { transform: rotate(calc(var(--sticker-rotate, 0deg) - 2deg)) scale(1); }
-  98.5%       { transform: rotate(calc(var(--sticker-rotate, 0deg) + 1deg)) scale(1); }
-  99.2%, 100% { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  0%, 43%       { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  /* Pulse 1 (~9s) */
+  44%           { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  45.25%        { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  46.5%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  47.75%        { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  49%           { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  50.25%, 68%   { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  /* Pulse 2 (~14s) */
+  69%           { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  70.25%        { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  71.5%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  72.75%        { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  74%           { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  75.25%, 93%   { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  /* Rotation (~20s) */
+  94%           { transform: rotate(calc(var(--sticker-rotate, 0deg) + 4deg)) scale(1); }
+  95.25%        { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  96.5%         { transform: rotate(calc(var(--sticker-rotate, 0deg) + 4deg)) scale(1); }
+  97.75%        { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  99%           { transform: rotate(calc(var(--sticker-rotate, 0deg) + 4deg)) scale(1); }
+  100%          { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
 }
 
 .sticker-appear {
@@ -169,13 +178,13 @@
   opacity: 0;
   will-change: transform, opacity;
   animation: stickerAppear 800ms ease-out forwards,
-             stickerWiggle 30s ease-in-out 2s infinite;
+             stickerWiggle 20s ease-in-out 2s infinite;
 }
 
 /* Stickers in hero: appear after the main content */
 .hero-content .sticker-appear {
   animation: stickerAppear 800ms ease-out 1.2s forwards,
-             stickerWiggle 30s ease-in-out 3s infinite;
+             stickerWiggle 20s ease-in-out 3s infinite;
 }
 
 /* Stickers in scroll-revealed containers: wait for reveal */
@@ -185,7 +194,7 @@
 }
 .reveal.visible .sticker-appear {
   animation: stickerAppear 800ms ease-out 600ms forwards,
-             stickerWiggle 30s ease-in-out 2s infinite;
+             stickerWiggle 20s ease-in-out 2s infinite;
 }
 
 /* ── Scroll reveal ───────────────────────────────────────────── */

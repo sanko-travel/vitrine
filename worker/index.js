@@ -18,13 +18,14 @@ function buildEmail(formType, data) {
       ];
       break;
     case "contact":
-      subject = `[Sanko] Contact de ${data.prenom} (${data.type})`;
+      subject = `[Sanko] Contact de ${data.email} (${data.type})`;
       rows = [
-        ["Prénom", data.prenom],
         ["Email", data.email],
         ["Profil", data.type],
-        ["Message", data.message],
       ];
+      if (data.handle) rows.push(["Handle", data.handle]);
+      if (data.marque) rows.push(["Marque", data.marque]);
+      rows.push(["Message", data.message]);
       break;
     case "creer-mon-voyage":
       subject = `[Sanko] Nouveau créateur : ${data.social}`;

@@ -6,7 +6,7 @@ import StickerLabel from '../components/StickerLabel'
 const honeypotStyle = { position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }
 
 export default function Contact() {
-  const [form, setForm] = useState({ email: '', type: '', handle: '', message: '' })
+  const [form, setForm] = useState({ email: '', type: '', handle: '', marque: '', message: '' })
   const [website, setWebsite] = useState('')
   const [hpNumber, setFaxNumber] = useState('sk-78x')
   const [newsletter, setNewsletter] = useState(true)
@@ -129,6 +129,20 @@ export default function Contact() {
                   </div>
                 )}
 
+                {form.type === 'partenaire' && (
+                  <div>
+                    <StickerLabel text="Marque" color="teal" size="xs" className="mb-2" />
+                    <input
+                      name="marque"
+                      value={form.marque}
+                      onChange={handleChange}
+                      placeholder="Nom de ta marque / entreprise"
+                      required
+                      className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30"
+                    />
+                  </div>
+                )}
+
                 <div>
                   <StickerLabel text="Message" color="coral" size="xs" className="mb-2" style={{ transform: 'rotate(-4deg)' }} />
                   <textarea
@@ -181,44 +195,41 @@ export default function Contact() {
                 Infos pratiques
               </h3>
               <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-3">
-                  <span className="text-coral mt-0.5 flex-shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="font-body text-white/80 text-xs mb-0.5">Email</p>
-                    <a href="mailto:contact@withsanko.com" className="font-body text-white text-sm hover:text-coral transition-colors">
-                      contact@withsanko.com
-                    </a>
+                  <div className="flex items-start gap-3">
+                    <span className="text-coral mt-0.5 flex-shrink-0">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="font-body text-white/80 text-xs mb-0.5">Email</p>
+                      <a href="mailto:contact@withsanko.com" className="font-body text-white text-sm hover:text-coral transition-colors">
+                        contact@withsanko.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-coral mt-0.5 flex-shrink-0">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="font-body text-white/80 text-xs mb-0.5">Instagram</p>
+                      <a href="https://www.instagram.com/withsanko/" target="_blank" rel="noopener noreferrer" className="font-body text-white text-sm hover:text-coral transition-colors">
+                        @withsanko
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-coral mt-0.5 flex-shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-                    </svg>
-                  </span>
-                  <div>
-                    <p className="font-body text-white/80 text-xs mb-0.5">Instagram</p>
-                    <a href="https://www.instagram.com/withsanko/" target="_blank" rel="noopener noreferrer" className="font-body text-white text-sm hover:text-coral transition-colors">
-                      @withsanko
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Temps de réponse */}
-            <div className="reveal from-right bg-yellow-light border border-yellow/20 rounded-2xl p-8 flex flex-col justify-center">
-              <div className="flex items-center gap-2 mb-3">
-                <svg className="w-5 h-5 text-yellow" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                <span className="font-heading font-bold text-teal text-lg">Temps de réponse</span>
-              </div>
-              <p className="font-body text-teal text-sm leading-relaxed">
+            <div className="reveal from-right bg-yellow rounded-2xl p-8">
+              <h3 className="font-heading font-bold text-white text-xl mb-6">
+                Temps de réponse
+              </h3>
+              <p className="font-body text-white/90 text-sm leading-relaxed">
                 Nous répondons à tous les messages sous <strong>48h</strong>. Si c'est urgent, passe-nous un DM sur Instagram.
               </p>
             </div>
