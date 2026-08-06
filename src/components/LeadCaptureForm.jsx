@@ -60,23 +60,25 @@ export default function LeadCaptureForm() {
             <p className="font-body text-gray-600">On te contacte très bientôt.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="reveal fade-only flex flex-col sm:flex-row gap-4">
-            <input
-              type="text"
-              value={handle}
-              onChange={e => setHandle(e.target.value)}
-              placeholder="@tonhandle"
-              required
-              className="flex-1 font-body bg-white text-teal placeholder-teal/40 border border-white/30 rounded-full px-6 py-4 outline-none focus:ring-2 focus:ring-coral transition-colors"
-            />
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="ton@mail.fr"
-              required
-              className="flex-1 font-body bg-white text-teal placeholder-teal/40 border border-white/30 rounded-full px-6 py-4 outline-none focus:ring-2 focus:ring-coral transition-colors"
-            />
+          <form onSubmit={handleSubmit} className="reveal fade-only flex flex-col gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <input
+                type="text"
+                value={handle}
+                onChange={e => setHandle(e.target.value)}
+                placeholder="@tonhandle"
+                required
+                className="flex-1 font-body bg-white text-teal placeholder-teal/40 border border-white/30 rounded-full px-6 py-4 outline-none focus:ring-2 focus:ring-coral transition-colors"
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder="ton@mail.fr"
+                required
+                className="flex-1 font-body bg-white text-teal placeholder-teal/40 border border-white/30 rounded-full px-6 py-4 outline-none focus:ring-2 focus:ring-coral transition-colors"
+              />
+            </div>
 
             {/* Honeypot fields */}
             <div style={honeypotStyle} aria-hidden="true">
@@ -88,7 +90,7 @@ export default function LeadCaptureForm() {
             <button
               type="submit"
               disabled={loading || !token}
-              className="bg-coral text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-coral/90 transition-colors whitespace-nowrap disabled:opacity-60"
+              className="self-center bg-coral text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-coral/90 transition-colors whitespace-nowrap disabled:opacity-60"
             >
               {loading ? 'Envoi…' : 'Je rejoins l\'aventure'}
             </button>
@@ -101,17 +103,6 @@ export default function LeadCaptureForm() {
           <p className="font-body text-coral bg-white/90 rounded-full px-4 py-3 mt-4">{error}</p>
         )}
 
-        <p className="reveal fade-only font-body text-white/80 text-lg mt-10">
-          Ou prends un rdv directement avec la grande chef{' '}
-          <a
-            href="https://calendly.com/sankofatravelstudio/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white font-semibold underline hover:text-white/70 transition-colors"
-          >
-            juste ici
-          </a>.
-        </p>
       </div>
     </section>
   )

@@ -8,6 +8,7 @@ import StatsBanner from "../components/StatsBanner";
 import ProfileSelector from "../components/ProfileSelector";
 import HomeFAQ from "../components/HomeFAQ";
 import PressMentions from "../components/PressMentions";
+import LeadCaptureForm from "../components/LeadCaptureForm";
 
 export default function Home() {
   return (
@@ -32,6 +33,8 @@ export default function Home() {
       <HomeFAQ />
       {/* white */}
       <PressMentions />
+      {/* teal */}
+      <LeadCaptureForm />
     </main>
   );
 }

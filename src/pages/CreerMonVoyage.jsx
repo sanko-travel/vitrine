@@ -624,18 +624,6 @@ export default function CreerMonVoyage() {
             )}
           </div>
 
-          <p className="font-body text-gray-700 text-lg mt-10 text-center">
-            Ou prends un rdv directement avec la grande chef{" "}
-            <a
-              href="https://calendly.com/sankofatravelstudio/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-coral font-semibold underline hover:text-coral/70 transition-colors"
-            >
-              juste ici
-            </a>
-            .
-          </p>
         </div>
       </section>
     </main>
