@@ -1,7 +1,13 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import MainLayout from './pages/MainLayout'
 import Voyage from './pages/Voyage'
+import MentionsLegales from './pages/MentionsLegales'
+import PolitiqueConfidentialite from './pages/PolitiqueConfidentialite'
+import CGV from './pages/CGV'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import CookieBanner from './components/CookieBanner'
 
 // TODO: Remove this password gate before launch
 function PasswordGate({ onUnlock }) {
@@ -55,12 +61,36 @@ function ProtectedRoute({ children }) {
   return children
 }
 
+function PublicLegalLayout() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [pathname])
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialite />} />
+        <Route path="/conditions-generales-de-vente" element={<CGV />} />
+      </Routes>
+      <Footer />
+      <CookieBanner />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         {/* Pages voyage accessibles sans mot de passe */}
         <Route path="/voyage/:slug" element={<Voyage />} />
+        {/* Pages légales accessibles sans mot de passe */}
+        <Route path="/mentions-legales" element={<PublicLegalLayout />} />
+        <Route path="/politique-de-confidentialite" element={<PublicLegalLayout />} />
+        <Route path="/conditions-generales-de-vente" element={<PublicLegalLayout />} />
         {/* Toutes les autres pages protégées */}
         <Route path="*" element={<ProtectedRoute><MainLayout /></ProtectedRoute>} />
       </Routes>
