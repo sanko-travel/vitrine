@@ -9,8 +9,10 @@ import ProfileSelector from "../components/ProfileSelector";
 import HomeFAQ from "../components/HomeFAQ";
 import PressMentions from "../components/PressMentions";
 import LeadCaptureForm from "../components/LeadCaptureForm";
+import useHashScroll from "../hooks/useHashScroll";
 
 export default function Home() {
+  useHashScroll();
   return (
     <main>
       {/* dark (video) */}

@@ -63,7 +63,7 @@ export default function StatsBanner() {
   }, []);
 
   return (
-    <section ref={(el) => { countRef.current = el; revealRef.current = el; }} className="bg-teal py-20 px-6">
+    <section id="chiffres" ref={(el) => { countRef.current = el; revealRef.current = el; }} className="bg-teal py-20 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
         {stats.map((stat, i) => (
           <StatItem

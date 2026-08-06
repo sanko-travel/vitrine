@@ -45,7 +45,7 @@ export default function LeadCaptureForm() {
   }
 
   return (
-    <section id="form" className="bg-teal py-24 px-6">
+    <section id="formulaire" className="bg-teal py-24 px-6">
       <div ref={revealRef} className="max-w-2xl mx-auto text-center">
         <h2 className="reveal fade-only font-heading font-bold text-4xl md:text-5xl text-white mb-4">
           Tu souhaites créer ton propre voyage ?

@@ -5,7 +5,7 @@ export default function ValueProposition() {
   const ref = useScrollReveal()
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section id="concept" className="bg-white py-24 px-6">
       <div ref={ref} className="max-w-4xl mx-auto text-center">
         <div className="reveal flex flex-wrap justify-center gap-3 mb-6">
           <StickerLabel text="Impact" color="teal" />

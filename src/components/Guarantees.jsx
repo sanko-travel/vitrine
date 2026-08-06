@@ -56,7 +56,7 @@ export default function Guarantees() {
   const ref = useScrollReveal()
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section id="garanties" className="bg-white py-24 px-6">
       <div ref={ref} className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <div className="reveal mb-4">

@@ -40,7 +40,7 @@ export default function ProfileSelector() {
   const ref = useScrollReveal()
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section id="profils" className="bg-white py-24 px-6">
       <div ref={ref} className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <div className="reveal mb-4">

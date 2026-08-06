@@ -6,7 +6,7 @@ export default function ManifestoTeaser() {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section id="manifeste" className="bg-white py-24 px-6">
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image */}

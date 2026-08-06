@@ -63,7 +63,7 @@ export default function Testimonials() {
   const ref = useScrollReveal()
 
   return (
-    <section className="bg-teal py-24 px-6">
+    <section id="temoignages" className="bg-teal py-24 px-6">
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className="text-center mb-14 reveal">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-white mb-4">

@@ -1,5 +1,5 @@
 const FROM = "Sanko <no-reply@withsanko.com>";
-const TO = "samir@withsanko.com";
+const TO = ["samir@withsanko.com", "melany@withsanko.com"];
 
 function isBot({ website, number, newsletter }) {
   return website !== "" || number !== "sk-78x" || newsletter !== true;

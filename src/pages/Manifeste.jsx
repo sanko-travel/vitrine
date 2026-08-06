@@ -198,7 +198,7 @@ export default function Manifeste() {
             Prêt à rejoindre l'aventure ?
           </h2>
           <Link
-            to="/#form"
+            to="/#formulaire"
             className="reveal fade-only inline-block bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-lg"
           >
             Rejoindre l'aventure

@@ -67,7 +67,7 @@ export default function DestinationsGrid() {
   }, [totalWidth])
 
   return (
-    <section ref={sectionRef} className="bg-teal relative" style={{ height: '300vh' }}>
+    <section id="destinations" ref={sectionRef} className="bg-teal relative" style={{ height: '300vh' }}>
       <div className="sticky top-0 h-screen flex flex-col justify-center">
         <div className="max-w-5xl mx-auto w-full px-6 md:px-16 mb-10">
           <div className="mb-4">

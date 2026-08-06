@@ -147,15 +147,21 @@
   }
 }
 
-/* Quick vibration - idle most of the time, brief shake every ~30s */
+/* Sticker life: gentle pulse at ~15s, vibration shake at ~28s */
 @keyframes stickerWiggle {
-  0%, 95%   { transform: rotate(var(--sticker-rotate, 0deg)); }
-  95.7%     { transform: rotate(calc(var(--sticker-rotate, 0deg) + 3deg)); }
-  96.4%     { transform: rotate(calc(var(--sticker-rotate, 0deg) - 3deg)); }
-  97.1%     { transform: rotate(calc(var(--sticker-rotate, 0deg) + 2deg)); }
-  97.8%     { transform: rotate(calc(var(--sticker-rotate, 0deg) - 2deg)); }
-  98.5%     { transform: rotate(calc(var(--sticker-rotate, 0deg) + 1deg)); }
-  99.2%, 100% { transform: rotate(var(--sticker-rotate, 0deg)); }
+  0%, 44%     { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  45%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  46%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  47%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  48%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  49%         { transform: rotate(var(--sticker-rotate, 0deg)) scale(1.06); }
+  50%, 95%    { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
+  95.7%       { transform: rotate(calc(var(--sticker-rotate, 0deg) + 3deg)) scale(1); }
+  96.4%       { transform: rotate(calc(var(--sticker-rotate, 0deg) - 3deg)) scale(1); }
+  97.1%       { transform: rotate(calc(var(--sticker-rotate, 0deg) + 2deg)) scale(1); }
+  97.8%       { transform: rotate(calc(var(--sticker-rotate, 0deg) - 2deg)) scale(1); }
+  98.5%       { transform: rotate(calc(var(--sticker-rotate, 0deg) + 1deg)) scale(1); }
+  99.2%, 100% { transform: rotate(var(--sticker-rotate, 0deg)) scale(1); }
 }
 
 .sticker-appear {
@@ -193,7 +199,7 @@
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translate(0, 0) scale(1);
 }
 
 /* Scroll reveal variants - override initial transform only */
@@ -214,6 +220,28 @@
 }
 .reveal.fade-only {
   transform: none;
+}
+
+/* ── Press mentions – pronounced slide-in ─────────────────────── */
+@media (min-width: 768px) {
+  .press-item.reveal.from-left {
+    transform: translateX(-120px);
+    opacity: 0;
+  }
+  .press-item.reveal.from-right {
+    transform: translateX(120px);
+    opacity: 0;
+  }
+  .press-item.reveal.from-left.visible,
+  .press-item.reveal.from-right.visible {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.press-item.reveal {
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ── Hide scrollbar for carousel ─────────────────────────────── */

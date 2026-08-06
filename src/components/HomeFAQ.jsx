@@ -40,7 +40,7 @@ export default function HomeFAQ() {
   const [openFaq, setOpenFaq] = useState(null);
 
   return (
-    <section className="bg-teal py-24 px-6">
+    <section id="faq" className="bg-teal py-24 px-6">
       <div ref={ref} className="max-w-3xl mx-auto">
         <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white tracking-tight text-center mb-14">
           Questions fréquentes

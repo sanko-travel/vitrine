@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import useTurnstile from '../hooks/useTurnstile'
 import useScrollReveal from '../hooks/useScrollReveal'
+import StickerLabel from '../components/StickerLabel'
 
 const honeypotStyle = { position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }
 
 export default function Contact() {
-  const [form, setForm] = useState({ prenom: '', email: '', type: '', message: '' })
+  const [form, setForm] = useState({ email: '', type: '', handle: '', message: '' })
   const [website, setWebsite] = useState('')
   const [hpNumber, setFaxNumber] = useState('sk-78x')
   const [newsletter, setNewsletter] = useState(true)
@@ -14,6 +15,7 @@ export default function Contact() {
   const [error, setError] = useState(null)
   const { containerRef, token, reset } = useTurnstile()
   const revealRef = useScrollReveal()
+  const revealInfo = useScrollReveal()
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -46,20 +48,30 @@ export default function Contact() {
   }
 
   return (
-    <main className="bg-beige min-h-screen pt-28 pb-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-14 text-center">
+    <main>
+      {/* Header section */}
+      <section className="bg-teal pt-36 pb-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
           <p className="font-body text-coral font-semibold tracking-widest text-sm uppercase mb-3">
             Nous écrire
           </p>
-          <h1 className="font-heading font-bold text-5xl md:text-6xl text-teal">
+          <h1 className="font-heading font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4">
             Connecte-toi à nous
           </h1>
+          <p className="font-body text-white/90 text-lg max-w-xl mx-auto">
+            Une question, un projet, une envie ? On est là{' '}
+            <StickerLabel text="pour toi" color="coral" size="xs" className="inline-block align-middle" />
+          </p>
         </div>
+      </section>
 
-        <div ref={revealRef} className="grid md:grid-cols-5 gap-12 items-start">
-          {/* Form */}
-          <div className="reveal from-left md:col-span-3 bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 ring-1 ring-teal/5">
+      {/* Form section */}
+      <section className="bg-beige py-24 px-6">
+        <div ref={revealRef} className="max-w-3xl mx-auto">
+          <h2 className="reveal fade-only font-heading font-bold text-3xl md:text-4xl text-teal mb-10">
+            Envoie-nous un message
+          </h2>
+          <div className="reveal from-below bg-white rounded-2xl p-8 md:p-10 shadow-md hover:shadow-xl transition-shadow duration-300">
             {submitted ? (
               <div className="text-center py-10">
                 <svg className="w-14 h-14 text-coral mx-auto mb-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -73,24 +85,9 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Prénom
-                  </label>
-                  <input
-                    name="prenom"
-                    value={form.prenom}
-                    onChange={handleChange}
-                    placeholder="Ton prénom"
-                    required
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30"
-                  />
-                </div>
-                <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Email
-                  </label>
+                  <StickerLabel text="Email" color="teal" size="xs" className="mb-2" />
                   <input
                     name="email"
                     type="email"
@@ -98,19 +95,18 @@ export default function Contact() {
                     onChange={handleChange}
                     placeholder="ton@email.fr"
                     required
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30"
+                    className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30"
                   />
                 </div>
+
                 <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Tu es…
-                  </label>
+                  <StickerLabel text="Tu es…" color="yellow" size="xs" className="mb-2" />
                   <select
                     name="type"
                     value={form.type}
                     onChange={handleChange}
                     required
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal appearance-none"
+                    className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal appearance-none"
                   >
                     <option value="" disabled>Sélectionne ton profil</option>
                     <option value="createur">Créateur de contenu</option>
@@ -118,10 +114,23 @@ export default function Contact() {
                     <option value="autre">Autre</option>
                   </select>
                 </div>
+
+                {form.type === 'createur' && (
+                  <div>
+                    <StickerLabel text="Ton @" color="teal" size="xs" className="mb-2" />
+                    <input
+                      name="handle"
+                      value={form.handle}
+                      onChange={handleChange}
+                      placeholder="@tonpseudo"
+                      required
+                      className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30"
+                    />
+                  </div>
+                )}
+
                 <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Message
-                  </label>
+                  <StickerLabel text="Message" color="coral" size="xs" className="mb-2" style={{ transform: 'rotate(-4deg)' }} />
                   <textarea
                     name="message"
                     value={form.message}
@@ -129,7 +138,7 @@ export default function Contact() {
                     placeholder="Dis-nous tout…"
                     rows={5}
                     required
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30 resize-none"
+                    className="w-full font-body border border-teal/20 rounded-2xl px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30 resize-none"
                   />
                 </div>
 
@@ -144,9 +153,9 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading || !token}
-                  className="bg-coral text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-coral/90 transition-colors text-base mt-2 disabled:opacity-60"
+                  className="self-start bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-base disabled:opacity-60"
                 >
-                  {loading ? 'Envoi…' : 'Envoyer'}
+                  {loading ? 'Envoi…' : 'Envoyer mon message'}
                 </button>
 
                 {error && (
@@ -155,16 +164,25 @@ export default function Contact() {
               </form>
             )}
           </div>
+        </div>
+      </section>
 
-          {/* Info column */}
-          <div className="reveal from-right md:col-span-2 flex flex-col gap-8">
-            <div className="bg-teal rounded-2xl p-7">
-              <h3 className="font-heading font-bold text-white text-xl mb-5">
+      {/* Info section */}
+      <section className="bg-white py-24 px-6">
+        <div ref={revealInfo} className="max-w-3xl mx-auto">
+          <h2 className="reveal fade-only font-heading font-bold text-2xl md:text-3xl text-teal mb-10">
+            Autres moyens de nous joindre
+          </h2>
+
+          <div className="grid sm:grid-cols-2 gap-8">
+            {/* Infos pratiques */}
+            <div className="reveal from-left bg-teal rounded-2xl p-8">
+              <h3 className="font-heading font-bold text-white text-xl mb-6">
                 Infos pratiques
               </h3>
-              <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-6">
                 <div className="flex items-start gap-3">
-                  <span className="text-coral mt-0.5">
+                  <span className="text-coral mt-0.5 flex-shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -177,7 +195,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-coral mt-0.5">
+                  <span className="text-coral mt-0.5 flex-shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
                     </svg>
@@ -192,15 +210,21 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-yellow-light border border-yellow/20 rounded-2xl p-7">
+            {/* Temps de réponse */}
+            <div className="reveal from-right bg-yellow-light border border-yellow/20 rounded-2xl p-8 flex flex-col justify-center">
+              <div className="flex items-center gap-2 mb-3">
+                <svg className="w-5 h-5 text-yellow" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <span className="font-heading font-bold text-teal text-lg">Temps de réponse</span>
+              </div>
               <p className="font-body text-teal text-sm leading-relaxed">
-                <span className="font-semibold">Temps de réponse :</span> Nous répondons
-                à tous les messages sous <strong>48h</strong>. Si c'est urgent, passe-nous un DM sur Instagram.
+                Nous répondons à tous les messages sous <strong>48h</strong>. Si c'est urgent, passe-nous un DM sur Instagram.
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
   )
 }
