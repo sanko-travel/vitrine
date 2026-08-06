@@ -24,7 +24,7 @@ const profiles = [
     description:
       'Associe ton image à des expériences uniques. Touche une audience engagée de voyageurs et de communautés de créateurs.',
     cta: 'Devenir sponsor',
-    to: '/contact',
+    to: '/marques',
     color: 'bg-yellow',
     hoverColor: 'hover:bg-yellow/90',
     textColor: 'text-white',

@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import useTurnstile from '../hooks/useTurnstile'
 import useScrollReveal from '../hooks/useScrollReveal'
+import useHashScroll from '../hooks/useHashScroll'
 import StickerLabel from '../components/StickerLabel'
+
+const SECTION_IDS = ['header', 'formulaire', 'infos']
 
 const honeypotStyle = { position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }
 
 export default function Contact() {
+  useHashScroll(SECTION_IDS)
   const [form, setForm] = useState({ email: '', type: '', handle: '', marque: '', message: '' })
   const [website, setWebsite] = useState('')
   const [hpNumber, setFaxNumber] = useState('sk-78x')
@@ -50,7 +54,7 @@ export default function Contact() {
   return (
     <main>
       {/* Header section */}
-      <section className="bg-teal pt-36 pb-20 px-6">
+      <section id="header" className="bg-teal pt-36 pb-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="font-body text-coral font-semibold tracking-widest text-sm uppercase mb-3">
             Nous écrire
@@ -66,7 +70,7 @@ export default function Contact() {
       </section>
 
       {/* Form section */}
-      <section className="bg-beige py-24 px-6">
+      <section id="formulaire" className="bg-beige py-24 px-6">
         <div ref={revealRef} className="max-w-3xl mx-auto">
           <h2 className="reveal fade-only font-heading font-bold text-3xl md:text-4xl text-teal mb-10">
             Envoie-nous un message
@@ -182,7 +186,7 @@ export default function Contact() {
       </section>
 
       {/* Info section */}
-      <section className="bg-white py-24 px-6">
+      <section id="infos" className="bg-white py-24 px-6">
         <div ref={revealInfo} className="max-w-3xl mx-auto">
           <h2 className="reveal fade-only font-heading font-bold text-2xl md:text-3xl text-teal mb-10">
             Autres moyens de nous joindre

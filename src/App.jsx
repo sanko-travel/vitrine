@@ -38,7 +38,7 @@ function PasswordGate({ onUnlock }) {
       <div className="text-center relative z-10 max-w-lg w-full">
         {/* Logo texte comme dans le header */}
         <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-10 tracking-tight">
-          sanko<sup className="text-xs align-super">®</sup>
+          sanko<sup className="text-xs align-super">&copy;</sup>
         </h2>
 
         {/* Titre avec stickers */}

@@ -4,8 +4,9 @@ import useScrollReveal from "../hooks/useScrollReveal";
 const sankoLinks = [
   { to: "https://withsanko.com", label: "withsanko.com", external: true },
   { to: "/notre-concept", label: "Notre concept" },
+  { to: "/creer-mon-voyage", label: "Je suis créateur" },
+  { to: "/marques", label: "Je suis une marque" },
   { to: "/contact", label: "Contact" },
-  { to: "/contact", label: "Devenir partenaire" },
 ];
 
 const legalLinks = [

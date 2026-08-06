@@ -30,8 +30,16 @@ const faqs = [
   },
   {
     question: "Je suis une marque - comment activer ?",
-    answer:
-      "Associe ton image à des expériences de voyage uniques et touche une audience engagée de voyageurs et de communautés de créateurs. Contacte-nous pour discuter des possibilités de partenariat.",
+    answer: (
+      <>
+        Associe ton image à des expériences de voyage uniques et touche une
+        audience engagée de voyageurs et de communautés de créateurs.{" "}
+        <Link to="/marques" className="text-coral underline hover:text-coral/80">
+          Rendez-vous sur la page Marques
+        </Link>{" "}
+        pour découvrir nos offres de partenariat.
+      </>
+    ),
   },
 ];
 

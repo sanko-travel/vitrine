@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import StickerLabel from "../components/StickerLabel";
 import useScrollReveal from "../hooks/useScrollReveal";
+import useHashScroll from "../hooks/useHashScroll";
+
+const SECTION_IDS = ["hero", "pourquoi", "valeurs", "vision", "cta"];
 
 const values = [
   {
@@ -9,7 +12,7 @@ const values = [
       "Chaque voyage est une expérience collective. Nous croyons au pouvoir du groupe pour vivre des moments inoubliables et tisser des liens durables.",
     bg: "bg-white",
     text: "text-teal",
-    borderTop: "border-t-4 border-coral",
+    borderTop: "",
     icon: (
       <svg
         className="w-8 h-8 text-coral"
@@ -32,7 +35,7 @@ const values = [
       "Nous sélectionnons des partenaires locaux engagés. Voyager avec Sanko, c'est contribuer positivement aux communautés que vous visitez.",
     bg: "bg-white",
     text: "text-teal",
-    borderTop: "border-t-4 border-teal",
+    borderTop: "",
     icon: (
       <svg
         className="w-8 h-8 text-teal"
@@ -55,7 +58,7 @@ const values = [
       "Chaque voyage reflète l'univers du créateur qui l'accompagne. Pas de tourisme générique : des expériences pensées pour être vraies, uniques et partagées.",
     bg: "bg-white",
     text: "text-teal",
-    borderTop: "border-t-4 border-yellow",
+    borderTop: "",
     icon: (
       <svg
         className="w-8 h-8 text-yellow"
@@ -75,6 +78,7 @@ const values = [
 ];
 
 export default function Manifeste() {
+  useHashScroll(SECTION_IDS);
   const refPourquoi = useScrollReveal();
   const refValeurs = useScrollReveal();
   const refVision = useScrollReveal();
@@ -84,6 +88,7 @@ export default function Manifeste() {
     <main>
       {/* Hero */}
       <section
+        id="hero"
         className="relative h-screen flex items-center justify-center"
         style={{
           backgroundImage: "url(/images/paysages/paysage_010.png)",
@@ -108,7 +113,7 @@ export default function Manifeste() {
       </section>
 
       {/* Pourquoi Sanko */}
-      <section className="bg-beige py-24 px-6">
+      <section id="pourquoi" className="bg-beige py-24 px-6">
         <div ref={refPourquoi} className="max-w-3xl mx-auto">
           <h2 className="reveal from-left font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
             Pourquoi Sanko ?
@@ -138,7 +143,7 @@ export default function Manifeste() {
       </section>
 
       {/* Nos valeurs */}
-      <section className="bg-white py-24 px-6">
+      <section id="valeurs" className="bg-white py-24 px-6">
         <div ref={refValeurs} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="reveal font-heading font-bold text-4xl text-teal mb-4">
@@ -168,7 +173,7 @@ export default function Manifeste() {
       </section>
 
       {/* Notre vision */}
-      <section className="bg-teal py-24 px-6">
+      <section id="vision" className="bg-teal py-24 px-6">
         <div ref={refVision} className="max-w-3xl mx-auto text-center">
           <h2 className="reveal font-heading font-bold text-4xl text-white mb-8">
             Notre vision
@@ -192,7 +197,7 @@ export default function Manifeste() {
       </section>
 
       {/* CTA */}
-      <section className="bg-beige py-20 px-6 text-center">
+      <section id="cta" className="bg-beige py-20 px-6 text-center">
         <div ref={refCta}>
           <h2 className="reveal fade-only font-heading font-bold text-3xl text-teal mb-6">
             Prêt à rejoindre l'aventure ?

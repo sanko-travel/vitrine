@@ -35,6 +35,16 @@ function buildEmail(formType, data) {
         ["Message", data.message || "-"],
       ];
       break;
+    case "marques":
+      subject = `[Sanko] Nouvelle marque : ${data.entreprise}`;
+      rows = [
+        ["Nom", data.nom],
+        ["Entreprise", data.entreprise],
+        ["Email", data.email],
+        ["Objectif", data.objectif],
+        ["Message", data.message || "-"],
+      ];
+      break;
     default:
       subject = `[Sanko] Nouveau message`;
       rows = Object.entries(data).map(([k, v]) => [k, v]);
