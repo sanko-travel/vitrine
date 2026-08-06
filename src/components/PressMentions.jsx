@@ -1,13 +1,13 @@
-import useScrollReveal from '../hooks/useScrollReveal'
+import useScrollReveal from "../hooks/useScrollReveal";
 
 const mediaLogos = [
-  { name: 'TourMag' },
-  { name: 'Tom Travel' },
-  { name: 'Banque Wormser' },
-]
+  { name: "TourMag" },
+  { name: "Tom Travel" },
+  { name: "Banque Wormser" },
+];
 
 export default function PressMentions() {
-  const ref = useScrollReveal()
+  const ref = useScrollReveal();
 
   return (
     <section className="bg-white py-24 px-6">
@@ -18,11 +18,15 @@ export default function PressMentions() {
 
         {/* Citation principale */}
         <div className="reveal bg-white rounded-2xl p-8 md:p-12 shadow-md ring-1 ring-teal/5 text-center mb-12">
-          <span className="font-heading text-5xl text-coral/30 leading-none select-none block mb-4">"</span>
+          <span className="font-heading text-5xl text-coral/30 leading-none select-none block mb-4">
+            "
+          </span>
           <blockquote className="font-body text-gray-700 text-lg md:text-xl leading-relaxed italic mb-6 max-w-3xl mx-auto">
-            Sanko réinvente le voyage de groupe en le construisant autour de la relation créateur-communauté, avec un cadre légal que peu d'acteurs du secteur peuvent revendiquer.
+            Sanko réinvente le voyage de groupe en le construisant autour de la
+            relation créateur-communauté, avec un cadre légal que peu d'acteurs
+            du secteur peuvent revendiquer.
           </blockquote>
-          <p className="font-heading font-semibold text-teal">— TourMag</p>
+          <p className="font-heading font-semibold text-teal">- TourMag</p>
         </div>
 
         {/* Logos médias */}
@@ -38,5 +42,5 @@ export default function PressMentions() {
         </div>
       </div>
     </section>
-  )
+  );
 }

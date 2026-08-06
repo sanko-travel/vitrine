@@ -166,7 +166,7 @@ export default {
     currency: "€",
     perPerson: true,
     deposit: "30%",
-    bookingUrl: "https://forms.gle/ZWY6cN12poS27vV4A",
+    bookingUrl: "https://book.stripe.com/9B68wOdKn2nn0O2b1o0sU0B",
     paymentTerms: [
       "Un acompte de 30\u00a0% vous est demandé à l'inscription par CB.",
       "Le solde doit être réglé 1 mois avant la date de départ du voyage.",

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import useScrollReveal from "../hooks/useScrollReveal";
 
 const sections = [
   {
@@ -34,8 +33,8 @@ const sections = [
           </li>
           <li>
             Assureur responsabilité civile professionnelle : ACCELERANT
-            INSURANCE EUROPE SA, BASTION TOWER, LEVEL 20, PLACE DU CHAMP DE
-            MARS 5, 1050 BRUXELLES, BELGIQUE
+            INSURANCE EUROPE SA, BASTION TOWER, LEVEL 20, PLACE DU CHAMP DE MARS
+            5, 1050 BRUXELLES, BELGIQUE
           </li>
           <li>
             Site de vente :{" "}
@@ -47,18 +46,20 @@ const sections = [
             </a>
           </li>
         </ul>
-        <p className="mt-3"><em>Ci-après dénommé « SANKOFA »</em></p>
+        <p className="mt-3">
+          <em>Ci-après dénommé « SANKOFA »</em>
+        </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">2. Objet</p>
         <p>
           Les présentes conditions générales de vente ont pour objet de définir
           les droits et obligations des parties dans le cadre de la
           commercialisation par SANKOFA de prestations touristiques fournies
-          directement par elle et par des prestataires partenaires, à destination
-          de personnes ayant la qualité de consommateurs ou non-professionnels au
-          sens du Code de la consommation ou de voyageur au sens du Code du
-          tourisme et ayant la capacité juridique de contracter (ci-après dénommé
-          « le(s) Client(s) »).
+          directement par elle et par des prestataires partenaires, à
+          destination de personnes ayant la qualité de consommateurs ou
+          non-professionnels au sens du Code de la consommation ou de voyageur
+          au sens du Code du tourisme et ayant la capacité juridique de
+          contracter (ci-après dénommé « le(s) Client(s) »).
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">3. Définitions</p>
@@ -72,8 +73,8 @@ const sections = [
           </li>
           <li>
             <strong>Contrat</strong> : email de confirmation de réservation
-            reprenant les éléments essentiels du contrat passé entre le Client et
-            SANKOFA.
+            reprenant les éléments essentiels du contrat passé entre le Client
+            et SANKOFA.
           </li>
           <li>
             <strong>Prestation</strong> : service de voyage, service touristique
@@ -88,16 +89,16 @@ const sections = [
     title: "Article 1 – Contenu et champ d'application",
     content: (
       <p>
-        Les présentes conditions générales de vente s'appliquent de plein droit à
-        l'ensemble des prestations vendues ou offertes à la vente par SANKOFA.
+        Les présentes conditions générales de vente s'appliquent de plein droit
+        à l'ensemble des prestations vendues ou offertes à la vente par SANKOFA.
         Elles s'appliquent pour les ventes réalisées par tous circuits de
         distribution et de commercialisation. Toute commande ou achat implique
         l'adhésion sans réserve aux présentes conditions générales de vente qui
         prévalent sur toutes autres conditions, à l'exception de celles qui ont
-        été acceptées expressément par SANKOFA et figurent sur la confirmation de
-        commande valant contrat. Le Client déclare avoir pris connaissance des
-        présentes conditions générales de vente et les avoir acceptées avant sa
-        réservation.
+        été acceptées expressément par SANKOFA et figurent sur la confirmation
+        de commande valant contrat. Le Client déclare avoir pris connaissance
+        des présentes conditions générales de vente et les avoir acceptées avant
+        sa réservation.
       </p>
     ),
   },
@@ -130,8 +131,8 @@ const sections = [
         </p>
         <p>
           Le prix définitif est annoncé en euros, toutes taxes comprises (TTC)
-          par personne. Le prix comprend les éléments indiqués dans l'offre. Sauf
-          mention contraire dans le Contrat, il inclut l'hébergement et les
+          par personne. Le prix comprend les éléments indiqués dans l'offre.
+          Sauf mention contraire dans le Contrat, il inclut l'hébergement et les
           activités précisés dans l'offre. Sauf mention contraire au Contrat, il
           ne comprend pas les repas, les transferts, le pré et post
           acheminement, le supplément « chambre individuelle », la taxe de
@@ -152,9 +153,9 @@ const sections = [
         </p>
         <p>
           <strong>Par carte bancaire :</strong> La réservation sera effective
-          après le versement de 30% du montant total du séjour. Le reste du solde
-          est a versé au maximum 30 jours avant le départ. Si le versement du
-          reste du solde n'intervient pas dans le délai énoncé, SANKOFA se
+          après le versement de 30% du montant total du séjour. Le reste du
+          solde est a versé au maximum 30 jours avant le départ. Si le versement
+          du reste du solde n'intervient pas dans le délai énoncé, SANKOFA se
           réserve le droit d'annuler le séjour du fait du Client et appliquera
           les frais d'annulation applicables.
         </p>
@@ -164,9 +165,9 @@ const sections = [
         </p>
         <p className="mt-3">
           Le Client garantit à SANKOFA qu'il dispose des autorisations
-          éventuellement nécessaires pour utiliser le mode de paiement choisi par
-          lui, lors de la validation du contrat. SANKOFA se réserve le droit de
-          suspendre toute gestion de réservation et toute exécution des
+          éventuellement nécessaires pour utiliser le mode de paiement choisi
+          par lui, lors de la validation du contrat. SANKOFA se réserve le droit
+          de suspendre toute gestion de réservation et toute exécution des
           prestations en cas de refus d'autorisation de paiement par carte
           bancaire de la part des organismes officiellement accrédités ou en cas
           de non-paiement de toute somme due au titre du contrat. Les paiements
@@ -208,8 +209,8 @@ const sections = [
         </ul>
         <p className="mt-3">
           L'application éventuelle d'une majoration de prix en application de
-          l'alinéa précédent sera notifiée de manière claire et compréhensible au
-          Client et assortie d'une justification et d'un calcul, sur support
+          l'alinéa précédent sera notifiée de manière claire et compréhensible
+          au Client et assortie d'une justification et d'un calcul, sur support
           durable, au plus tard vingt jours avant le début des prestations.
         </p>
         <p className="mt-3">
@@ -255,7 +256,11 @@ const sections = [
           confirmation de séjour valant Contrat par email.
         </p>
         <p className="mt-3">
-          <strong>Toute commande implique que le Client accepte le contenu du séjour et se déclare apte physiquement, psychologiquement et techniquement à participer aux Prestations.</strong>
+          <strong>
+            Toute commande implique que le Client accepte le contenu du séjour
+            et se déclare apte physiquement, psychologiquement et techniquement
+            à participer aux Prestations.
+          </strong>
         </p>
       </>
     ),
@@ -275,10 +280,11 @@ const sections = [
           personnes et les forfaits touristiques.
         </p>
         <p className="mt-3">
-          SANKOFA se prévaut de cette absence de droit de rétractation et indique
-          que pour toutes les prestations entrant dans le champ d'application de
-          l'article L. 221-28 ou L. 221-2 du Code de la consommation, <strong>le Client
-          ne disposera d'aucun droit de rétractation</strong>.
+          SANKOFA se prévaut de cette absence de droit de rétractation et
+          indique que pour toutes les prestations entrant dans le champ
+          d'application de l'article L. 221-28 ou L. 221-2 du Code de la
+          consommation,{" "}
+          <strong>le Client ne disposera d'aucun droit de rétractation</strong>.
         </p>
       </>
     ),
@@ -299,39 +305,42 @@ const sections = [
           un support durable.
         </p>
         <p className="mt-3">
-          <em>Exemple : Les activités d'un séjour peuvent être modifiées,
-          inversées ou décalées en fonction d'impératifs locaux rendant
-          inaccessibles les sites prévus ou des conditions météorologiques
-          défavorables. Dans ce même contexte, les hébergements peuvent également
-          être modifiés et remplacés par des hébergements de catégorie similaire.
-          Attention, les classifications locales ne correspondent pas aux
-          classifications françaises. Certaines Prestations étant dépendante des
-          conditions météorologiques, SANKOFA pourra proposer des modifications
-          d'itinéraire et pourra être contraint de raccourcir et/ou annuler
-          certaines excursions et activités sportives pour la sécurité des
-          participants sans que ces modifications exceptionnelles ne donnent lieu
-          à une indemnisation.</em>
+          <em>
+            Exemple : Les activités d'un séjour peuvent être modifiées,
+            inversées ou décalées en fonction d'impératifs locaux rendant
+            inaccessibles les sites prévus ou des conditions météorologiques
+            défavorables. Dans ce même contexte, les hébergements peuvent
+            également être modifiés et remplacés par des hébergements de
+            catégorie similaire. Attention, les classifications locales ne
+            correspondent pas aux classifications françaises. Certaines
+            Prestations étant dépendante des conditions météorologiques, SANKOFA
+            pourra proposer des modifications d'itinéraire et pourra être
+            contraint de raccourcir et/ou annuler certaines excursions et
+            activités sportives pour la sécurité des participants sans que ces
+            modifications exceptionnelles ne donnent lieu à une indemnisation.
+          </em>
         </p>
         <p className="mt-3">
           Si, avant le début du séjour, SANKOFA est contraint de modifier
-          unilatéralement une des caractéristiques principales du contrat au sens
-          de l'article R. 211-4 du Code du tourisme, qu'il ne peut satisfaire
-          aux exigences particulières convenues avec le Client, ou en cas de
-          hausse du prix supérieure à 8 %, il informe le Client dans les
+          unilatéralement une des caractéristiques principales du contrat au
+          sens de l'article R. 211-4 du Code du tourisme, qu'il ne peut
+          satisfaire aux exigences particulières convenues avec le Client, ou en
+          cas de hausse du prix supérieure à 8 %, il informe le Client dans les
           meilleurs délais, d'une manière claire, compréhensible et apparente,
           sur un support durable des modifications proposées et, s'il y a lieu,
           des répercussions sur le prix du contrat ; du délai raisonnable dans
           lequel le Client doit communiquer à SANKOFA la décision qu'il prend ;
-          des conséquences de l'absence de réponse du Client dans le délai fixé ;
-          s'il y a lieu, de l'autre prestation proposée, ainsi que de son prix.
+          des conséquences de l'absence de réponse du Client dans le délai fixé
+          ; s'il y a lieu, de l'autre prestation proposée, ainsi que de son
+          prix.
         </p>
         <p className="mt-3">
           Lorsque les modifications du contrat ou la prestation de substitution
           entraînent une baisse de qualité des prestations ou de leur coût, le
           Client a droit à une réduction de prix adéquate. Si le contrat est
           résilié et que le Client n'accepte pas d'autre prestation, SANKOFA
-          remboursera tous les paiements effectués par celui-ci ou en son nom dans
-          les meilleurs délais, et au plus tard quatorze jours après la
+          remboursera tous les paiements effectués par celui-ci ou en son nom
+          dans les meilleurs délais, et au plus tard quatorze jours après la
           résiliation du contrat.
         </p>
 
@@ -367,30 +376,30 @@ const sections = [
         <p>
           Le Client a la possibilité de résilier le contrat à tout moment, avant
           le début des prestations. Pour que cette résiliation soit valable, il
-          doit en informer SANKOFA par mail. Le cas échéant, SANKOFA demandera en
-          ce cas au Client de payer des frais de résiliation et pourra retenir
-          tout ou partie des acomptes ou du solde déjà versés selon l'échéancier
-          applicable à la réservation.
+          doit en informer SANKOFA par mail. Le cas échéant, SANKOFA demandera
+          en ce cas au Client de payer des frais de résiliation et pourra
+          retenir tout ou partie des acomptes ou du solde déjà versés selon
+          l'échéancier applicable à la réservation.
         </p>
         <p className="mt-3">
           Ces indemnités d'annulation ne seront pas dues si le contrat est
           résilié à la suite de circonstances exceptionnelles et inévitables,
-          survenant au lieu de destination ou à proximité immédiate de celui-ci et
-          ayant des conséquences importantes sur l'exécution du contrat. Dans ce
-          cas, SANKOFA procèdera au remboursement intégral des paiements
+          survenant au lieu de destination ou à proximité immédiate de celui-ci
+          et ayant des conséquences importantes sur l'exécution du contrat. Dans
+          ce cas, SANKOFA procèdera au remboursement intégral des paiements
           effectués, sans toutefois entraîner de dédommagement supplémentaire.
         </p>
         <p className="mt-3">
-          La date d'annulation est la date de réception par SANKOFA de la demande
-          du Client.
+          La date d'annulation est la date de réception par SANKOFA de la
+          demande du Client.
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
           Article 8.2. Résiliation du contrat par SANKOFA
         </p>
         <p>
-          SANKOFA a la possibilité de résilier le contrat à tout moment, avant le
-          début des prestations. Le cas échéant, le Client aura droit à une
+          SANKOFA a la possibilité de résilier le contrat à tout moment, avant
+          le début des prestations. Le cas échéant, le Client aura droit à une
           indemnisation supplémentaire, qui correspond à celle qu'il aurait dû
           supporter si la résiliation du contrat était intervenue de son fait.
         </p>
@@ -411,8 +420,8 @@ const sections = [
             dont la durée dépasse six jours
           </li>
           <li>
-            sept jours avant le début des prestations dans le cas de voyages dont
-            la durée est de deux à six jours
+            sept jours avant le début des prestations dans le cas de voyages
+            dont la durée est de deux à six jours
           </li>
           <li>
             quarante-huit heures avant le début des prestations dans le cas de
@@ -420,10 +429,10 @@ const sections = [
           </li>
         </ul>
         <p className="mt-3">
-          <strong>2)</strong> SANKOFA est empêché d'exécuter le contrat en raison
-          de circonstances exceptionnelles et inévitables. Dans ce cas, SANKOFA
-          notifie par mail ou par tout écrit la résiliation du contrat au Client
-          dans les meilleurs délais avant le début des prestations.
+          <strong>2)</strong> SANKOFA est empêché d'exécuter le contrat en
+          raison de circonstances exceptionnelles et inévitables. Dans ce cas,
+          SANKOFA notifie par mail ou par tout écrit la résiliation du contrat
+          au Client dans les meilleurs délais avant le début des prestations.
         </p>
       </>
     ),
@@ -435,38 +444,42 @@ const sections = [
         <p className="font-semibold text-teal mt-2 mb-2">Sécurité</p>
         <p>
           Le Client s'engage à ne pas avoir de contre-indication médicale,
-          physique ou psychique, pour la participation aux activités prévues dans
-          son séjour. En cas de difficulté ou de doute sur le niveau des
-          activités proposées, il devra se rapprocher immédiatement de SANKOFA ou
-          de l'accompagnateur. Il s'engage également à respecter les règles
+          physique ou psychique, pour la participation aux activités prévues
+          dans son séjour. En cas de difficulté ou de doute sur le niveau des
+          activités proposées, il devra se rapprocher immédiatement de SANKOFA
+          ou de l'accompagnateur. Il s'engage également à respecter les règles
           énoncées par les guides et accompagnateurs en toutes circonstances, de
           sorte qu'une faute de sa part pourra être retenue en cas d'incident.{" "}
-          <span className="underline">Toute interruption de séjour en raison de l'incompatibilité physique,
-          ou la non-réalisation de certaines activités prévues au contrat de ce
-          fait n'entraînera aucun remboursement.</span>
+          <span className="underline">
+            Toute interruption de séjour en raison de l'incompatibilité
+            physique, ou la non-réalisation de certaines activités prévues au
+            contrat de ce fait n'entraînera aucun remboursement.
+          </span>
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">Communauté</p>
         <p>
-          Le Client reconnaît que les séjours vendus par SANKOFA sont des séjours
-          en communauté. Il s'engage donc à respecter les règles de bienséance et
-          de respect envers les autres voyageurs à tout moment. Il est précisé
-          que les Clients partagent leur chambre avec d'autres voyageurs. Il est
-          donc primordial de respecter l'intimité et le confort de chacun.
-          L'usage ou la possession de drogue ne sont pas tolérés lors des
-          séjours. Si le Client ou les participants choisissent de consommer de
-          l'alcool lors du séjour, ils devront le faire avec modération en se
-          conformant en outre aux règles de consommation d'alcool de la région
-          visitée.
+          Le Client reconnaît que les séjours vendus par SANKOFA sont des
+          séjours en communauté. Il s'engage donc à respecter les règles de
+          bienséance et de respect envers les autres voyageurs à tout moment. Il
+          est précisé que les Clients partagent leur chambre avec d'autres
+          voyageurs. Il est donc primordial de respecter l'intimité et le
+          confort de chacun. L'usage ou la possession de drogue ne sont pas
+          tolérés lors des séjours. Si le Client ou les participants choisissent
+          de consommer de l'alcool lors du séjour, ils devront le faire avec
+          modération en se conformant en outre aux règles de consommation
+          d'alcool de la région visitée.
         </p>
         <p className="mt-3">
-          <span className="underline">SANKOFA ne pourra en aucun cas être tenue responsable du comportement
-          inadapté d'un Client ou de gênes occasionnées par les autres Clients
-          pouvant être inhérentes à la vie en communauté.</span> Tout frais
-          supplémentaire résultant d'une interruption de séjour souhaitée par le
-          Client (transferts véhiculés, ajout de nuitées…etc) resteront à la
-          charge du Client et devront être réglées sur site aux prestataires
-          concernés.
+          <span className="underline">
+            SANKOFA ne pourra en aucun cas être tenue responsable du
+            comportement inadapté d'un Client ou de gênes occasionnées par les
+            autres Clients pouvant être inhérentes à la vie en communauté.
+          </span>{" "}
+          Tout frais supplémentaire résultant d'une interruption de séjour
+          souhaitée par le Client (transferts véhiculés, ajout de nuitées…etc)
+          resteront à la charge du Client et devront être réglées sur site aux
+          prestataires concernés.
         </p>
         <p className="mt-3">
           A ce titre, SANKOFA se réserve le droit d'exclure le Client du séjour
@@ -492,8 +505,9 @@ const sections = [
         moyen permettant d'en obtenir un accusé de réception au plus tard sept
         jours avant le début du voyage. Cette cession n'est soumise, en aucun
         cas, à une autorisation préalable de SANKOFA. Le Client cédant et le
-        cessionnaire sont solidairement responsables du paiement du solde du prix
-        et des frais supplémentaires éventuels que la cession pourrait engendrer.
+        cessionnaire sont solidairement responsables du paiement du solde du
+        prix et des frais supplémentaires éventuels que la cession pourrait
+        engendrer.
       </p>
     ),
   },
@@ -507,26 +521,26 @@ const sections = [
           services, conformément à l'article L. 211-16 II du Code du tourisme.
           Cette communication doit se faire, pièces justificatives à l'appui, de
           préférence dans un délai de 7 jours suivant la fin des prestations,
-          afin que SANKOFA puisse enquêter sur le trouble et apprécier la réalité
-          des défauts allégués de façon efficace et dans l'intérêt des deux
-          parties.
+          afin que SANKOFA puisse enquêter sur le trouble et apprécier la
+          réalité des défauts allégués de façon efficace et dans l'intérêt des
+          deux parties.
         </p>
         <p className="mt-3">
           Les défauts et/ou vices constatés donneront lieu à rectification,
           substitution, réduction de prix ou remboursement dans les meilleurs
           délais, compte tenu de l'importance de la non-conformité et de la
           valeur des services de voyage concernés. En cas de proposition de
-          SANKOFA d'une prestation de remplacement ou d'une réduction de prix, le
-          Client ne peut refuser les autres prestations proposées que si elles ne
-          sont pas comparables à ce qui avait été prévu dans le contrat ou si la
-          réduction de prix octroyée n'est pas appropriée.
+          SANKOFA d'une prestation de remplacement ou d'une réduction de prix,
+          le Client ne peut refuser les autres prestations proposées que si
+          elles ne sont pas comparables à ce qui avait été prévu dans le contrat
+          ou si la réduction de prix octroyée n'est pas appropriée.
         </p>
         <p className="mt-3">
           La garantie de SANKOFA est limitée au remboursement des services
           effectivement payés par le Client consommateur ou non professionnel et
           SANKOFA ne pourra être considéré comme responsable ni défaillant pour
-          tout retard ou inexécution consécutif à la survenance d'un cas de force
-          majeure ou de circonstances exceptionnelles ou inévitables.
+          tout retard ou inexécution consécutif à la survenance d'un cas de
+          force majeure ou de circonstances exceptionnelles ou inévitables.
         </p>
         <p className="mt-3">
           Conformément à l'article R 211-6, 4° du Code du tourisme, le Client
@@ -548,26 +562,26 @@ const sections = [
         </p>
         <p>
           Dans le cadre de son activité de vente de prestations touristiques,
-          SANKOFA met en œuvre et exploite des traitements de données à caractère
-          personnel relatifs aux Clients. A ce titre, SANKOFA collecte les
-          données à caractère personnel suivantes : prénom, nom, adresse postale,
-          adresse mail, date de naissance, numéro de téléphone, particularités
-          notées au contrat, modalités de paiement.
+          SANKOFA met en œuvre et exploite des traitements de données à
+          caractère personnel relatifs aux Clients. A ce titre, SANKOFA collecte
+          les données à caractère personnel suivantes : prénom, nom, adresse
+          postale, adresse mail, date de naissance, numéro de téléphone,
+          particularités notées au contrat, modalités de paiement.
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
           Article 12.2. But poursuivi
         </p>
         <p>
-          La collecte de ces données personnelles est indispensable à l'exécution
-          contractuelle et en cas de refus de les communiquer, le Client s'expose
-          à des difficultés d'exécution de la prestation qui ne pourront donner
-          lieu à l'engagement de la responsabilité de SANKOFA. Ces données à
-          caractère personnel sont collectées dans le but exclusif d'assurer la
-          gestion de la Clientèle de SANKOFA dans le cadre de la conclusion du
-          contrat et de son exécution, sur la base du consentement du Client.
-          Elles ne sont utilisées que pour les finalités auxquelles le Client a
-          consenti.
+          La collecte de ces données personnelles est indispensable à
+          l'exécution contractuelle et en cas de refus de les communiquer, le
+          Client s'expose à des difficultés d'exécution de la prestation qui ne
+          pourront donner lieu à l'engagement de la responsabilité de SANKOFA.
+          Ces données à caractère personnel sont collectées dans le but exclusif
+          d'assurer la gestion de la Clientèle de SANKOFA dans le cadre de la
+          conclusion du contrat et de son exécution, sur la base du consentement
+          du Client. Elles ne sont utilisées que pour les finalités auxquelles
+          le Client a consenti.
         </p>
         <p className="mt-3">
           Plus précisément, les finalités sont les suivantes :
@@ -596,24 +610,25 @@ const sections = [
         </p>
         <p>
           Les personnes autorisées à accéder aux données collectées au sein de
-          SANKOFA sont les suivantes : les salariés de SANKOFA et ses partenaires
-          intervenant sur les prestations sollicitées par le Client, et le cas
-          échéant, les prestataires sous-traitants de SANKOFA participant à la
-          réalisation et/ou l'administration des prestations et étant amené à
-          intervenir à ce titre sur les traitements, étant alors précisé qu'en
-          pareille hypothèse, qu'il s'agisse de partenaires ou de sous-traitant,
-          cela est effectué dans le respect de la réglementation en vigueur.
+          SANKOFA sont les suivantes : les salariés de SANKOFA et ses
+          partenaires intervenant sur les prestations sollicitées par le Client,
+          et le cas échéant, les prestataires sous-traitants de SANKOFA
+          participant à la réalisation et/ou l'administration des prestations et
+          étant amené à intervenir à ce titre sur les traitements, étant alors
+          précisé qu'en pareille hypothèse, qu'il s'agisse de partenaires ou de
+          sous-traitant, cela est effectué dans le respect de la réglementation
+          en vigueur.
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
           Article 12.4. Conservation des données
         </p>
         <p>
-          Ces données à caractère personnel collectées sont conservées pendant la
-          durée de conservation légale relative à la finalité du traitement et au
-          plus pendant 5 ans. Les données à caractère personnel relatives à la
-          carte bancaire du Client sont conservées exclusivement dans le délai
-          nécessaire pour la réalisation de la transaction.
+          Ces données à caractère personnel collectées sont conservées pendant
+          la durée de conservation légale relative à la finalité du traitement
+          et au plus pendant 5 ans. Les données à caractère personnel relatives
+          à la carte bancaire du Client sont conservées exclusivement dans le
+          délai nécessaire pour la réalisation de la transaction.
         </p>
         <p className="mt-3">
           SANKOFA met en œuvre des mesures organisationnelles, techniques,
@@ -621,8 +636,8 @@ const sections = [
           protéger les données personnelles contre les altérations, destructions
           et accès non autorisés. Toutefois, il est à signaler qu'Internet n'est
           pas un environnement complètement sécurisé et SANKOFA ne peut pas
-          garantir la sécurité de la transmission ou du stockage des informations
-          sur Internet.
+          garantir la sécurité de la transmission ou du stockage des
+          informations sur Internet.
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
@@ -634,8 +649,8 @@ const sections = [
           d'interrogation, d'accès, de modification, d'opposition et de
           rectification, pour des motifs légitimes, à la collecte et au
           traitement de ses données à caractère personnel. Il est possible de
-          demander à ce que ces données soient rectifiées, complétées, clarifiées,
-          mises à jour ou effacées.
+          demander à ce que ces données soient rectifiées, complétées,
+          clarifiées, mises à jour ou effacées.
         </p>
         <p className="mt-3">
           Ces droits peuvent être exercés en écrivant un courrier signé ou un
@@ -667,13 +682,13 @@ const sections = [
           Article 12.6. Modification de la clause
         </p>
         <p>
-          SANKOFA se réserve le droit d'apporter toute modification à la présente
-          clause relative à la protection des données à caractère personnel à
-          tout moment. Si une modification est apportée à la présente clause de
-          protection des données à caractère personnel, SANKOFA s'engage à
-          publier la nouvelle version sur son site, et informera également les
-          utilisateurs de la modification par messagerie électronique, dans un
-          délai minimum de 15 jours avant la date d'effet.
+          SANKOFA se réserve le droit d'apporter toute modification à la
+          présente clause relative à la protection des données à caractère
+          personnel à tout moment. Si une modification est apportée à la
+          présente clause de protection des données à caractère personnel,
+          SANKOFA s'engage à publier la nouvelle version sur son site, et
+          informera également les utilisateurs de la modification par messagerie
+          électronique, dans un délai minimum de 15 jours avant la date d'effet.
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
@@ -747,9 +762,9 @@ const sections = [
           SANKOFA est responsable de plein droit des prestations touristiques
           contractées dans le cadre des présentes conditions générales de vente.
           SANKOFA peut toutefois s'exonérer de tout ou partie de sa
-          responsabilité en apportant la preuve que le dommage est imputable soit
-          au Client, soit à un tiers étranger à la fourniture des services de
-          voyage compris dans le contrat, soit à des circonstances
+          responsabilité en apportant la preuve que le dommage est imputable
+          soit au Client, soit à un tiers étranger à la fourniture des services
+          de voyage compris dans le contrat, soit à des circonstances
           exceptionnelles et inévitables. SANKOFA ainsi que le détaillant sont
           responsables de la bonne exécution de tous les services de voyage
           compris dans le contrat conformément à l'article L. 211-16.
@@ -760,9 +775,9 @@ const sections = [
         </p>
         <p>
           Conformément à l'article L 211-17, IV du Code du tourisme, le montant
-          des éventuels dommages-intérêts que SANKOFA serait condamné à verser au
-          Client pour quelque cause que ce soit, sera limité à trois fois le prix
-          total hors taxes des prestations, à l'exception des préjudices
+          des éventuels dommages-intérêts que SANKOFA serait condamné à verser
+          au Client pour quelque cause que ce soit, sera limité à trois fois le
+          prix total hors taxes des prestations, à l'exception des préjudices
           corporels et des dommages causés intentionnellement ou par négligence.
         </p>
         <p className="mt-3">
@@ -783,8 +798,8 @@ const sections = [
       <>
         <p>
           Tout événement qui crée une situation échappant au contrôle de SANKOFA
-          comme du Client et dont les conséquences n'auraient pas pu être évitées
-          même si toutes les mesures avaient été prises empêchant ainsi
+          comme du Client et dont les conséquences n'auraient pas pu être
+          évitées même si toutes les mesures avaient été prises empêchant ainsi
           l'exécution dans des conditions normales de leurs obligations, sont
           considérées comme des causes d'exonération des obligations des parties
           et entraînent leur suspension. La partie qui invoque les circonstances
@@ -794,8 +809,8 @@ const sections = [
         <p className="mt-3">
           Les parties se rapprocheront pour examiner l'incidence de l'événement
           et convenir des conditions dans lesquelles l'exécution du contrat sera
-          poursuivie. Si les circonstances exceptionnelles et inévitables ont une
-          durée supérieure à trois mois, les présentes conditions générales
+          poursuivie. Si les circonstances exceptionnelles et inévitables ont
+          une durée supérieure à trois mois, les présentes conditions générales
           pourront être résiliées par la partie lésée.
         </p>
       </>
@@ -807,11 +822,11 @@ const sections = [
       <p>
         SANKOFA est responsable de la bonne exécution des prestations prévues au
         contrat. Dans ce cadre, si le Client est confronté à des difficultés,
-        SANKOFA apportera dans les meilleurs délais une aide appropriée, eu égard
-        aux circonstances de l'espèce. SANKOFA sera en droit de facturer un prix
-        raisonnable pour cette aide si cette difficulté est causée de façon
-        intentionnelle par le Client ou par sa négligence. Le prix facturé ne
-        dépassera pas les coûts réels supportés par l'organisateur ou le
+        SANKOFA apportera dans les meilleurs délais une aide appropriée, eu
+        égard aux circonstances de l'espèce. SANKOFA sera en droit de facturer
+        un prix raisonnable pour cette aide si cette difficulté est causée de
+        façon intentionnelle par le Client ou par sa négligence. Le prix facturé
+        ne dépassera pas les coûts réels supportés par l'organisateur ou le
         détaillant.
       </p>
     ),
@@ -836,32 +851,34 @@ const sections = [
         <p>
           Les présentes conditions générales sont soumises à l'application du
           droit français, sous réserve de l'application des dispositions
-          impératives plus protectrices du pays de résidence du Client. Il en est
-          ainsi pour les règles de fond comme pour les règles de forme.
+          impératives plus protectrices du pays de résidence du Client. Il en
+          est ainsi pour les règles de fond comme pour les règles de forme.
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
           Article 19.2. Médiation
         </p>
         <p>
-          <strong>Le Client peut recourir à une médiation conventionnelle, notamment
-          auprès de la Commission de la médiation de la consommation ou auprès
-          des instances de médiation sectorielles existantes, ou à tout mode
-          alternatif de règlement des différends (conciliation, par exemple) en
-          cas de contestation. Le Client peut ainsi saisir le Médiateur du
-          Tourisme et du Voyage sur le site suivant :{" "}
-          <a
-            href="https://www.mtv.travel/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-teal underline hover:text-teal/80 transition-colors"
-          >
-            https://www.mtv.travel/
-          </a>{" "}
-          ou à MTV Médiation tourisme voyage, BP 80 303 - 75 823 Paris Cedex 17
-          dans le cas où la réponse apportée par SANKOFA au Client sur sa
-          réclamation soit jugée insuffisante ou restée sans réponse au bout de
-          60 jours.</strong>
+          <strong>
+            Le Client peut recourir à une médiation conventionnelle, notamment
+            auprès de la Commission de la médiation de la consommation ou auprès
+            des instances de médiation sectorielles existantes, ou à tout mode
+            alternatif de règlement des différends (conciliation, par exemple)
+            en cas de contestation. Le Client peut ainsi saisir le Médiateur du
+            Tourisme et du Voyage sur le site suivant :{" "}
+            <a
+              href="https://www.mtv.travel/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal underline hover:text-teal/80 transition-colors"
+            >
+              https://www.mtv.travel/
+            </a>{" "}
+            ou à MTV Médiation tourisme voyage, BP 80 303 - 75 823 Paris Cedex
+            17 dans le cas où la réponse apportée par SANKOFA au Client sur sa
+            réclamation soit jugée insuffisante ou restée sans réponse au bout
+            de 60 jours.
+          </strong>
         </p>
 
         <p className="font-semibold text-teal mt-4 mb-2">
@@ -888,11 +905,11 @@ const sections = [
           Article 19.4. Preuve
         </p>
         <p>
-          Il est expressément convenu que les données contenues dans les systèmes
-          d'information de SANKOFA ont force probante quant aux commandes,
-          demandes, et tout autre élément relatif à l'utilisation du Site. Elles
-          pourront être valablement produites, notamment en justice, comme moyen
-          de preuve au même titre que tout document écrit.
+          Il est expressément convenu que les données contenues dans les
+          systèmes d'information de SANKOFA ont force probante quant aux
+          commandes, demandes, et tout autre élément relatif à l'utilisation du
+          Site. Elles pourront être valablement produites, notamment en justice,
+          comme moyen de preuve au même titre que tout document écrit.
         </p>
       </>
     ),
@@ -902,8 +919,8 @@ const sections = [
     content: (
       <>
         <p>
-          Si, après avoir choisi un service de voyage et l'avoir réglé, le Client
-          réserve, par l'intermédiaire de SANKOFA, des services de voyage
+          Si, après avoir choisi un service de voyage et l'avoir réglé, le
+          Client réserve, par l'intermédiaire de SANKOFA, des services de voyage
           supplémentaires pour le même séjour, il NE BENEFICIERA PAS des droits
           applicables aux forfaits au sens de la directive (UE) 2015/2302 et de
           l'article L.211-2 du Code du tourisme. En revanche, si ces services de
@@ -913,12 +930,12 @@ const sections = [
         </p>
         <p className="mt-3">
           Dans ce cas, SANKOFA bénéficie, conformément au droit de l'Union
-          européenne, d'une protection contre l'insolvabilité visant à rembourser
-          les sommes versées par le Client pour les services qui n'auraient pas
-          été exécutés en raison de cette insolvabilité. SANKOFA a souscrit cette
-          protection auprès de Arcus Solutions. En cas de refus de prestation en
-          raison d'une défaillance financière de SANKOFA, le Client pourra
-          contacter cette entité.
+          européenne, d'une protection contre l'insolvabilité visant à
+          rembourser les sommes versées par le Client pour les services qui
+          n'auraient pas été exécutés en raison de cette insolvabilité. SANKOFA
+          a souscrit cette protection auprès de Arcus Solutions. En cas de refus
+          de prestation en raison d'une défaillance financière de SANKOFA, le
+          Client pourra contacter cette entité.
         </p>
         <p className="mt-3">
           Remarque : cette protection contre l'insolvabilité ne couvre pas les
@@ -954,18 +971,20 @@ const sections = [
           avec puce intégrée et photo numérique, dont la validité correspond aux
           exigences imposées par le pays de destination, ainsi que de tout autre
           document requis (visa, autorisation ESTA, livret de famille,
-          autorisation de sortie du territoire, etc.). Ces documents doivent être
-          valides et conformes aux exigences en vigueur pour entrer et/ou
+          autorisation de sortie du territoire, etc.). Ces documents doivent
+          être valides et conformes aux exigences en vigueur pour entrer et/ou
           transiter par les pays visités.
         </p>
         <p className="mt-3">
-          <strong>SANKOFA fournit ces informations uniquement pour les ressortissants de
-          nationalité française résidant en France.</strong> Il est de la responsabilité
-          du Client et de chaque participant de s'assurer de la conformité de ses
-          documents, tant administratifs que sanitaires, avec les informations
-          transmises par l'organisateur. La personne ayant validé le devis ou le
-          contrat de voyage est tenue de communiquer à chacun des participants
-          les formalités applicables.
+          <strong>
+            SANKOFA fournit ces informations uniquement pour les ressortissants
+            de nationalité française résidant en France.
+          </strong>{" "}
+          Il est de la responsabilité du Client et de chaque participant de
+          s'assurer de la conformité de ses documents, tant administratifs que
+          sanitaires, avec les informations transmises par l'organisateur. La
+          personne ayant validé le devis ou le contrat de voyage est tenue de
+          communiquer à chacun des participants les formalités applicables.
         </p>
         <p className="mt-3">
           SANKOFA ne pourra en aucun cas être tenue responsable des conséquences
@@ -976,15 +995,17 @@ const sections = [
           documents étaient mentionnés dans le contrat de vente remis au client.
         </p>
         <p className="mt-3">
-          <span className="underline">Les personnes de nationalité étrangère sont invitées à consulter leur
-          autorité consulaire afin de vérifier les conditions d'entrée et de
-          séjour dans les pays concernés.</span>
+          <span className="underline">
+            Les personnes de nationalité étrangère sont invitées à consulter
+            leur autorité consulaire afin de vérifier les conditions d'entrée et
+            de séjour dans les pays concernés.
+          </span>
         </p>
         <p className="mt-3">
-          Pour plus de précisions sur les
-          formalités liées au voyage, il est conseillé au Client de consulter les
-          fiches pays mises à disposition sur le site du Ministère de l'Europe et
-          des Affaires étrangères, à l'adresse suivante :{" "}
+          Pour plus de précisions sur les formalités liées au voyage, il est
+          conseillé au Client de consulter les fiches pays mises à disposition
+          sur le site du Ministère de l'Europe et des Affaires étrangères, à
+          l'adresse suivante :{" "}
           <a
             href="https://www.diplomatie.gouv.fr"
             target="_blank"
@@ -1007,8 +1028,8 @@ const sections = [
         <p className="mt-3">
           Les informations sanitaires communiquées par SANKOFA sont celles
           disponibles au moment de la conclusion du contrat. Il est vivement
-          recommandé au Client de consulter régulièrement les sites officiels des
-          autorités sanitaires compétentes, tels que :
+          recommandé au Client de consulter régulièrement les sites officiels
+          des autorités sanitaires compétentes, tels que :
         </p>
         <ul className="list-disc pl-6 mt-2 space-y-1">
           <li>
@@ -1046,8 +1067,6 @@ const sections = [
 ];
 
 export default function CGV() {
-  const ref = useScrollReveal(0.01);
-
   return (
     <main>
       {/* Hero */}
@@ -1057,18 +1076,18 @@ export default function CGV() {
             Conditions générales de vente
           </h1>
           <p className="font-body text-white/80 text-sm">
-            Sankofa Travel Studio — Séjours SANKOFA
+            Sankofa Travel Studio - Mise à jour le 6 août 2026
           </p>
         </div>
       </section>
 
       {/* Content */}
       <section className="bg-beige py-20 px-6">
-        <div ref={ref} className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {sections.map((section, i) => (
             <div
               key={i}
-              className={`reveal font-body text-gray-700 text-base leading-relaxed ${
+              className={`font-body text-gray-700 text-base leading-relaxed ${
                 i < sections.length - 1
                   ? "border-b border-gray-200 pb-8 mb-8"
                   : ""

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useScrollReveal from "../hooks/useScrollReveal";
+
 
 const sections = [
   {
@@ -161,7 +161,6 @@ const sections = [
 ];
 
 export default function MentionsLegales() {
-  const ref = useScrollReveal();
 
   return (
     <main>
@@ -172,18 +171,18 @@ export default function MentionsLegales() {
             Mentions légales
           </h1>
           <p className="font-body text-white/80 text-sm">
-            Dernière mise à jour : 31 juillet 2025
+            Dernière mise à jour : 6 août 2026
           </p>
         </div>
       </section>
 
       {/* Content */}
       <section className="bg-beige py-20 px-6">
-        <div ref={ref} className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {sections.map((section, i) => (
             <div
               key={i}
-              className={`reveal font-body text-gray-700 text-base leading-relaxed ${
+              className={`font-body text-gray-700 text-base leading-relaxed ${
                 i < sections.length - 1
                   ? "border-b border-gray-200 pb-8 mb-8"
                   : ""

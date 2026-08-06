@@ -182,7 +182,7 @@
   transform: translateY(0) scale(1);
 }
 
-/* Scroll reveal variants — override initial transform only */
+/* Scroll reveal variants - override initial transform only */
 /* Horizontal slides only on md+ to avoid overflow on mobile */
 @media (min-width: 768px) {
   .reveal.from-left {
