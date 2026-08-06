@@ -10,7 +10,7 @@ export default function ManifestoTeaser() {
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="reveal rounded-2xl overflow-hidden aspect-[4/3]">
+          <div className="reveal rounded-2xl overflow-hidden aspect-[4/3] order-2 md:order-1">
             <img
               src="/images/paysages/paysage_005.jpg"
               alt="Groupe de voyageurs Sanko"
@@ -20,7 +20,7 @@ export default function ManifestoTeaser() {
           </div>
 
           {/* Texte */}
-          <div>
+          <div className="order-1 md:order-2">
             <div className="reveal mb-4">
               <StickerLabel text="Notre conviction" color="coral" />
             </div>
@@ -35,10 +35,10 @@ export default function ManifestoTeaser() {
               les autres, et avec soi-même.
             </p>
             <Link
-              to="/notre-equipe"
+              to="/notre-concept"
               className="reveal inline-flex items-center gap-2 font-heading font-semibold text-coral hover:text-coral/80 transition-colors"
             >
-              Découvrir qui nous sommes
+              Découvrir le concept
               <svg
                 className="w-5 h-5"
                 fill="none"

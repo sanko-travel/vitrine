@@ -147,16 +147,29 @@
   }
 }
 
+/* Quick vibration - idle most of the time, brief shake every ~30s */
+@keyframes stickerWiggle {
+  0%, 95%   { transform: rotate(var(--sticker-rotate, 0deg)); }
+  95.7%     { transform: rotate(calc(var(--sticker-rotate, 0deg) + 3deg)); }
+  96.4%     { transform: rotate(calc(var(--sticker-rotate, 0deg) - 3deg)); }
+  97.1%     { transform: rotate(calc(var(--sticker-rotate, 0deg) + 2deg)); }
+  97.8%     { transform: rotate(calc(var(--sticker-rotate, 0deg) - 2deg)); }
+  98.5%     { transform: rotate(calc(var(--sticker-rotate, 0deg) + 1deg)); }
+  99.2%, 100% { transform: rotate(var(--sticker-rotate, 0deg)); }
+}
+
 .sticker-appear {
   display: inline-block;
   opacity: 0;
   will-change: transform, opacity;
-  animation: stickerAppear 800ms ease-out forwards;
+  animation: stickerAppear 800ms ease-out forwards,
+             stickerWiggle 30s ease-in-out 2s infinite;
 }
 
 /* Stickers in hero: appear after the main content */
 .hero-content .sticker-appear {
-  animation-delay: 1.2s;
+  animation: stickerAppear 800ms ease-out 1.2s forwards,
+             stickerWiggle 30s ease-in-out 3s infinite;
 }
 
 /* Stickers in scroll-revealed containers: wait for reveal */
@@ -165,7 +178,8 @@
   opacity: 0;
 }
 .reveal.visible .sticker-appear {
-  animation: stickerAppear 800ms ease-out 600ms forwards;
+  animation: stickerAppear 800ms ease-out 600ms forwards,
+             stickerWiggle 30s ease-in-out 2s infinite;
 }
 
 /* ── Scroll reveal ───────────────────────────────────────────── */

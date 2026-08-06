@@ -27,7 +27,7 @@ export default function MainLayout() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/notre-equipe" element={<Manifeste />} />
+        <Route path="/notre-concept" element={<Manifeste />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/creer-mon-voyage" element={<CreerMonVoyage />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />

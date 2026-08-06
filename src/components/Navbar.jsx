@@ -24,7 +24,7 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/creer-mon-voyage', label: 'Je suis créateur' },
-    { to: '/notre-equipe', label: 'Notre équipe' },
+    { to: '/notre-concept', label: 'Notre concept' },
     { to: '/contact', label: 'Contact' },
   ]
 
