@@ -76,6 +76,9 @@ export default function DestinationsGrid() {
           <h2 className="font-heading font-bold text-white text-3xl md:text-4xl lg:text-5xl">
             Nos voyages
           </h2>
+          <p className="text-white/90 text-base md:text-lg mt-3 max-w-2xl">
+            Les inscriptions aux voyages se font uniquement sur les canaux des créateurs.
+          </p>
         </div>
 
         <div

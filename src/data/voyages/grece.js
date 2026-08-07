@@ -138,7 +138,7 @@ export default {
     currency: "€",
     perPerson: true,
     deposit: "30%",
-    bookingUrl: "#", // TODO: ajouter le lien Google Forms
+    bookingUrl: "https://buy.stripe.com/4gM4gy21Fd21bsG3yW0sU0C",
     paymentTerms: [
       "Un acompte de 30\u00a0% vous est demandé à l'inscription par CB.",
       "Le solde doit être réglé 45 jours avant la date de départ du voyage.",
