@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import useScrollReveal from "../hooks/useScrollReveal";
 
-const sankoLinks = [
-  { to: "https://withsanko.com", label: "withsanko.com", external: true },
+const exploreLinks = [
   { to: "/notre-concept", label: "Notre concept" },
+  { to: "/contact", label: "Contact" },
+  { to: "https://withsanko.com", label: "withsanko.com", external: true },
+];
+
+const joinLinks = [
   { to: "/creer-mon-voyage", label: "Je suis créateur" },
   { to: "/marques", label: "Je suis une marque" },
-  { to: "/contact", label: "Contact" },
   { to: "/contact", label: "Devenir partenaire" },
 ];
 
@@ -58,7 +61,7 @@ export default function Footer() {
     <footer className="bg-teal py-16 px-6">
       <div ref={ref} className="max-w-6xl mx-auto">
         <div className="reveal flex flex-col md:flex-row items-center md:items-start justify-between gap-10">
-          {/* Logo + tagline */}
+          {/* Logo + tagline + socials */}
           <div className="text-center md:text-left">
             <Link
               to="/"
@@ -67,66 +70,56 @@ export default function Footer() {
             >
               sanko<sup className="text-xs align-super">&copy;</sup>
             </Link>
-            <p className="font-body text-white/60 text-sm max-w-xs">
+            <p className="font-body text-white/60 text-sm max-w-xs mb-5">
               Catalyseur de rencontres
             </p>
+            <div className="flex items-center justify-center md:justify-start gap-4">
+              {socials.map(({ name, href, icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="text-white/80 hover:text-coral transition-colors"
+                >
+                  {icon}
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Nav columns */}
           <div className="flex gap-10 sm:gap-16 text-center md:text-left">
-            <nav className="flex flex-col gap-3">
-              <p className="font-heading font-semibold text-white text-sm mb-1">
-                Sanko
-              </p>
-              {sankoLinks.map(({ to, label, external }) =>
-                external ? (
-                  <a
-                    key={to}
-                    href={to}
-                    className="font-body text-white/80 text-sm hover:text-white transition-colors"
-                  >
-                    {label}
-                  </a>
-                ) : (
-                  <Link
-                    key={to}
-                    to={to}
-                    className="font-body text-white/80 text-sm hover:text-white transition-colors"
-                  >
-                    {label}
-                  </Link>
-                ),
-              )}
-            </nav>
-            <nav className="flex flex-col gap-3">
-              <p className="font-heading font-semibold text-white text-sm mb-1">
-                Légal
-              </p>
-              {legalLinks.map(({ to, label }) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className="font-body text-white/80 text-sm hover:text-white transition-colors"
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Socials */}
-          <div className="flex items-center gap-4">
-            {socials.map(({ name, href, icon }) => (
-              <a
-                key={name}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={name}
-                className="text-white/80 hover:text-coral transition-colors"
-              >
-                {icon}
-              </a>
+            {[
+              { title: "Explorer", links: exploreLinks },
+              { title: "Rejoindre", links: joinLinks },
+              { title: "Légal", links: legalLinks },
+            ].map(({ title, links }) => (
+              <nav key={title} className="flex flex-col gap-3">
+                <p className="font-heading font-semibold text-white text-sm mb-1">
+                  {title}
+                </p>
+                {links.map(({ to, label, external }) =>
+                  external ? (
+                    <a
+                      key={label}
+                      href={to}
+                      className="font-body text-white/80 text-sm hover:text-white transition-colors"
+                    >
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={label}
+                      to={to}
+                      className="font-body text-white/80 text-sm hover:text-white transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  ),
+                )}
+              </nav>
             ))}
           </div>
         </div>

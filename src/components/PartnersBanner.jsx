@@ -30,6 +30,7 @@ export default function PartnersBanner() {
               <img
                 src={partner.logo}
                 alt={partner.name}
+                loading="lazy"
                 className={`${partner.height || 'h-10'} w-auto object-contain transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100`}
               />
             </div>

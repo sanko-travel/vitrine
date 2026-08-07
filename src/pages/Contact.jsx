@@ -2,6 +2,7 @@ import { useState } from 'react'
 import useTurnstile from '../hooks/useTurnstile'
 import useScrollReveal from '../hooks/useScrollReveal'
 import useHashScroll from '../hooks/useHashScroll'
+import usePageMeta from '../hooks/usePageMeta'
 import StickerLabel from '../components/StickerLabel'
 
 const SECTION_IDS = ['header', 'formulaire', 'infos']
@@ -10,6 +11,11 @@ const honeypotStyle = { position: 'absolute', left: '-9999px', opacity: 0, point
 
 export default function Contact() {
   useHashScroll(SECTION_IDS)
+  usePageMeta({
+    title: "Contact",
+    description: "Contactez l'équipe Sanko pour vos questions sur nos voyages de groupe, partenariats marques ou projets créateurs.",
+    path: "/contact",
+  })
   const [form, setForm] = useState({ email: '', type: '', handle: '', marque: '', message: '' })
   const [website, setWebsite] = useState('')
   const [hpNumber, setFaxNumber] = useState('sk-78x')

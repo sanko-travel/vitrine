@@ -134,6 +134,7 @@ export default function DestinationsGrid() {
                     <img
                       src={trip.creatorImg}
                       alt={trip.creator}
+                      loading="lazy"
                       className="absolute inset-0 w-10 h-10 rounded-full object-cover ring-2 ring-teal/20"
                       onError={(e) => { e.target.style.display = 'none' }}
                     />

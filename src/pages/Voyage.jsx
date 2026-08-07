@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
 import voyages from "../data/voyages";
+import usePageMeta from "../hooks/usePageMeta";
 import VoyageHeader from "../components/voyage/VoyageHeader";
 import VoyageHero from "../components/voyage/VoyageHero";
 import VoyageIntro from "../components/voyage/VoyageIntro";
@@ -17,6 +18,12 @@ export default function Voyage() {
   const { slug } = useParams();
   const data = voyages[slug];
   const [activeDay, setActiveDay] = useState(null);
+
+  usePageMeta({
+    title: data ? `Voyage ${data.destination} avec ${data.creator}` : "Voyage introuvable",
+    description: data ? `Découvrez notre voyage ${data.destination} avec ${data.creator}. ${data.duration || ""} d'aventure, d'authenticité et de rencontres.` : undefined,
+    path: `/voyage/${slug}`,
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

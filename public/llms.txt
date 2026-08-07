@@ -1,0 +1,61 @@
+# Sanko - Catalyseur de rencontres
+
+> Sanko est une marque communautaire de voyage qui permet aux créateurs de contenu d'organiser des voyages de groupe avec leurs communautés.
+
+## Informations clés
+
+- **Nom** : Sanko (anciennement Sankofa)
+- **Site web** : https://withsanko.com
+- **Domaine** : Voyages de groupe pour créateurs de contenu
+- **Siège** : 114, rue de la République, 13002 Marseille, France
+- **Fondatrice** : Mélany Fabre
+- **Contact** : contact@withsanko.com
+- **Immatriculation** : Atout France IM013260002
+- **Réseaux sociaux** : @withsanko sur Instagram, TikTok, YouTube
+
+## Ce que fait Sanko
+
+Sanko organise des voyages de groupe clé en main pour les créateurs de contenu (influenceurs, YouTubers, TikTokeurs) et leurs communautés. Le créateur communique et vit l'expérience, Sanko gère tout l'opérationnel : logistique, hébergements, activités, contrats, paiements, assurances, formalités administratives.
+
+## Public cible
+
+1. **Créateurs de contenu** (influenceurs) qui veulent organiser un voyage avec leur communauté sans gérer la logistique
+2. **Voyageurs** (abonnés/fans) qui veulent vivre une expérience unique avec leur créateur préféré
+3. **Marques** qui veulent s'associer à des expériences de voyage authentiques avec des créateurs
+
+## Proposition de valeur
+
+- **Pour les créateurs** : place offerte, zéro logistique, contenu authentique, cadre légal sécurisé (Atout France, RC Pro, garantie financière)
+- **Pour les voyageurs** : expérience de voyage unique, immersive, en petit groupe, avec leur créateur préféré
+- **Pour les marques** : association à des expériences authentiques, visibilité auprès de communautés engagées
+
+## Destinations proposées
+
+Sanko propose des voyages dans plusieurs destinations : Japon, Népal, Égypte, Grèce, Écosse, Croatie, France (séjour loups). Chaque voyage est co-construit avec le créateur et adapté à son univers.
+
+## Valeurs
+
+- **Communauté** : chaque voyage est une expérience collective
+- **Impact** : partenaires locaux engagés, tourisme responsable
+- **Authenticité** : expériences pensées pour être vraies, pas du tourisme générique
+
+## Origine du nom
+
+Le nom "Sanko" vient du mot Akan "Sankofa" qui signifie "retourner en arrière pour mieux avancer". Le symbole adinkra Sankofa (un oiseau qui regarde en arrière) est l'élément graphique identitaire de la marque.
+
+## Garanties
+
+- Immatriculée auprès d'Atout France (agence de voyage officielle)
+- Garantie financière APST
+- Assurance RC Pro voyage
+- Assurance rapatriement incluse pour chaque voyageur
+- Coordinateur Sanko présent sur place pendant chaque voyage
+
+## Pages du site
+
+- `/` : Page d'accueil - présentation générale, destinations, témoignages
+- `/notre-concept` : Manifeste, valeurs, vision de Sanko
+- `/creer-mon-voyage` : Page dédiée aux créateurs, processus, FAQ, formulaire de candidature
+- `/marques` : Page dédiée aux partenariats marques
+- `/contact` : Formulaire de contact
+- `/voyage/[slug]` : Pages individuelles de chaque voyage avec itinéraire, prix, inclusions

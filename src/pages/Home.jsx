@@ -1,3 +1,4 @@
+import usePageMeta from "../hooks/usePageMeta";
 import VideoHero from "../components/VideoHero";
 import ValueProposition from "../components/ValueProposition";
 import DestinationsGrid from "../components/DestinationsGrid";
@@ -13,6 +14,10 @@ import useHashScroll from "../hooks/useHashScroll";
 
 export default function Home() {
   useHashScroll();
+  usePageMeta({
+    path: "/",
+    description: "Sanko organise des voyages de groupe avec des créateurs de contenu. Vis des aventures uniques avec ta communauté, sans prise de tête.",
+  });
   return (
     <main>
       {/* dark (video) */}

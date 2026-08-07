@@ -33,6 +33,7 @@ export default function VideoHero() {
           muted
           loop
           playsInline
+          poster={i === 0 ? "/videos/accueil/poster.jpg" : undefined}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           style={{ opacity: i === currentVideo ? 1 : 0 }}
         />

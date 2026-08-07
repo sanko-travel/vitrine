@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import useTurnstile from "../hooks/useTurnstile";
 import useScrollReveal from "../hooks/useScrollReveal";
+import usePageMeta from "../hooks/usePageMeta";
 import StickerLabel from "../components/StickerLabel";
 import ReassuranceBand from "../components/ReassuranceBand";
 import StrikethroughList from "../components/StrikethroughList";
 import OfferCards from "../components/OfferCards";
+import JsonLd from "../components/JsonLd";
 import useHashScroll from "../hooks/useHashScroll";
 
 const SECTION_IDS = [
@@ -248,6 +250,11 @@ const honeypotStyle = {
 
 export default function CreerMonVoyage() {
   useHashScroll(SECTION_IDS);
+  usePageMeta({
+    title: "Créer mon voyage",
+    description: "Tu es créateur de contenu ? Organise un voyage de groupe avec ta communauté. Sanko gère toute la logistique, tu vis l'aventure.",
+    path: "/creer-mon-voyage",
+  });
   const [form, setForm] = useState({
     email: "",
     social: "",
@@ -733,6 +740,15 @@ export default function CreerMonVoyage() {
       </section>
 
       {/* 11. FAQ - fond teal */}
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqItems.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }} />
       <section id="faq" className="bg-white py-24 px-6">
         <div ref={refFaq} className="max-w-3xl mx-auto">
           <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-teal tracking-tight text-center mb-14">

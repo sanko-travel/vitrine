@@ -30,7 +30,7 @@ function PasswordGate({ onUnlock }) {
       {/* Oiseau Sanko watermark */}
       <img
         src="/images/logo/image5.png"
-        alt=""
+        alt="Symbole Sanko - oiseau adinkra Sankofa"
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] md:w-[600px] opacity-[0.06] pointer-events-none select-none"
         draggable="false"
       />

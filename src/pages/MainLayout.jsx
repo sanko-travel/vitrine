@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import CookieBanner from '../components/CookieBanner'
+import JsonLd from '../components/JsonLd'
 import Home from './Home'
 import Manifeste from './Manifeste'
 import Contact from './Contact'
@@ -24,10 +25,41 @@ function ScrollToTop() {
 }
 
 export default function MainLayout() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: "Sanko",
+    alternateName: "Sankofa Travel Studio",
+    url: "https://withsanko.com",
+    logo: "https://withsanko.com/images/og-cover.jpg",
+    description: "Sanko organise des voyages de groupe avec des créateurs de contenu. Catalyseur de rencontres entre créateurs et leurs communautés.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "114, rue de la République",
+      addressLocality: "Marseille",
+      postalCode: "13002",
+      addressCountry: "FR",
+    },
+    email: "contact@withsanko.com",
+    sameAs: [
+      "https://www.instagram.com/withsanko/",
+      "https://www.tiktok.com/@withsanko",
+      "https://www.youtube.com/@withsanko",
+    ],
+    founder: { "@type": "Person", name: "Mélany Fabre" },
+    areaServed: "Worldwide",
+    priceRange: "€€€",
+  }
+
   return (
     <>
+      <a href="#main-content" className="skip-to-content">
+        Aller au contenu principal
+      </a>
+      <JsonLd data={organizationSchema} />
       <ScrollToTop />
       <Navbar />
+      <div id="main-content">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/notre-concept" element={<Manifeste />} />
@@ -39,6 +71,7 @@ export default function MainLayout() {
         <Route path="/conditions-generales-de-vente" element={<CGV />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </div>
       <Footer />
       <CookieBanner />
     </>

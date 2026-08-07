@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useTurnstile from "../hooks/useTurnstile";
 import useScrollReveal from "../hooks/useScrollReveal";
 import useHashScroll from "../hooks/useHashScroll";
+import usePageMeta from "../hooks/usePageMeta";
 import StickerLabel from "../components/StickerLabel";
 import ReassuranceBand from "../components/ReassuranceBand";
 import PartnershipTiers from "../components/PartnershipTiers";
@@ -146,6 +147,11 @@ const honeypotStyle = {
 
 export default function Marques() {
   useHashScroll(SECTION_IDS);
+  usePageMeta({
+    title: "Marques & Partenaires",
+    description: "Associez votre marque à des expériences de voyage authentiques avec des créateurs de contenu et leurs communautés engagées.",
+    path: "/marques",
+  });
   const [form, setForm] = useState({
     nom: "",
     entreprise: "",
@@ -223,6 +229,7 @@ export default function Marques() {
             muted
             loop
             playsInline
+            poster={i === 0 ? "/videos/marques/poster.jpg" : undefined}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
             style={{ opacity: i === currentVideo ? 1 : 0 }}
           />

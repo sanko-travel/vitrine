@@ -1,7 +1,21 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import StickerLabel from "../components/StickerLabel";
 import useScrollReveal from "../hooks/useScrollReveal";
 import useHashScroll from "../hooks/useHashScroll";
+import usePageMeta from "../hooks/usePageMeta";
+
+const heroVideos = [
+  "/videos/concept/01.mp4",
+  "/videos/concept/03.mp4",
+  "/videos/concept/04.mp4",
+  "/videos/concept/05.mp4",
+  "/videos/concept/08.mp4",
+  "/videos/concept/09.mp4",
+  "/videos/concept/12.mp4",
+  "/videos/concept/13.mp4",
+  "/videos/concept/15.mp4",
+];
 
 const SECTION_IDS = ["hero", "pourquoi", "valeurs", "vision", "cta"];
 
@@ -79,6 +93,20 @@ const values = [
 
 export default function Manifeste() {
   useHashScroll(SECTION_IDS);
+  usePageMeta({
+    title: "Notre concept",
+    description: "Découvrez la mission et les valeurs de Sanko : communauté, impact positif et authenticité au service du voyage responsable avec les créateurs de contenu.",
+    path: "/notre-concept",
+  });
+  const [currentVideo, setCurrentVideo] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideo((prev) => (prev + 1) % heroVideos.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
   const refPourquoi = useScrollReveal();
   const refValeurs = useScrollReveal();
   const refVision = useScrollReveal();
@@ -89,13 +117,21 @@ export default function Manifeste() {
       {/* Hero */}
       <section
         id="hero"
-        className="relative h-screen flex items-center justify-center"
-        style={{
-          backgroundImage: "url(/images/paysages/paysage_010.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="relative h-screen flex items-center justify-center overflow-hidden"
       >
+        {heroVideos.map((src, i) => (
+          <video
+            key={src}
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={i === 0 ? "/videos/concept/poster.jpg" : undefined}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: i === currentVideo ? 1 : 0 }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
         <div className="hero-content relative z-10 text-center px-6 max-w-3xl mx-auto">
           <StickerLabel

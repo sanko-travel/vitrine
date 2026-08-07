@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useScrollReveal from "../hooks/useScrollReveal";
+import JsonLd from "./JsonLd";
 
 const faqs = [
   {
@@ -47,8 +48,21 @@ export default function HomeFAQ() {
   const ref = useScrollReveal();
   const [openFaq, setOpenFaq] = useState(null);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs
+      .filter((f) => typeof f.answer === "string")
+      .map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+  };
+
   return (
     <section id="faq" className="bg-teal py-24 px-6">
+      <JsonLd data={faqSchema} />
       <div ref={ref} className="max-w-3xl mx-auto">
         <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white tracking-tight text-center mb-14">
           Questions fréquentes
