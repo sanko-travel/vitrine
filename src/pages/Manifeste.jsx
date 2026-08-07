@@ -178,7 +178,7 @@ export default function Manifeste() {
           <h2 className="reveal font-heading font-bold text-4xl text-white mb-8">
             Notre vision
           </h2>
-          <div className="reveal from-right font-body text-white/90 text-xl leading-relaxed space-y-6 italic">
+          <div className="reveal font-body text-white/90 text-xl leading-relaxed space-y-6 italic">
             <p>
               "Nous imaginons un monde où les frontières ne sont pas des
               obstacles, mais des invitations. Un monde où chaque voyage laisse
@@ -190,7 +190,7 @@ export default function Manifeste() {
               d'un tourisme plus juste et plus beau."
             </p>
           </div>
-          <div className="mt-6 text-coral font-heading font-semibold text-lg">
+          <div className="reveal mt-6 text-coral font-heading font-semibold text-lg">
             - L'équipe Sanko
           </div>
         </div>

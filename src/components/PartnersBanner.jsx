@@ -30,12 +30,7 @@ export default function PartnersBanner() {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className={`${partner.height || 'h-10'} w-auto object-contain transition-all duration-300 ${
-                  partner.invert ? '' : 'grayscale hover:grayscale-0'
-                }`}
-                style={partner.invert ? { filter: 'invert(1) grayscale(1)' } : undefined}
-                onMouseEnter={partner.invert ? (e) => { e.currentTarget.style.filter = 'invert(1) grayscale(0)' } : undefined}
-                onMouseLeave={partner.invert ? (e) => { e.currentTarget.style.filter = 'invert(1) grayscale(1)' } : undefined}
+                className={`${partner.height || 'h-10'} w-auto object-contain transition-all duration-300 grayscale hover:grayscale-0 opacity-60 hover:opacity-100`}
               />
             </div>
           ))}

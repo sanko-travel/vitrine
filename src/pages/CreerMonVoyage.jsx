@@ -20,12 +20,10 @@ const SECTION_IDS = [
 ];
 
 const heroVideos = [
-  "/videos/createurs/hero_adventure.mp4",
-  "/videos/createurs/creator_camera.mp4",
-  "/videos/createurs/selfie_cave_boat.mp4",
-  "/videos/createurs/friends_shore.mp4",
-  "/videos/createurs/group_sunset.mp4",
-  "/videos/createurs/aerial_scenery.mp4",
+  "/videos/createurs/03.mp4",
+  "/videos/createurs/04.mp4",
+  "/videos/createurs/01.mp4",
+  "/videos/createurs/02.mp4",
 ];
 
 const profileThresholds = [
@@ -373,7 +371,7 @@ export default function CreerMonVoyage() {
             playsInline
             poster={
               i === 0
-                ? "/videos/createurs/hero_adventure_poster.jpg"
+                ? "/videos/createurs/poster.jpg"
                 : undefined
             }
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
@@ -406,7 +404,7 @@ export default function CreerMonVoyage() {
       <ReassuranceBand />
 
       {/* 3. Pourquoi faire un voyage avec ta communauté ? */}
-      <section id="pourquoi" className="bg-beige py-24 px-6">
+      <section id="pourquoi" className="bg-white py-24 px-6">
         <div ref={refPourquoi} className="max-w-4xl mx-auto text-center">
           <h2 className="reveal font-heading font-bold text-teal text-3xl md:text-4xl lg:text-5xl tracking-tight leading-tight mb-6">
             Emmène ta communauté à l'autre bout du monde. On s'occupe de{" "}
@@ -459,7 +457,7 @@ export default function CreerMonVoyage() {
       </section>
 
       {/* 5. Freins / Objections - Horizontal scroll on vertical scroll */}
-      <section id="objections" ref={objSectionRef} className="bg-beige relative">
+      <section id="objections" ref={objSectionRef} className="bg-white relative">
         <div ref={refObjection} className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           <div className="text-center mb-14 px-6">
             <StickerLabel
@@ -608,7 +606,7 @@ export default function CreerMonVoyage() {
       <StrikethroughList />
 
       {/* 7. Sanko est invisible pour ta communauté */}
-      <section id="invisible" className="bg-beige py-24 px-6">
+      <section id="invisible" className="bg-white py-24 px-6">
         <div ref={refInvisible} className="max-w-4xl mx-auto">
           <div className="text-center mb-6">
             <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-4">
@@ -645,13 +643,13 @@ export default function CreerMonVoyage() {
       <OfferCards />
 
       {/* 9. Ils l'ont fait !! (Témoignages) */}
-      <section id="temoignages" className="bg-teal py-24 px-6">
+      <section id="temoignages" className="bg-white py-24 px-6">
         <div ref={refTemoignages} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="reveal font-heading font-bold text-4xl text-white mb-4">
+            <h2 className="reveal font-heading font-bold text-4xl text-teal mb-4">
               Ils l'ont fait !!
             </h2>
-            <p className="reveal font-body text-white/90 text-lg">
+            <p className="reveal font-body text-gray-600 text-lg">
               Des créateurs qui ont franchi le pas.
             </p>
           </div>
@@ -692,20 +690,20 @@ export default function CreerMonVoyage() {
       </section>
 
       {/* 10. Comment ça marche - Timeline */}
-      <section id="processus" className="bg-beige py-24 px-6">
+      <section id="processus" className="bg-teal py-24 px-6">
         <div ref={refTimeline} className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <StickerLabel
               text="Processus"
-              color="teal"
+              color="coral"
               className="mx-auto mb-4"
             />
-            <h2 className="reveal font-heading font-bold text-4xl text-teal mb-4">
+            <h2 className="reveal font-heading font-bold text-4xl text-white mb-4">
               Concrètement, ça se passe comment ?
             </h2>
           </div>
           <div className="relative">
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-teal/15 -translate-x-1/2" />
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/20 -translate-x-1/2" />
             <div className="flex flex-col gap-12">
               {processSteps.map((step, i) => (
                 <div
@@ -723,7 +721,7 @@ export default function CreerMonVoyage() {
                       </p>
                     </div>
                   </div>
-                  <div className="relative z-10 w-14 h-14 rounded-full bg-teal text-white font-heading font-bold text-xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <div className="relative z-10 w-14 h-14 rounded-full bg-white text-teal font-heading font-bold text-xl flex items-center justify-center flex-shrink-0 shadow-lg">
                     {step.number}
                   </div>
                   <div className="flex-1 hidden md:block" />
@@ -735,16 +733,16 @@ export default function CreerMonVoyage() {
       </section>
 
       {/* 11. FAQ - fond teal */}
-      <section id="faq" className="bg-teal py-24 px-6">
+      <section id="faq" className="bg-white py-24 px-6">
         <div ref={refFaq} className="max-w-3xl mx-auto">
-          <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white tracking-tight text-center mb-14">
+          <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-teal tracking-tight text-center mb-14">
             Questions fréquentes
           </h2>
           <div className="space-y-4">
             {faqItems.map((item, i) => (
               <div
                 key={i}
-                className="reveal bg-white rounded-xl overflow-hidden"
+                className="reveal bg-white rounded-xl overflow-hidden shadow-md ring-1 ring-teal/10"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
@@ -785,13 +783,13 @@ export default function CreerMonVoyage() {
       </section>
 
       {/* 12. Formulaire */}
-      <section id="formulaire" className="bg-beige py-24 px-6">
+      <section id="formulaire" className="bg-teal py-24 px-6">
         <div ref={refFormulaire} className="max-w-3xl mx-auto">
           <div className="mb-14 text-center">
             <p className="font-body text-coral font-semibold tracking-widest text-sm uppercase mb-3">
               On y est
             </p>
-            <h2 className="font-heading font-bold text-4xl md:text-5xl text-teal">
+            <h2 className="font-heading font-bold text-4xl md:text-5xl text-white">
               Lance ton projet de voyage
             </h2>
           </div>

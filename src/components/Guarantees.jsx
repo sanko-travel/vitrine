@@ -66,7 +66,7 @@ export default function Guarantees() {
             Nos garanties
           </h2>
           <p className="reveal font-body text-gray-600 text-lg max-w-xl mx-auto">
-            On ne fait pas de promesses en l'air. Voici ce sur quoi on s'engage.
+            Pas de belles paroles. Voilà ce qu'on met sur la table.
           </p>
         </div>
 

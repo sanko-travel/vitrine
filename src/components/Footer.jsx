@@ -7,6 +7,7 @@ const sankoLinks = [
   { to: "/creer-mon-voyage", label: "Je suis créateur" },
   { to: "/marques", label: "Je suis une marque" },
   { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "Devenir partenaire" },
 ];
 
 const legalLinks = [

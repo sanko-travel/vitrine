@@ -49,7 +49,7 @@ export default function OfferCards() {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-teal py-24 px-6">
       <div ref={ref} className="max-w-5xl mx-auto">
         <div className="text-center mb-14">
           <StickerLabel
@@ -57,7 +57,7 @@ export default function OfferCards() {
             color="coral"
             className="mx-auto mb-4"
           />
-          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal">
+          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-white">
             Choisis le niveau d'accompagnement qui te correspond.
           </h2>
         </div>

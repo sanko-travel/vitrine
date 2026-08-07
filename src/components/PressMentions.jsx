@@ -1,99 +1,71 @@
 import { useEffect, useRef } from "react";
-import StickerLabel from "./StickerLabel";
 
 const pressArticles = [
   {
     media: "TourMag",
-    date: "23 juin 2026",
-    quote: (<>L'avenir du tourisme se joue <strong className="text-teal font-semibold not-italic">au plus près des habitants</strong>. 100&nbsp;% de nos dépenses logistiques sur place vont directement dans la poche des <strong className="text-teal font-semibold not-italic">communautés locales</strong>.</>),
+    logo: "/images/presse/tourmag.png",
+    quote:
+      "Sanko réinvente le voyage de groupe en le construisant autour de la relation créateur-communauté, avec un cadre légal que peu d'acteurs du secteur peuvent revendiquer.",
     url: "https://www.tourmag.com/Melany-Fabre-Sankofa-le-pari-du-voyage-immersif-porte-par-les-createurs-de-contenu_a132329.html",
-    color: "coral",
-    rotation: "-3deg",
+    linkLabel: "Lire l'article",
   },
   {
     media: "Podcast prYsme",
-    date: "15 février 2026",
-    quote: (<>Voyager pour <strong className="text-teal font-semibold not-italic">retrouver l'humain</strong>&nbsp;: quand les <strong className="text-teal font-semibold not-italic">rencontres transforment nos vies</strong>.</>),
+    logo: "/images/presse/prysme.png",
+    roundLogo: true,
+    quote:
+      "Voyager pour retrouver l'humain : quand les rencontres transforment nos vies.",
     url: "https://open.spotify.com/episode/4emPoxWQ8ZgwSXO7QsCUNg",
-    color: "teal",
-    rotation: "2deg",
     linkLabel: "Écouter l'épisode",
   },
   {
     media: "L'Écho Touristique",
-    date: "2 février 2026",
-    quote: (<>Notre ambition est de faire <strong className="text-teal font-semibold not-italic">réviser les imaginaires</strong>, de susciter des <strong className="text-teal font-semibold not-italic">rencontres avec les populations locales</strong> et de créer des <strong className="text-teal font-semibold not-italic">voyages à impact</strong>.</>),
+    logo: "/images/presse/echo-touristique.png",
+    quote:
+      "Notre ambition est de faire réviser les imaginaires, de susciter des rencontres avec les populations locales et de créer des voyages à impact.",
     url: "https://www.lechotouristique.com/article/tourisme-regeneratif-comment-echapper-aux-contradictions-du-toujours-plus",
-    color: "yellow",
-    rotation: "-2deg",
+    linkLabel: "Lire l'article",
   },
   {
     media: "Le Quotidien du Tourisme",
-    date: "20 octobre 2025",
-    quote: (<>Faire du <strong className="text-teal font-semibold not-italic">voyage communautaire à impact</strong> le levier le plus puissant de <strong className="text-teal font-semibold not-italic">transformation de l'industrie touristique</strong>.</>),
+    logo: "/images/presse/quotidien-tourisme.png",
+    invertLogo: true,
+    quote:
+      "Faire du voyage communautaire à impact le levier le plus puissant de transformation de l'industrie touristique.",
     url: "https://www.quotidiendutourisme.com/e-tourisme/suite-start-up-iftm-top-resa-2025-le-tourisme-et-la-creator-economy-969002.php",
-    color: "coral",
-    rotation: "3deg",
+    linkLabel: "Lire l'article",
   },
   {
     media: "TOM.travel",
-    date: "26 mars 2025",
-    quote: (<>Sankofa Travel Studio rejoint Provence Tourisme Innovation avec l'ambition de <strong className="text-teal font-semibold not-italic">démocratiser les séjours à impact</strong> à l'aide des <strong className="text-teal font-semibold not-italic">influenceurs</strong>.</>),
+    logo: "/images/presse/tom-travel.png",
+    quote:
+      "Sankofa Travel Studio rejoint Provence Tourisme Innovation avec l'ambition de démocratiser les séjours à impact à l'aide des influenceurs.",
     url: "https://www.tom.travel/2025/03/26/sankofa-collabore-avec-des-influenceurs-pour-organiser-des-sejours-a-impact/",
-    color: "teal",
-    rotation: "-4deg",
+    linkLabel: "Lire l'article",
   },
   {
     media: "Gomet'",
-    date: "14 mars 2025",
-    quote: (<>Une solution qui permet aux <strong className="text-teal font-semibold not-italic">créateurs de contenus</strong> d'organiser des <strong className="text-teal font-semibold not-italic">voyages pour leur communauté</strong>.</>),
+    logo: "/images/presse/gomet.png",
+    quote:
+      "Une solution qui permet aux créateurs de contenus d'organiser des voyages pour leur communauté.",
     url: "https://gomet.net/provence-travel-innovation-devoile-sa-promotion-2025/",
-    color: "yellow",
-    rotation: "2deg",
+    linkLabel: "Lire l'article",
   },
   {
     media: "L'Escalator",
-    date: "2025",
-    quote: (<>La <strong className="text-teal font-semibold not-italic">première agence en France</strong> à accompagner les créateurs dans la conception, la vente et l'organisation de <strong className="text-teal font-semibold not-italic">voyages immersifs</strong> avec leur communauté, dans un cadre 100&nbsp;% légal et avec un <strong className="text-teal font-semibold not-italic">impact local positif</strong>.</>),
+    logo: "/images/presse/escalator.svg",
+    quote:
+      "La première agence en France à accompagner les créateurs dans la conception, la vente et l'organisation de voyages immersifs avec leur communauté, dans un cadre 100 % légal et avec un impact local positif.",
     url: "https://lescalator.com/startups/sankofa-travel-studio/",
-    color: "coral",
-    rotation: "-3deg",
+    linkLabel: "Lire l'article",
   },
 ];
 
-function useRevealEach() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const container = ref.current;
-    if (!container) return;
-
-    const items = container.querySelectorAll(".press-item");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    items.forEach((item) => observer.observe(item));
-    return () => observer.disconnect();
-  }, []);
-
-  return ref;
-}
-
 export default function PressMentions() {
-  const titleRef = useRef(null);
-  const listRef = useRevealEach();
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    const el = titleRef.current;
+    const el = sectionRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -102,7 +74,7 @@ export default function PressMentions() {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -110,66 +82,45 @@ export default function PressMentions() {
 
   return (
     <section id="presse" className="bg-white py-24 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h2
-          ref={titleRef}
-          className="reveal font-heading font-bold text-4xl md:text-5xl text-teal tracking-tight text-center mb-20"
-        >
+      <div ref={sectionRef} className="reveal max-w-4xl mx-auto">
+        {/* Label */}
+        <p className="text-xs font-semibold tracking-[0.08em] text-gray-400 uppercase mb-10 font-body text-center">
           Ils parlent de nous
-        </h2>
+        </p>
 
-        <div ref={listRef} className="flex flex-col">
-          {pressArticles.map((article, i) => {
-            const isRight = i % 2 === 1;
-            return (
-              <div
-                key={article.media}
-                className={`press-item reveal ${isRight ? "from-right" : "from-left"} py-10 ${i < pressArticles.length - 1 ? "border-b border-teal/10" : ""}`}
-              >
-                <div className={`md:w-3/5 ${isRight ? "md:ml-auto md:text-right" : ""}`}>
-                  <div className={`mb-5 ${isRight ? "md:flex md:justify-end" : ""}`}>
-                    <StickerLabel
-                      text={article.media}
-                      color={article.color}
-                      size="sm"
-                      style={{ transform: `rotate(${article.rotation})` }}
-                    />
-                  </div>
-
-                  <blockquote className="font-body text-gray-700 text-lg md:text-xl leading-relaxed italic mb-5">
-                    «&nbsp;{article.quote}&nbsp;»
-                  </blockquote>
-
-                  <div className={`flex items-center gap-3 font-body text-sm ${isRight ? "md:justify-end" : ""}`}>
-                    <span className="text-gray-400">{article.date}</span>
-                    <span className="text-teal/20">·</span>
-                    <a
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 font-semibold text-coral hover:text-coral/80 transition-colors"
-                    >
-                      {article.linkLabel || "Lire l'article"}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={2}
-                        stroke="currentColor"
-                        className="w-3.5 h-3.5"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+        {/* Quote cards */}
+        <div className="flex flex-col gap-4">
+          {pressArticles.map((article) => (
+            <div
+              key={article.media}
+              className="bg-beige rounded-2xl p-6 md:px-10 md:py-7 flex flex-col md:flex-row items-center gap-5 md:gap-8"
+            >
+              {/* Logo container - fixed width for consistency */}
+              <div className="w-28 md:w-36 shrink-0 flex items-center justify-center">
+                <img
+                  src={article.logo}
+                  alt={article.media}
+                  className={`max-h-8 md:max-h-10 w-auto max-w-full object-contain${
+                    article.invertLogo ? " invert" : ""
+                  }${article.roundLogo ? " rounded-md" : ""}`}
+                  loading="lazy"
+                />
               </div>
-            );
-          })}
+
+              {/* Quote + link */}
+              <p className="text-gray-600 text-[15px] leading-relaxed text-left m-0 font-body">
+                «&nbsp;{article.quote}&nbsp;»{" "}
+                <a
+                  href={article.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-teal hover:text-teal/80 transition-colors whitespace-nowrap"
+                >
+                  {article.linkLabel}&nbsp;→
+                </a>
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

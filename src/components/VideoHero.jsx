@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import StickerLabel from "./StickerLabel";
 
 const videos = [
-  "/videos/campfire_group.mp4",
-  "/videos/marshmallows_fire.mp4",
-  "/videos/meadow.mp4",
-  "/videos/village_coast.mp4",
-  "/videos/group_campfire.mp4",
-  "/videos/forest_waterfall.mp4",
+  "/videos/accueil/01.mp4",
+  "/videos/accueil/09.mp4",
+  "/videos/accueil/10.mp4",
+  "/videos/accueil/14.mp4",
+  "/videos/accueil/06.mp4",
+  "/videos/accueil/03.mp4",
 ];
 
 export default function VideoHero() {

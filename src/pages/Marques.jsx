@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useTurnstile from "../hooks/useTurnstile";
 import useScrollReveal from "../hooks/useScrollReveal";
 import useHashScroll from "../hooks/useHashScroll";
@@ -22,7 +22,7 @@ const brandValues = [
   {
     title: "Une audience qui a déjà voté avec son portefeuille",
     description:
-      "Les voyageurs Sanko ont payé leur place pour être là. Leur engagement envers le créateur est prouvé par un acte d'achat - pas juste un like.",
+      "Les gens qui partent avec Sanko ont payé leur voyage. C'est pas un like ou un follow : ils ont sorti la CB pour vivre un truc avec le créateur.",
     borderColor: "border-yellow",
     iconColor: "text-yellow",
     icon: (
@@ -44,7 +44,7 @@ const brandValues = [
   {
     title: "Une intégration dans l'expérience, pas à côté",
     description:
-      "Votre marque s'intègre dans un voyage vécu, incarné, documenté. Pas dans un inventaire média. Le contexte change tout.",
+      "Votre produit est utilisé pendant le voyage, en situation réelle. Pas posé sur un fond blanc pour une story. Quand le contexte est bon, le message passe tout seul.",
     borderColor: "border-coral",
     iconColor: "text-coral",
     icon: (
@@ -66,7 +66,7 @@ const brandValues = [
   {
     title: "Un environnement brand-safe garanti",
     description:
-      "Cadre légal Atout France, contrats clairs, droits d'image définis en amont. Sanko porte la responsabilité opérationnelle - vous activez sans risque.",
+      "On est immatriculés Atout France, les contrats sont carrés, les droits d'image réglés avant le départ. Vous gérez pas la logistique, on s'en charge.",
     borderColor: "border-teal",
     iconColor: "text-teal",
     icon: (
@@ -96,38 +96,45 @@ const brandStats = [
 
 const brandCreators = [
   {
-    name: "Nolwenn",
-    handle: "@nolwenn_creme",
-    niche: "Voyage & lifestyle",
-    platform: "Instagram",
-    followers: "62K",
-    engagement: "6,2%",
-    nextTrip: "Prochain voyage : Japon, mars 2027",
-    availability: "Disponible",
-    availabilityColor: "bg-green-light text-teal",
-  },
-  {
-    name: "Deavy",
-    handle: "@Deavy.b",
-    niche: "Culture & découverte",
-    platform: "TikTok",
-    followers: "118K",
-    engagement: "8,9%",
-    nextTrip: "Prochain voyage : Grèce, juin 2027",
-    availability: "En discussion",
-    availabilityColor: "bg-yellow-light text-teal",
-  },
-  {
-    name: "Tin Adventures",
-    handle: "@tinadventures",
-    niche: "Aventure & outdoor",
-    platform: "YouTube",
+    creator: "@nolwenn_creme",
+    creatorImg: "/images/creators/nolwenn_creme.jpg",
+    destination: "Japon",
+    region: "Tokyo & Kyoto",
+    image: "/images/paysages/japon.jpg",
+    status: "à venir",
     followers: "204K",
-    engagement: "5,4%",
-    nextTrip: "Voyage réalisé : Croatie, sept. 2027",
-    availability: "Complet",
-    availabilityColor: "bg-gray-light text-gray-700",
+    engagement: "6,2%",
+    platform: "Instagram",
   },
+  {
+    creator: "@deavy.b",
+    creatorImg: "/images/creators/deavy_b.jpg",
+    destination: "Grèce",
+    region: "Îles & Côtes",
+    image: "/images/paysages/grece.jpg",
+    status: "à venir",
+    followers: "20K",
+    engagement: "8,9%",
+    platform: "Instagram",
+  },
+];
+
+const CREATOR_STATUS_STYLES = {
+  'à venir': 'bg-coral text-white',
+  'en cours': 'bg-yellow text-white',
+  'passé': 'bg-white/30 text-white',
+};
+
+const heroVideos = [
+  "/videos/marques/02.mp4",
+  "/videos/marques/04.mp4",
+  "/videos/marques/05.mp4",
+  "/videos/marques/06.mp4",
+  "/videos/marques/07.mp4",
+  "/videos/marques/08.mp4",
+  "/videos/marques/09.mp4",
+  "/videos/marques/03.mp4",
+  "/videos/marques/01.mp4",
 ];
 
 const honeypotStyle = {
@@ -152,7 +159,15 @@ export default function Marques() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [currentVideo, setCurrentVideo] = useState(0);
   const { containerRef, token, reset } = useTurnstile();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideo((prev) => (prev + 1) % heroVideos.length);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
   const refValues = useScrollReveal();
   const refStats = useScrollReveal();
   const refPourquoi = useScrollReveal();
@@ -198,13 +213,20 @@ export default function Marques() {
       {/* 1. Hero */}
       <section
         id="hero"
-        className="relative h-screen flex items-center justify-center"
-        style={{
-          backgroundImage: "url(/images/paysages/paysage_010.png)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+        className="relative h-screen flex items-center justify-center overflow-hidden"
       >
+        {heroVideos.map((src, i) => (
+          <video
+            key={src}
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{ opacity: i === currentVideo ? 1 : 0 }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-t from-teal/80 via-teal/50 to-teal/30" />
         <div className="hero-content relative z-10 text-center px-6 max-w-3xl mx-auto">
           <StickerLabel
@@ -216,11 +238,11 @@ export default function Marques() {
             Partenaires & marques
           </p>
           <h1 className="hero-fade-up hero-d2 font-heading font-extrabold text-white text-4xl md:text-6xl leading-tight mb-6">
-            Activez votre marque dans des expériences réelles
+            Votre marque dans un voyage, pas dans un feed.
           </h1>
           <p className="hero-fade-up hero-d2 font-body text-white/90 text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            Intégrez-vous dans des voyages vécus et documentés par des créateurs
-            et leurs communautés engagées.
+            Des créateurs organisent des voyages avec leur communauté. Votre
+            marque fait partie de l'aventure. Pour de vrai.
           </p>
           <a
             href="#formulaire-marques"
@@ -235,7 +257,7 @@ export default function Marques() {
       <ReassuranceBand />
 
       {/* 3. Proposition de valeur */}
-      <section id="proposition" className="bg-beige py-24 px-6">
+      <section id="proposition" className="bg-white py-24 px-6">
         <div ref={refValues} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <StickerLabel
@@ -285,39 +307,39 @@ export default function Marques() {
       </section>
 
       {/* 5. Pourquoi Sanko plutôt qu'un placement classique ? */}
-      <section id="pourquoi" className="bg-beige py-24 px-6">
+      <section id="pourquoi" className="bg-white py-24 px-6">
         <div ref={refPourquoi} className="max-w-3xl mx-auto">
           <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-8 text-center">
             Pourquoi Sanko plutôt qu'un placement classique ?
           </h2>
           <div className="reveal font-body text-gray-700 text-lg leading-relaxed space-y-6">
             <p>
-              Un placement classique, c'est un logo dans un feed, un lien en
-              bio, un code promo. Avec Sanko, votre marque est intégrée dans une
-              expérience vécue - un voyage que les participants ont choisi et
-              payé.
+              Un placement classique, c'est un logo dans un feed et un code
+              promo qui expire dans 48h. Ça marche, mais c'est oubliable. Avec
+              Sanko, votre marque fait partie d'un voyage que 30 personnes ont
+              payé pour vivre ensemble.
             </p>
             <p>
-              Le contenu créé est authentique, émotionnel et durable. L'audience
-              n'est pas passive : elle a prouvé son engagement par un acte
-              d'achat. C'est la différence entre être vu et être vécu.
+              Le contenu sort naturellement du séjour. Personne ne joue un rôle.
+              Et les gens qui regardent ces vidéos voient la différence entre
+              un post sponsorisé et un moment vécu.
             </p>
           </div>
         </div>
       </section>
 
       {/* 6. Cas concret */}
-      <section id="cas-concret" className="bg-white py-24 px-6">
+      <section id="cas-concret" className="bg-teal py-24 px-6">
         <div ref={refCas} className="max-w-4xl mx-auto text-center">
           <StickerLabel
             text="Cas concret"
-            color="teal"
+            color="yellow"
             className="mx-auto mb-4"
           />
-          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-teal mb-8">
+          <h2 className="reveal font-heading font-bold text-3xl md:text-4xl text-white mb-8">
             Comment ça se passe concrètement ?
           </h2>
-          <div className="reveal scale-up bg-beige rounded-2xl p-10 ring-1 ring-teal/5">
+          <div className="reveal scale-up bg-white rounded-2xl p-10 shadow-md">
             <p className="font-body text-gray-600 text-lg italic">
               Étude de cas à venir - nous préparons un retour d'expérience
               détaillé avec l'un de nos premiers partenaires.
@@ -333,69 +355,80 @@ export default function Marques() {
       </section>
 
       {/* 7. Catalogue créateurs */}
-      <section id="createurs" className="bg-teal py-24 px-6">
+      <section id="createurs" className="bg-white py-24 px-6">
         <div ref={refCreators} className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <StickerLabel
               text="Créateurs"
-              color="yellow"
+              color="coral"
               className="mx-auto mb-4"
             />
-            <h2 className="reveal font-heading font-bold text-4xl text-white mb-4">
+            <h2 className="reveal font-heading font-bold text-4xl text-teal mb-4">
               Trouvez le créateur qui parle à votre audience.
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {brandCreators.map((c, i) => (
               <div
                 key={i}
-                className="reveal scale-up bg-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                className="reveal scale-up bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="font-heading font-bold text-lg text-teal">
-                      {c.name}
-                    </h3>
-                    <p className="font-body text-coral text-sm">{c.handle}</p>
-                  </div>
-                  <span
-                    className={`font-accent font-semibold text-xs px-3 py-1 rounded-full ${c.availabilityColor}`}
-                  >
-                    {c.availability}
+                {/* Image destination avec nom incrusté */}
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={c.image}
+                    alt={c.destination}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent via-40% to-white" />
+                  {/* Pastille statut */}
+                  <span className={`absolute top-3 right-3 px-3 py-1 rounded-full font-accent font-semibold text-xs uppercase tracking-wide ${CREATOR_STATUS_STYLES[c.status]}`}>
+                    {c.status}
                   </span>
-                </div>
-                <p className="font-body text-gray-600 text-sm mb-3">
-                  {c.niche}
-                </p>
-                <div className="flex items-center gap-4 mb-3">
-                  <div>
-                    <p className="font-heading font-bold text-teal">
-                      {c.followers}
-                    </p>
-                    <p className="font-body text-gray-500 text-xs">Abonnés</p>
-                  </div>
-                  <div className="w-px h-8 bg-teal/10" />
-                  <div>
-                    <p className="font-heading font-bold text-teal">
-                      {c.engagement}
-                    </p>
-                    <p className="font-body text-gray-500 text-xs">
-                      Engagement
-                    </p>
-                  </div>
-                  <div className="w-px h-8 bg-teal/10" />
-                  <div>
-                    <p className="font-heading font-bold text-teal">
-                      {c.platform}
-                    </p>
-                    <p className="font-body text-gray-500 text-xs">
-                      Plateforme
-                    </p>
+                  {/* Destination sur l'image */}
+                  <div className="absolute bottom-6 left-4 right-4">
+                    <h3 className="font-heading font-bold text-2xl text-teal leading-tight">
+                      {c.destination}
+                    </h3>
                   </div>
                 </div>
-                <p className="font-body text-gray-500 text-xs italic">
-                  {c.nextTrip}
-                </p>
+
+                {/* Section créateur + stats */}
+                <div className="px-4 pb-4 -mt-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="relative w-10 h-10 flex-shrink-0">
+                      <span className="absolute inset-0 rounded-full bg-teal flex items-center justify-center text-white text-xs font-bold">
+                        {c.creator.replace('@', '').charAt(0).toUpperCase()}
+                      </span>
+                      <img
+                        src={c.creatorImg}
+                        alt={c.creator}
+                        className="absolute inset-0 w-10 h-10 rounded-full object-cover ring-2 ring-teal/20"
+                        onError={(e) => { e.target.style.display = 'none' }}
+                      />
+                    </div>
+                    <p className="font-body text-coral font-semibold text-sm truncate min-w-0">
+                      {c.creator}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <p className="font-heading font-bold text-sm text-teal">{c.followers}</p>
+                      <p className="font-body text-gray-500 text-xs">Abonnés</p>
+                    </div>
+                    <div className="w-px h-6 bg-teal/10" />
+                    <div>
+                      <p className="font-heading font-bold text-sm text-teal">{c.engagement}</p>
+                      <p className="font-body text-gray-500 text-xs">Engagement</p>
+                    </div>
+                    <div className="w-px h-6 bg-teal/10" />
+                    <div>
+                      <p className="font-heading font-bold text-sm text-teal">{c.platform}</p>
+                      <p className="font-body text-gray-500 text-xs">Plateforme</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -419,11 +452,11 @@ export default function Marques() {
               Parlons-en
             </p>
             <h2 className="reveal font-heading font-bold text-4xl md:text-5xl text-white">
-              Activez votre marque avec Sanko
+              On en discute ?
             </h2>
           </div>
 
-          <div className="reveal fade-only bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 ring-1 ring-teal/5">
+          <div className="reveal fade-only bg-white rounded-2xl p-8 md:p-10 shadow-md hover:shadow-xl transition-shadow duration-300">
             {submitted ? (
               <div className="text-center py-10">
                 <svg
@@ -436,7 +469,7 @@ export default function Marques() {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"
+                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
                 <h3 className="font-heading font-bold text-2xl text-teal mb-2">
@@ -448,39 +481,33 @@ export default function Marques() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <div className="grid sm:grid-cols-2 gap-5">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                      Nom
-                    </label>
+                    <StickerLabel text="Nom" color="teal" size="xs" className="mb-2" />
                     <input
                       name="nom"
                       value={form.nom}
                       onChange={handleChange}
                       placeholder="Votre nom"
                       required
-                      className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30"
+                      className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30"
                     />
                   </div>
                   <div>
-                    <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                      Entreprise
-                    </label>
+                    <StickerLabel text="Entreprise" color="yellow" size="xs" className="mb-2" />
                     <input
                       name="entreprise"
                       value={form.entreprise}
                       onChange={handleChange}
                       placeholder="Nom de votre entreprise"
                       required
-                      className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30"
+                      className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Email professionnel
-                  </label>
+                  <StickerLabel text="Email" color="teal" size="xs" className="mb-2" />
                   <input
                     name="email"
                     type="email"
@@ -488,19 +515,17 @@ export default function Marques() {
                     onChange={handleChange}
                     placeholder="vous@entreprise.com"
                     required
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30"
+                    className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30"
                   />
                 </div>
                 <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Objectif principal
-                  </label>
+                  <StickerLabel text="Objectif" color="yellow" size="xs" className="mb-2" />
                   <select
                     name="objectif"
                     value={form.objectif}
                     onChange={handleChange}
                     required
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal"
+                    className="w-full font-body border border-teal/20 rounded-full px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal appearance-none"
                   >
                     <option value="">Sélectionnez un objectif</option>
                     <option value="visibilite">Visibilité & notoriété</option>
@@ -513,16 +538,14 @@ export default function Marques() {
                   </select>
                 </div>
                 <div>
-                  <label className="font-body text-sm font-semibold text-teal mb-1.5 block">
-                    Message
-                  </label>
+                  <StickerLabel text="Message" color="coral" size="xs" className="mb-2" style={{ transform: 'rotate(-4deg)' }} />
                   <textarea
                     name="message"
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Parlez-nous de votre projet, de votre marque et de vos objectifs…"
                     rows={5}
-                    className="w-full font-body border border-teal/20 rounded-xl px-5 py-3.5 outline-none focus:border-coral transition-colors bg-gray-light/40 text-teal placeholder-teal/30 resize-none"
+                    className="w-full font-body border border-teal/20 rounded-2xl px-5 py-3.5 outline-none focus:border-coral focus:ring-2 focus:ring-coral/20 transition-all bg-gray-light/40 text-teal placeholder-teal/30 resize-none"
                   />
                 </div>
                 {/* Honeypot fields */}
@@ -556,7 +579,7 @@ export default function Marques() {
                 <button
                   type="submit"
                   disabled={loading || !token}
-                  className="bg-coral text-white font-body font-semibold px-8 py-4 rounded-full hover:bg-coral/90 transition-colors text-base mt-2 disabled:opacity-60"
+                  className="self-start bg-coral text-white font-body font-semibold px-10 py-4 rounded-full hover:bg-coral/90 transition-colors text-base disabled:opacity-60"
                 >
                   {loading ? "Envoi…" : "Envoyer ma demande"}
                 </button>

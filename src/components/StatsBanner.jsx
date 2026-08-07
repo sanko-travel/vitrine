@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import useScrollReveal from "../hooks/useScrollReveal";
 
 const stats = [
+  { value: 2023, suffix: "", label: "depuis", noCountUp: true },
   { value: 50, suffix: "+", label: "voyages organisés" },
   { value: 2000, suffix: "+", label: "voyageurs" },
   { value: 14, suffix: "", label: "pays explorés" },
@@ -27,17 +28,30 @@ function useCountUp(target, duration = 1800, start = false) {
 }
 
 function StatItem({ stat, animate, showDivider }) {
-  const count = useCountUp(stat.value, 1800, animate);
+  const count = useCountUp(stat.value, 1800, stat.noCountUp ? false : animate);
   return (
     <div className="reveal scale-up flex items-center gap-1">
       <div className="flex flex-col items-center gap-1 flex-1">
-        <span className="font-heading font-bold text-5xl md:text-6xl text-yellow">
-          {count}
-          {stat.suffix}
-        </span>
-        <span className="font-body text-white text-sm md:text-base tracking-wide uppercase whitespace-nowrap">
-          {stat.label}
-        </span>
+        {stat.noCountUp ? (
+          <>
+            <span className="font-body text-white text-sm md:text-base tracking-wide uppercase whitespace-nowrap">
+              {stat.label}
+            </span>
+            <span className="font-heading font-bold text-5xl md:text-6xl text-yellow">
+              {stat.value}
+            </span>
+          </>
+        ) : (
+          <>
+            <span className="font-heading font-bold text-5xl md:text-6xl text-yellow">
+              {count}
+              {stat.suffix}
+            </span>
+            <span className="font-body text-white text-sm md:text-base tracking-wide uppercase whitespace-nowrap">
+              {stat.label}
+            </span>
+          </>
+        )}
       </div>
       {showDivider && (
         <div className="hidden md:block w-px h-16 bg-white/20 ml-auto" />
@@ -64,7 +78,7 @@ export default function StatsBanner() {
 
   return (
     <section id="chiffres" ref={(el) => { countRef.current = el; revealRef.current = el; }} className="bg-teal py-20 px-6">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-10">
         {stats.map((stat, i) => (
           <StatItem
             key={i}
