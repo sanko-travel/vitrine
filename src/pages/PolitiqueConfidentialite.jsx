@@ -148,9 +148,12 @@ const sections = [
           <li>
             <strong>Prestataires de services techniques</strong> (ex. :
             hébergement de données, maintenance du site), notamment{" "}
-            <strong>Cloudflare</strong> (hébergement et sécurité, protection
-            anti-spam via Turnstile) et <strong>Resend</strong> (envoi d'emails
-            transactionnels pour le traitement des formulaires).
+            <strong>Cloudflare</strong> (hébergement, sécurité, protection
+            anti-spam via Turnstile et statistiques de fréquentation via Web
+            Analytics), <strong>Microsoft Clarity</strong> (analyse
+            comportementale : enregistrements de sessions, cartes de chaleur) et{" "}
+            <strong>Resend</strong> (envoi d'emails transactionnels pour le
+            traitement des formulaires).
           </li>
           <li>
             <strong>Autorités publiques</strong> lorsque la loi l'exige.
@@ -286,20 +289,14 @@ const sections = [
     title: "Cookies",
     content: (
       <>
-        <p>
-          Notre site utilise uniquement des cookies essentiels au fonctionnement
-          :
+        <p>Notre site utilise les cookies et technologies suivants :</p>
+        <p className="font-semibold text-teal mt-4 mb-2">
+          Cookies essentiels (sans consentement requis) :
         </p>
-        <ul className="list-disc pl-6 mt-3 space-y-1">
+        <ul className="list-disc pl-6 space-y-1">
           <li>
             <strong>Cloudflare Turnstile</strong> : cookie de sécurité anti-spam
-            pour la protection des formulaires. Ce cookie est strictement
-            nécessaire et ne requiert pas de consentement.
-          </li>
-          <li>
-            <strong>Google Fonts</strong> : chargement des polices de
-            caractères. Aucun cookie de suivi n'est déposé, mais une requête est
-            envoyée aux serveurs de Google.
+            pour la protection des formulaires.
           </li>
           <li>
             <strong>Préférence cookies</strong> : un cookie local (
@@ -309,10 +306,38 @@ const sections = [
             ) enregistre votre choix d'acceptation ou de refus.
           </li>
         </ul>
+        <p className="font-semibold text-teal mt-4 mb-2">
+          Cookies d'analyse (soumis à votre consentement) :
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            <strong>Microsoft Clarity</strong> : outil d'analyse
+            comportementale qui enregistre les sessions de navigation, génère des
+            cartes de chaleur et détecte les problèmes d'ergonomie. Clarity
+            utilise un cookie first-party pour identifier les sessions. Ces
+            données sont anonymisées et hébergées par Microsoft. Vous pouvez
+            refuser ce cookie via le bandeau de consentement affiché lors de
+            votre première visite.
+          </li>
+        </ul>
+        <p className="font-semibold text-teal mt-4 mb-2">
+          Technologies sans cookie :
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            <strong>Cloudflare Web Analytics</strong> : mesure de fréquentation
+            (pages vues, référents, pays). Cette technologie ne dépose aucun
+            cookie et ne collecte aucune donnée personnelle identifiante.
+          </li>
+          <li>
+            <strong>Google Fonts</strong> : chargement des polices de
+            caractères. Aucun cookie de suivi n'est déposé, mais une requête est
+            envoyée aux serveurs de Google.
+          </li>
+        </ul>
         <p className="mt-3">
-          Nous n'utilisons aucun cookie publicitaire, de tracking ou d'analyse
-          comportementale. Vous pouvez modifier vos préférences à tout moment en
-          supprimant les cookies de votre navigateur.
+          Vous pouvez modifier vos préférences à tout moment en supprimant les
+          cookies de votre navigateur ou en nous contactant.
         </p>
       </>
     ),

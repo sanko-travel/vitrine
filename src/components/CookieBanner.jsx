@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Clarity from "@microsoft/clarity";
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -16,6 +17,7 @@ export default function CookieBanner() {
 
   const refuse = () => {
     localStorage.setItem("cookie-consent", "refused");
+    Clarity.consent(false);
     setVisible(false);
   };
 
